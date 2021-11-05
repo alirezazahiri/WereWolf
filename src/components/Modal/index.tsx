@@ -5,11 +5,12 @@ import styles from "./Modal.module.css"
 
 // UI Components 
 import Modal from "react-bootstrap/Modal";
-import NameEnter from '../NameEnter';
+import NameEnter from '../NameEnter/index';
 import { getModal } from '../../services/getPageData';
 import HeaderButtons from './HeaderButtons';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
+import CharSelect from '../CharSelect/index';
 
 interface Props {
     language: string,
@@ -55,7 +56,7 @@ const ModalContainer: FC<Props> = ({ language, type, show, closeHandler, backHan
             <Modal.Body>
                 {/* components */}
                 {type === "nameEnter" && <NameEnter />}
-                {type === "charSelect" && <NameEnter />}
+                {type === "charSelect" && <CharSelect />}
             </Modal.Body>
         </Modal>
     );

@@ -1,34 +1,43 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import getChars, { getCharSelect } from '../../services/getPageData';
+import FilterCharacters from '../FilterCharacters/index';
+import { AppState } from '../../redux/store';
+import CharacterButton from './CharacterButton';
 
 const CharSelect = () => {
-    return (
-        <div className={styles.container}>
+  const { language, filter } = useSelector((state: AppState) => ({
+    ...state.languageState,
+    ...state.filterState
+  }))
+  const { characters } = getChars(language)
+  const { buttons } = getCharSelect(language)
+
+  const resetHandler = () => {
+
+  }
+  
+  return (
+    <div >
       <button
-        
-        type="button"
-        onClick={charactersResetHandler}
+        onClick={resetHandler}
       >
         {buttons.reset}
       </button>
-      <FilterCharacters setType={setType}/>
-      
+      <FilterCharacters />
+
       {characters
         .filter((character) =>
-          type === "all" ? true : character.type === type
+          filter === "all" ? true : character.type === filter
         )
         .map((character) => (
           <CharacterButton
             key={character.id}
             character={character}
-            setRemaining={setRemaining}
-            names={names}
-            charactersInGame={charactersInGame}
-            setCharactersInGame={setCharactersInGame}
-            resetClicked={resetClicked}
           />
         ))}
     </div>
-    );
+  );
 };
 
 export default CharSelect;
