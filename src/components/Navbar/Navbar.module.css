@@ -1,0 +1,74 @@
+.container,
+.content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+}
+
+.content button {
+    border: none;
+    box-shadow: none;
+    transition: all 0.2s;
+    display: fixed;
+}
+
+.content button:focus,
+.content button:hover {
+    box-shadow: 0 0 .8rem rgb(71, 58, 121);
+}
+
+.title {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    color: #50cb93;
+    margin-right: 10px;
+}
+
+.container {
+    backdrop-filter: blur(30px);
+    box-shadow: 1rem 0 2rem rgb(71, 58, 121);
+}
+
+.linksContainer {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.linksContainer a {
+    text-decoration: none;
+    float: right;
+    color: #50cb93;
+    transition: all 0.2s ease-in-out;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.linksContainer a:hover {
+    color: rgb(71, 58, 121);
+    text-decoration: underline;
+    text-underline-position: under;
+    text-underline-offset: 3px;
+}
+
+.title:hover {
+    color: rgb(71, 58, 121);
+}
+
+.flag {
+    width: 3.6rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .linksContainer a:first-child {
+        margin-top: 1rem;
+    }
+
+    .linksContainer a {
+        margin-bottom: .8rem;
+    }
+}

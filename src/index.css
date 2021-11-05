@@ -3,11 +3,11 @@
 @import "./styles/fonts/fontiranWeb.css";
 
 html {
-  font-family: iranyekan !important;
   font-size: 62.5%;
 }
 
 * {
+  font-family: iranyekan !important;
   padding: 0;
   margin: 0;
   box-sizing: border-box;

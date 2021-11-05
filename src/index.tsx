@@ -1,3 +1,6 @@
+// react-router-dom
+import { BrowserRouter } from "react-router-dom";
+
 import ReactDOM from 'react-dom';
 
 // Components 
@@ -11,6 +14,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'font-awesome/css/font-awesome.css'
 
 ReactDOM.render(
-  <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );

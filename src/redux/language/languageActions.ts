@@ -1,5 +1,6 @@
 import { ILanguageAtion } from "../types";
 
-export const changeLanguage = (): ILanguageAtion => ({
+export const changeLanguage = (language: string): ILanguageAtion => ({
     type: "CHANGE_LANGUAGE",
+    payload: language,
 });

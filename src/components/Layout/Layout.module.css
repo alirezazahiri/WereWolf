@@ -1,0 +1,11 @@
+.container {
+    overflow-x: hidden;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+      url("../../assets/img/home-bg.jpg") center center / cover no-repeat fixed;
+    position: fixed;
+    inset: 0px;
+    opacity: 1;
+    z-index: -1;
+}
