@@ -4,12 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../redux/store';
 import { getNameEnter } from '../../services/getPageData';
 import { addName, resetPlayers } from '../../redux/players/playersActions';
+import Name from './Name';
 
 const NameEnter = () => {
     const dispatch = useDispatch()
-    const {language, names} = useSelector((state: AppState) => ({...state.languageState, ...state.playersState}))
-
-    console.log(names)
+    const { language, names, playersCount } = useSelector((state: AppState) => ({ ...state.languageState, ...state.playersState }))
 
     const { buttons, unknown } = getNameEnter(language);
     const [name, setName] = useState("")
@@ -37,6 +36,9 @@ const NameEnter = () => {
             >
                 {buttons.reset}
             </button>
+            <div>
+                {names.map((name, index) => <Name key={`${index+1}`} name={name} index={index} />)}
+            </div>
             <form onSubmit={submitHandler} className={styles.formContainer}>
                 <input
                     ref={inputRef}
@@ -47,7 +49,8 @@ const NameEnter = () => {
                 <button
                     className={styles.submitButton}
                     type="submit"
-                    // disabled={playersCount - names.length === 0} // disable the add button, when all players added
+                    disabled={playersCount - names.length === 0} 
+                    // disable the add button, when all players added
                 >
                     {buttons.add}
                 </button>

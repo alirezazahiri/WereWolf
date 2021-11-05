@@ -17,4 +17,17 @@
 .headerContainer {
     border: none;
     overflow: hidden;
+    display: flex;
+}
+
+.headerContainer button{
+    border: none;
+    font-size: 1.4rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    background-color: none;
 }

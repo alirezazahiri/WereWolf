@@ -1,0 +1,27 @@
+.close {
+    color: rgba(255, 0, 0, 0.7);
+}
+.close:hover {
+    color: rgba(255, 0, 0);
+}
+
+.back {
+    color: rgba(253, 255, 0, 0.7);
+}
+.back:hover {
+    color: rgba(253, 255, 0);
+}
+
+.start {
+    color: rgba(80, 203, 147, 0.7);
+}
+.start:hover {
+    color: rgb(80, 203, 147);
+}
+
+.goto {
+    color: rgba(80, 203, 147, 0.7);
+}
+.goto:hover {
+    color: rgb(80, 203, 147);
+}

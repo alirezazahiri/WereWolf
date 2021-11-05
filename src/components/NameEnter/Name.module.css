@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(71, 58, 121, 0.5);
+    margin: 5px 10px;
+}
+
+.nameIndexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameIndexContainer span {
+    margin-right: 12px;
+}
+
+.nameIndexContainer span i {
+    font-size: 20px;
+    margin-top: 5px;
+    color: rgb(85, 75, 122);
+}
+
+.nameIndexContainer h1 {
+    color: #50cb93;
+    font-size: 20px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.formContainer input {
+    font-size: 18px;
+    color: #50cb93;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.formContainer input:focus {
+    outline: none;
+    border: 1px solid rgb(85, 75, 122);
+    box-shadow: 0 0 12px rgb(85, 75, 122);
+}
+
+.formContainer button {
+    color: #50cb93;
+    transition: all 0.2s;
+    border: 1px solid #50cb93;
+    font-size: 1.1rem;
+    padding: 0 5px;
+}
+
+.formContainer button:hover {
+    border: 1px solid rgb(85, 75, 122);
+    color: rgb(92, 53, 150);
+}
+
+@media only screen and (max-width: 600px) {
+    .formContainer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

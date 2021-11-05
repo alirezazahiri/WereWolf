@@ -12,7 +12,7 @@ import styles from "./GameSetup.module.css"
 
 // reducer 
 import gameSetupReducer, { initialState } from './reducer';
-import { openNameEnter, closeNameEnter, closeCharSelect } from './actions';
+import { openNameEnter, closeNameEnter, closeCharSelect, openCharSelect } from './actions';
 import ModalContainer from '../Modal';
 
 const GameSetup = () => {
@@ -20,7 +20,7 @@ const GameSetup = () => {
     const { title, description, prompt_1 } = getGameSetup(language);
 
     const [state, dispatch] = useReducer(gameSetupReducer, initialState);
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.headerContainer}>
@@ -37,14 +37,18 @@ const GameSetup = () => {
 
             {/* NAME ENTER MODAL */}
             <ModalContainer
+                language={language}
                 type={state.type}
                 closeHandler={() => dispatch(closeNameEnter())}
+                gotoCharSelect={() => dispatch(openCharSelect())}
                 show={state.nameEnter}
-            />
+                />
 
             {/* CHARACTER SELECT MODAL */}
             <ModalContainer
+                language={language}
                 type={state.type}
+                backHandler={() => dispatch(openNameEnter())}
                 closeHandler={() => dispatch(closeCharSelect())}
                 show={state.charSelect}
             />

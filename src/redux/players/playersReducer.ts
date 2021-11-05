@@ -11,6 +11,13 @@ const playersReducer = (state = initialState, action: IPlayersActions) => {
             return { ...state, playersCount: Number(action.payload) };
         case "ADD_NAME":
             return { ...state, names: [...state.names, action.payload] };
+        case "EDIT_NAME":
+            return {
+                ...state,
+                names: state.names.map((name: string, index: number) =>
+                    index === action.payload.index ? action.payload.name : name
+                ),
+            };
         case "RESET_NAMES":
             return { ...state, names: [] };
         default:
