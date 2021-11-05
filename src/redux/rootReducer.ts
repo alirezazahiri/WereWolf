@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 
-// reducers 
+// reducers
 import languageReducer from "./language/languageReducers";
+import playersReducer from "./players/playersReducer";
 
 const rootReducer = combineReducers({
-    languageState: languageReducer
-})
+    languageState: languageReducer,
+    playersState: playersReducer,
+});
 
-export default rootReducer
+export default rootReducer;

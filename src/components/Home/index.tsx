@@ -1,13 +1,25 @@
 import { FC, useState, useEffect, useRef } from 'react';
+
+// navigate 
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getHome } from '../../services/getPageData';
+
+// redux 
 import { AppState } from '../../redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+
+
+// services 
+import { getHome } from '../../services/getPageData';
 import fixNumbers from '../../services/convertNumbersToEn';
+
+// styles 
 import styles from "./Home.module.css"
+import { setCountOfPlayers } from '../../redux/players/playersActions';
 
 const Home: FC = () => {
+    const dispatch = useDispatch()
     const { language } = useSelector((state: AppState) => state.languageState)
+
     const {
         title,
         description,
@@ -17,6 +29,7 @@ const Home: FC = () => {
 
     const [disable, setDisable] = useState(false);
     const [playersCount, setPlayersCount] = useState("");
+
     const navigate = useNavigate()
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -49,6 +62,7 @@ const Home: FC = () => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!disable) {
+            dispatch(setCountOfPlayers(fixNumbers(playersCount)))
             navigate("/game-setup");
         }
     };
@@ -63,7 +77,7 @@ const Home: FC = () => {
                 <form onSubmit={submitHandler} className={styles.formContainer}>
                     <input
                         ref={inputRef}
-                        // pattern="\d*"
+                        pattern="\d*"
                         type="text"
                         placeholder={placeholder_1}
                         value={playersCount}
