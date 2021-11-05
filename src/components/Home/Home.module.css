@@ -9,7 +9,7 @@
 .headerContainer h1 {
     color: rgb(71, 58, 121);
     font-size: 4.5rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .headerContainer p {
@@ -29,7 +29,7 @@
 .formContainer input {
     padding: 1.5rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: none;
     background: rgba(255, 255, 255, 0.2);
     transition: all 0.5s ease;

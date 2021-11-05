@@ -4,14 +4,15 @@ export interface ILanguageAtion {
 }
 
 export interface ILanguageState {
-    language: string
+    language: string;
 }
 
 export interface IPlayersActions {
-    type: string,
-    payload?: any
+    type: string;
+    payload?: any;
 }
 
 export interface IPlayersState {
-    playersCount: number
+    playersCount: number;
+    names: string[];
 }

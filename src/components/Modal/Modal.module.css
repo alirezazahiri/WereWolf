@@ -1,0 +1,20 @@
+.container {
+    backdrop-filter: blur(20px);
+}
+
+.container div{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container div {
+    border-radius: 12px;
+}
+
+.container div div div div {
+    color: #50cb93;
+}
+
+.headerContainer {
+    border: none;
+    overflow: hidden;
+}

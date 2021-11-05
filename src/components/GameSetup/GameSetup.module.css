@@ -1,0 +1,36 @@
+.container {
+    text-align: center;
+}
+
+.startButton {
+    color: rgb(80, 203, 147);
+    border: 1px solid rgba(71, 58, 121, 0.8);
+    padding: 20px 30px;
+
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(71, 58, 121, 0.8);
+    backdrop-filter: blur(15px);
+    background-color: rgba(71, 58, 121, 0.1);
+    transition: all 0.2s ease;
+}
+
+.startButton:hover {
+    border-radius: 12px;
+}
+
+.headerContainer {
+    margin: 120px 80px;
+}
+
+.headerContainer h1 {
+    color: rgb(71, 58, 121);
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.headerContainer p {
+    color: #50cb93;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-top: 2.5rem;
+}
