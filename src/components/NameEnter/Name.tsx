@@ -2,9 +2,11 @@ import React, { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from '
 import { shorten } from '../../services/shorten';
 
 import styles from "./Name.module.css"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { editName } from '../../redux/players/playersActions';
 import Icon from '../Icon';
+import { AppState } from '../../redux/store';
+import { stat } from 'fs';
 
 type Props = {
     name: string,
@@ -13,6 +15,7 @@ type Props = {
 
 const Name: FC<Props> = ({ name, index }) => {
     const dispatch = useDispatch()
+    const { language } = useSelector((state: AppState) => state.languageState)
     const [canEdit, setCanEdit] = useState(false)
     const [newName, setNewName] = useState(name)
     const [currentName, setCurrentName] = useState(name);
@@ -52,15 +55,15 @@ const Name: FC<Props> = ({ name, index }) => {
                             onChange={changeHandler}
                         />
                         <button type="submit">
-                            submit
+                            {language === "persian" ? "ثبت" : "submit"}
                         </button>
                     </form>
                 ) : (
-                    <h1>{shorten(currentName)}</h1>
+                    <h3>{shorten(currentName)}</h3>
                 )}
             </div>
             <button className={styles.editButton} onClick={() => setCanEdit((prevStatus) => !prevStatus)}>
-                <Icon icon="edit" />
+                <Icon icon="edit fa-2x" />
             </button>
         </div>
     );

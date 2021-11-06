@@ -1,9 +1,10 @@
 .container {
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .container div{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .container div {

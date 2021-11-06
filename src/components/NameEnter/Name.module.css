@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(71, 58, 121, 0.5);
@@ -12,6 +13,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nameIndexContainer span {
@@ -19,14 +21,16 @@
 }
 
 .nameIndexContainer span i {
-    font-size: 20px;
+    font-size: 2.5rem;
     margin-top: 5px;
-    color: rgb(85, 75, 122);
+    display: block;
+    color: #50cb94aa;
 }
 
-.nameIndexContainer h1 {
+.nameIndexContainer h3 {
     color: #50cb93;
-    font-size: 20px;
+    font-size: 1.8rem;
+    margin-top: 1rem;
 }
 
 .formContainer {
@@ -36,7 +40,7 @@
 }
 
 .formContainer input {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: #50cb93;
     margin-right: 5px;
     padding: 5px;
@@ -71,7 +75,7 @@
 
 .editButton{
     color: rgb(92, 53, 150);
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .editButton:hover {
