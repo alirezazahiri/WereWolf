@@ -1,0 +1,51 @@
+.container {
+    text-align: center;
+    margin: 15px 30px;
+    padding: 40px 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(30px);
+    transition: all 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.container:hover {
+    cursor: pointer;
+}
+
+.container div h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.container div p {
+    color: white;
+    font-size: 15px;
+}
+
+.htmlContainer {
+    margin: 12px;
+    padding: 12px;
+}
+
+.htmlContainer div {
+    border: 1px solid rgb(100, 98, 98);
+    border-radius: 12px;
+}
+.htmlContainer div span{
+    padding-bottom: 5px;
+    color: rgb(165, 89, 165);
+    border-bottom: 1px solid white;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.htmlContainer div p{
+    border-bottom: 1px solid rgb(100, 98, 98);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0 20px;
+}

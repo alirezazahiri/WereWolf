@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+}
+
+.resetButton {
+    border: none;
+    font-size: 1.4rem;
+    color: #8246bb;
+    margin: 10px 0 15px 0;
+}

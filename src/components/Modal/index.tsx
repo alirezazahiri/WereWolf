@@ -11,20 +11,35 @@ import HeaderButtons from './HeaderButtons';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
 import CharSelect from '../CharSelect/index';
+import ScenarioCard from '../ScenarioCard';
+import { CharType } from '../../redux/types';
 
 interface Props {
     language: string,
     type: string,
     show: boolean,
     remaining?: number,
+    character?: CharType,
     closeHandler: (() => void),
     backHandler?: (() => void),
     gotoCharSelect?: (() => void)
 }
 
-const ModalContainer: FC<Props> = ({ language, type, show, closeHandler, backHandler, gotoCharSelect }) => {
+const ModalContainer: FC<Props> = ({
+    language,
+    type,
+    show,
+    closeHandler,
+    backHandler,
+    gotoCharSelect,
+    character
+}) => {
     const { buttons } = getModal(language)
-    const { playersCount, names } = useSelector((state: AppState) => state.playersState)
+    const { playersCount, names, characters } = useSelector((state: AppState) => ({
+        ...state.playersState,
+        ...state.charactersState
+    }))
+    
     return (
         <Modal show={show}
             onHide={closeHandler}
@@ -38,9 +53,15 @@ const ModalContainer: FC<Props> = ({ language, type, show, closeHandler, backHan
                 }}
             >
                 <Modal.Title>
-                    <h2>
-                        {playersCount - names.length}
-                    </h2>
+                    {type === "nameEnter" &&
+                        <h2>
+                            {playersCount - names.length}
+                        </h2>}
+                    {type === "charSelect" &&
+                        <h2>
+                            {playersCount - characters.length}
+                        </h2>
+                    }
                 </Modal.Title>
                 <div className={styles.buttonsContainer}>
                     {/* buttons */}
@@ -57,6 +78,7 @@ const ModalContainer: FC<Props> = ({ language, type, show, closeHandler, backHan
                 {/* components */}
                 {type === "nameEnter" && <NameEnter />}
                 {type === "charSelect" && <CharSelect />}
+                {type === "charInfo" && character && <ScenarioCard character={character} />}
             </Modal.Body>
         </Modal>
     );

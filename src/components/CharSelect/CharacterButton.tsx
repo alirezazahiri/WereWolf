@@ -1,5 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import getColor from '../../services/getColor';
+import { AppState } from '../../redux/store';
+import { countOfCharacter } from '../../redux/characters/charactersReducer';
+import { increaseCharacter, decreaseCharacter } from '../../redux/characters/charactersActions';
+import styles from "./CharacterButton.module.css"
 import ModalContainer from '../Modal/index';
 
 type Props = {
@@ -9,36 +14,59 @@ type Props = {
         title: string,
         description: string,
         max: number,
+        html?: string,
         type: string,
     }
 }
 
 const CharacterButton: FC<Props> = ({ character }) => {
     const color = getColor(character.type)
+    const dispatch = useDispatch()
+    const { language, playersCount, characters } = useSelector((state: AppState) => ({
+        ...state.languageState,
+        ...state.playersState,
+        ...state.charactersState
+    }))
+
+    const [show, setShow] = useState(false)
+
+    const count = countOfCharacter(characters, character)
+
+    const buttonStyle = {
+        color,
+        border: `1px solid ${color}`,
+        boxShadow: `0 0 12px ${color}`,
+    };
+
     return (
         <div
-            // className={styles.container}
-            // style={{ color: color, borderBottom: `1px solid ${color}` }}
+            className={styles.container}
+            style={{ color: color, borderBottom: `1px solid ${color}` }}
         >
-            {/* <button onClick={increaseHandler} style={buttonStyle}>
+            <button
+                disabled={playersCount === characters.length}
+                onClick={() => dispatch(increaseCharacter(character, playersCount))}
+                style={buttonStyle}
+            >
                 <span>
-                    {count > 0 ? count : <i className="fa fa-plus"></i>}
+                    {count > 0 ? count : "plus"/*<i className="fa fa-plus"></i>*/}
                 </span>
             </button>
-            <button onClick={showInfoHandler} style={buttonStyle}>
-                <i className={icon}></i>
-                <p>{title}</p>
+            <button onClick={() => setShow(true)} style={buttonStyle}>
+                <i className={character.icon}></i>
+                <p>{character.title}</p>
             </button>
-            <button onClick={decreaseHandler} style={buttonStyle}>
-                <i className="fa fa-minus"></i>
+            <button onClick={() => dispatch(decreaseCharacter(character))} style={buttonStyle}>
+                {/* <i className="fa fa-minus"></i> */}
+                minus
             </button>
             <ModalContainer
+                language={language}
                 type="charInfo"
                 show={show}
                 character={character}
-                closeHandler={closeHandler}
-            /> */}
-            <h1 style={{color}}>{character.title}</h1>
+                closeHandler={() => setShow(false)}
+            />
         </div>
     );
 };
