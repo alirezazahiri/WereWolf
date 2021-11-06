@@ -14,7 +14,10 @@ const dict: { [key: string]: string } = {
 const toFarsiNumber = (num: string) => {
     let result = "";
     for (const char of num) {
-        result += dict[char];
+        if (/\d/.test(char)) result += dict[char];
+        else {
+            result += char;
+        }
     }
     return result;
 };

@@ -8,7 +8,7 @@ import { CharType } from '../../redux/types';
 
 type Props = {
     name: string,
-    character: CharType
+    character: CharType | undefined
 }
 
 const PButton: FC<Props> = ({ name, character }) => {

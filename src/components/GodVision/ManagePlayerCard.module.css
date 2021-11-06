@@ -1,0 +1,63 @@
+.container {
+    text-align: center;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    font-family: 'Cairo', sans-serif;
+}
+
+.container textarea {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 80px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+}
+
+.container textarea:focus {
+    outline: none;
+}
+
+.hedearContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hedearContainer h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.hedearContainer i {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+
+.playerStatusContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px white;
+}
+
+.playerStatusContainer button {
+    margin-top: 15px;
+    background-color: none;
+    border: none;
+    color: rgba(218, 0, 55, .7);
+    height: 8rem;
+    width: 4rem;
+    font-size: 2rem;
+}
+
+.playerStatusContainer button:hover {
+    color: rgb(218, 0, 55);
+}

@@ -10,7 +10,7 @@ const useSearch = (): [string, (e: any) => void] => {
     
     useEffect(() => {
         dispatch(setFilter("all"))
-    }, [])
+    }, [dispatch])
 
     return [value, changeHandler]
 }
