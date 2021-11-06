@@ -39,7 +39,13 @@ const ModalContainer: FC<Props> = ({
         ...state.playersState,
         ...state.charactersState
     }))
-    
+
+    let title
+    if (type === "nameEnter")
+        title = playersCount - names.length
+    else if (type === "nameEnter")
+        title = playersCount - characters.length
+
     return (
         <Modal show={show}
             onHide={closeHandler}
@@ -53,24 +59,20 @@ const ModalContainer: FC<Props> = ({
                 }}
             >
                 <Modal.Title>
-                    {type === "nameEnter" &&
-                        <h2>
-                            {playersCount - names.length}
-                        </h2>}
-                    {type === "charSelect" &&
-                        <h2>
-                            {playersCount - characters.length}
-                        </h2>
-                    }
+                    <h2>
+                        {title}
+                    </h2>
                 </Modal.Title>
                 <div className={styles.buttonsContainer}>
                     {/* buttons */}
                     <HeaderButtons
+                        language={language}
                         buttons={buttons}
                         type={type}
                         closeHandler={closeHandler}
                         backHandler={backHandler}
                         gotoCharSelect={gotoCharSelect}
+                        remaining={title}
                     />
                 </div>
             </Modal.Header>

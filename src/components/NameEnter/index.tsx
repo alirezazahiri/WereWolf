@@ -5,10 +5,16 @@ import { AppState } from '../../redux/store';
 import { getNameEnter } from '../../services/getPageData';
 import { addName, resetPlayers } from '../../redux/players/playersActions';
 import Name from './Name';
+import toFarsiNumber from '../../services/convertNumbersToFa';
+import showToast from '../../services/showToast';
+import { NAME_ENTER_ERROR_FA, NAME_ENTER_ERROR_EN } from '../../translations/Toaster/toast-messages';
 
 const NameEnter = () => {
     const dispatch = useDispatch()
-    const { language, names, playersCount } = useSelector((state: AppState) => ({ ...state.languageState, ...state.playersState }))
+    const { language, names, playersCount } = useSelector((state: AppState) => ({
+        ...state.languageState,
+        ...state.playersState
+    }))
 
     const { buttons, unknown } = getNameEnter(language);
     const [name, setName] = useState("")
@@ -18,9 +24,24 @@ const NameEnter = () => {
         inputRef.current?.focus()
     }, []);
 
+    const checkName = (): string | undefined => {
+        if (!name) {
+            return `${unknown} ${language === "persian" ?
+                toFarsiNumber(`${names.length + 1}`) : names.length + 1}`
+        } else if (names.includes(name)) {
+            const message = language === "persian" ?
+                NAME_ENTER_ERROR_FA : NAME_ENTER_ERROR_EN
+            showToast('error', message)
+            return
+        }
+        return name
+    }
+
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch(addName(name.trim() ? name : unknown))
+        const checkedName = checkName()
+        if (checkedName)
+            dispatch(addName(checkedName))
     }
 
     const resetHandler = () => {
@@ -37,7 +58,7 @@ const NameEnter = () => {
                 {buttons.reset}
             </button>
             <div>
-                {names.map((name, index) => <Name key={`${index+1}`} name={name} index={index} />)}
+                {names.map((name, index) => <Name key={`${index + 1}`} name={name} index={index} />)}
             </div>
             <form onSubmit={submitHandler} className={styles.formContainer}>
                 <input
@@ -49,8 +70,8 @@ const NameEnter = () => {
                 <button
                     className={styles.submitButton}
                     type="submit"
-                    disabled={playersCount - names.length === 0} 
-                    // disable the add button, when all players added
+                    disabled={playersCount - names.length === 0}
+                // disable the add button, when all players added
                 >
                     {buttons.add}
                 </button>

@@ -14,7 +14,13 @@ import fixNumbers from '../../services/convertNumbersToEn';
 
 // styles 
 import styles from "./Home.module.css"
-import { setCountOfPlayers } from '../../redux/players/playersActions';
+import { setCountOfPlayers, resetPlayers } from '../../redux/players/playersActions';
+import showToast from '../../services/showToast';
+
+// toast messages 
+import { HOME_SUCCESS_MESSAGE_EN, HOME_SUCCESS_MESSAGE_FA, HOME_ERROR_MESSAGE_FA, HOME_ERROR_MESSAGE_EN } from '../../translations/Toaster/toast-messages';
+import { resetCharacters } from '../../redux/characters/charactersActions';
+import { setFilter } from '../../redux/filter/filterActions';
 
 const Home: FC = () => {
     const dispatch = useDispatch()
@@ -64,6 +70,16 @@ const Home: FC = () => {
         if (!disable) {
             dispatch(setCountOfPlayers(fixNumbers(playersCount)))
             navigate("/game-setup");
+            const message = language === "persian" ?
+                HOME_SUCCESS_MESSAGE_FA : HOME_SUCCESS_MESSAGE_EN
+            showToast("success", message(playersCount))
+            dispatch(resetPlayers())
+            dispatch(resetCharacters())
+            dispatch(setFilter("all"))
+        } else {
+            const message = language === "persian" ?
+                HOME_ERROR_MESSAGE_FA : HOME_ERROR_MESSAGE_EN
+            showToast("error", message)
         }
     };
 
@@ -83,7 +99,7 @@ const Home: FC = () => {
                         value={playersCount}
                         onChange={changeHandler}
                     />
-                    <button type="submit" disabled={disable}>
+                    <button type="submit" >
                         {start}
                     </button>
                 </form>

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 
 // redux 
 import { AppState } from '../../redux/store';
@@ -14,12 +14,26 @@ import styles from "./GameSetup.module.css"
 import gameSetupReducer, { initialState } from './reducer';
 import { openNameEnter, closeNameEnter, closeCharSelect, openCharSelect } from './actions';
 import ModalContainer from '../Modal';
+import showToast from '../../services/showToast';
+import { GAME_SETUP_MOUNT_ERROR_EN, GAME_SETUP_MOUNT_ERROR_FA } from '../../translations/Toaster/toast-messages';
 
 const GameSetup = () => {
-    const { language } = useSelector((state: AppState) => state.languageState)
+    const { language, playersCount } = useSelector((state: AppState) => ({
+        ...state.languageState,
+        ...state.playersState
+    }))
     const { title, description, prompt_1 } = getGameSetup(language);
 
     const [state, dispatch] = useReducer(gameSetupReducer, initialState);
+
+    useEffect(() => {
+        console.log(playersCount)
+        if (playersCount < 4 || playersCount > 80 || typeof playersCount !== "number") {
+            const message = language === "persian" ?
+                GAME_SETUP_MOUNT_ERROR_FA : GAME_SETUP_MOUNT_ERROR_EN
+            showToast("error", message)
+        }
+    }, [])
 
     return (
         <div className={styles.container}>
@@ -42,7 +56,7 @@ const GameSetup = () => {
                 closeHandler={() => dispatch(closeNameEnter())}
                 gotoCharSelect={() => dispatch(openCharSelect())}
                 show={state.nameEnter}
-                />
+            />
 
             {/* CHARACTER SELECT MODAL */}
             <ModalContainer
