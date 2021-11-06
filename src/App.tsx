@@ -14,8 +14,10 @@ import Home from "./components/Home/index";
 import GameSetup from "./components/GameSetup/index";
 import NavBar from "./components/Navbar/index";
 import Layout from "./components/Layout/index";
-import { Toaster } from "react-hot-toast";
+import PlayerButtons from "./components/PlayerButtons";
 
+// Toast
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -30,7 +32,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/game-setup" element={<GameSetup />} />
-            <Route path="/players-roles" element={<Home />} />
+            <Route path="/players-roles" element={<PlayerButtons />} />
             <Route path="/god-vision" element={<Home />} />
             <Route path="/scenarios" element={<Home />} />
           </Routes>

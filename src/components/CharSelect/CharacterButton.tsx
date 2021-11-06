@@ -31,7 +31,7 @@ const CharacterButton: FC<Props> = ({ character }) => {
 
     const [show, setShow] = useState(false)
 
-    const count = countOfCharacter(characters, character)
+    const count = countOfCharacter(characters, character.id)
 
     const buttonStyle = {
         color,

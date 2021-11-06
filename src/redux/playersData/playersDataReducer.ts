@@ -1,7 +1,6 @@
 import {
     IPlayersDataState,
     IPlayersDataActions,
-    CharType,
     DictType,
 } from "../types";
 
@@ -24,11 +23,11 @@ const shuffleIndexedList = (arr: number[]): number[] => {
     return arr;
 };
 
-const shuffle = (players: string[], characters: CharType[]): DictType => {
+const shuffle = (players: string[], ids: number[]): DictType => {
     const shuffledIndecies = shuffleIndexedList(getList(players.length));
     const dict: DictType = {};
     for (let i = 0; i < players.length; i++) {
-        dict[players[i]] = characters[shuffledIndecies[i]].id;
+        dict[players[i]] = ids[shuffledIndecies[i]];
     }
     return dict;
 };

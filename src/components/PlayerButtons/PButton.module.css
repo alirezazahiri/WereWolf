@@ -1,0 +1,43 @@
+.container {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left, #66de943a, #d6013650);
+
+    box-shadow: -5px 0 25px 0 #5c527f38,
+        0 0 25px 0 #d6013650,
+        5px 0 5px 0 #66de943a;
+
+    text-align: center;
+    margin: 15px 30px;
+    /* padding: 15px 0; */
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    transition: all 0.2s;
+    font-family: 'Cairo', sans-serif;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.container:hover,
+.container:active,
+.container:focus,
+.container:focus-visible{
+    outline: none;
+    border-image-source: linear-gradient(to left, #66de94, #d60136);
+    box-shadow: -5px 0 25px 0 #5c527f,
+        0 0 25px 0 #d60136,
+        5px 0 5px 0 #66de94;
+}
+
+.container button {
+    color: rgb(115, 190, 108);
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+}

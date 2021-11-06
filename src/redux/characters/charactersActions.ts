@@ -5,7 +5,7 @@ export const increaseCharacter = (
     MAX_ALLOWED: number
 ) => ({
     type: "INCREASE_CHARACTER",
-    payload: { character, MAX_ALLOWED },
+    payload: { max: character.max, id: character.id, MAX_ALLOWED },
 });
 
 export const decreaseCharacter = (character: CharType) => ({

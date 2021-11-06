@@ -9,9 +9,8 @@ type Props = {
 }
 
 const ScenarioCard: FC<Props> = ({ character }) => {
-    const { title, description, html, type, icon } = character;
+    const { title, description, html, type, icon } = character
     const color = getColor(type);
-
     return (
         <div
             className={styles.container}

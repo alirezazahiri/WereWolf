@@ -1,0 +1,28 @@
+.container {
+    margin: 50px 0 150px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.updateButton {
+    box-shadow: -5px 0 25px 0 #5c527f38,
+        0 0 25px 0 #d6013650,
+        5px 0 5px 0 #66de943a;
+
+    color: #66de94;
+    font-size: 1.6rem;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 2rem 0.5rem;
+    border-radius: 50%;
+}
+
+.updateButton:hover {
+    box-shadow: -5px 0 25px 0 #5c527f,
+        0 0 25px 0 #d60136,
+        5px 0 5px 0 #66de94;
+}

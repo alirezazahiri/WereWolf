@@ -19,8 +19,8 @@ interface Props {
     language: string,
     type: string,
     show: boolean,
-    remaining?: number,
     character?: CharType,
+    pName?: string,
     closeHandler: (() => void),
     backHandler?: (() => void),
     startHandler?: (() => void),
@@ -31,6 +31,7 @@ const ModalContainer: FC<Props> = ({
     language,
     type,
     show,
+    pName,
     closeHandler,
     backHandler,
     startHandler,
@@ -48,6 +49,8 @@ const ModalContainer: FC<Props> = ({
         title = playersCount - names.length
     else if (type === "charSelect")
         title = playersCount - characters.length
+    else if (type === "showRole")
+        title = pName
     else
         title = ""
 
@@ -65,7 +68,10 @@ const ModalContainer: FC<Props> = ({
             >
                 <Modal.Title>
                     <h2>
-                        {language === "persian" ? toFarsiNumber(`${title}`) : title}
+                        {type === "showRole" ?
+                            title
+                            :
+                            language === "persian" ? toFarsiNumber(`${title}`) : title}
                     </h2>
                 </Modal.Title>
                 <div className={styles.buttonsContainer}>
@@ -86,7 +92,7 @@ const ModalContainer: FC<Props> = ({
                 {/* components */}
                 {type === "nameEnter" && <NameEnter />}
                 {type === "charSelect" && <CharSelect />}
-                {type === "charInfo" && character && <ScenarioCard character={character} />}
+                {(type === "charInfo" || type === "showRole") && character && <ScenarioCard character={character} />}
             </Modal.Body>
         </Modal>
     );

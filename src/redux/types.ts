@@ -33,7 +33,7 @@ export type CharType = {
 };
 
 export interface ICharactersState {
-    characters: CharType[];
+    characters: number[];
 }
 
 export type DictType = { [player: string]: string | number };
