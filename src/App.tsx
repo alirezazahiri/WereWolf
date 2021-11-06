@@ -10,11 +10,13 @@ import { Provider } from "react-redux"
 import store, { persistor } from './redux/store';
 
 // components 
-import Home from "./components/Home/index";
+import PlayerButtons from "./components/PlayerButtons";
+import Scenarios from "./components/Scenarios/index";
 import GameSetup from "./components/GameSetup/index";
+import GodVision from "./components/GodVision/index";
 import NavBar from "./components/Navbar/index";
 import Layout from "./components/Layout/index";
-import PlayerButtons from "./components/PlayerButtons";
+import Home from "./components/Home/index";
 
 // Toast
 import { Toaster } from "react-hot-toast";
@@ -33,8 +35,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/game-setup" element={<GameSetup />} />
             <Route path="/players-roles" element={<PlayerButtons />} />
-            <Route path="/god-vision" element={<Home />} />
-            <Route path="/scenarios" element={<Home />} />
+            <Route path="/god-vision" element={<GodVision />} />
+            <Route path="/scenarios" element={<Scenarios />} />
           </Routes>
           <Layout />
         </PersistGate>
