@@ -12,3 +12,7 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+
+i {
+  font-family: FontAwesome !important;
+}

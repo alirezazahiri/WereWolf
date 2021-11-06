@@ -6,6 +6,7 @@ import { countOfCharacter } from '../../redux/characters/charactersReducer';
 import { increaseCharacter, decreaseCharacter } from '../../redux/characters/charactersActions';
 import styles from "./CharacterButton.module.css"
 import ModalContainer from '../Modal/index';
+import Icon from '../Icon';
 
 type Props = {
     character: {
@@ -36,6 +37,7 @@ const CharacterButton: FC<Props> = ({ character }) => {
         color,
         border: `1px solid ${color}`,
         boxShadow: `0 0 12px ${color}`,
+        fontSize: "1.5rem"
     };
 
     return (
@@ -49,16 +51,15 @@ const CharacterButton: FC<Props> = ({ character }) => {
                 style={buttonStyle}
             >
                 <span>
-                    {count > 0 ? count : "plus"/*<i className="fa fa-plus"></i>*/}
+                    {count > 0 ? count : <Icon icon="plus" />}
                 </span>
             </button>
             <button onClick={() => setShow(true)} style={buttonStyle}>
-                <i className={character.icon}></i>
+                <Icon icon={character.icon} />
                 <p>{character.title}</p>
             </button>
             <button onClick={() => dispatch(decreaseCharacter(character))} style={buttonStyle}>
-                {/* <i className="fa fa-minus"></i> */}
-                minus
+                <Icon icon="minus" />
             </button>
             <ModalContainer
                 language={language}

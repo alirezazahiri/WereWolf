@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { CharType } from '../../redux/types';
 import getColor from '../../services/getColor';
+import Icon from '../Icon';
 import styles from "./ScenarioCard.module.css"
 
 type Props = {
@@ -18,11 +19,7 @@ const ScenarioCard: FC<Props> = ({ character }) => {
         >
             <div>
                 <div>
-                    <i
-                        style={{ color: color }}
-                        className={icon + " fa-2x"}
-                        aria-hidden="true"
-                    ></i>
+                    <Icon style={{ color: color }} icon={icon + " fa-2x"} />
                 </div>
                 <h1 style={{ color: color }}>{title}</h1>
             </div>

@@ -4,6 +4,7 @@ import { shorten } from '../../services/shorten';
 import styles from "./Name.module.css"
 import { useDispatch } from 'react-redux';
 import { editName } from '../../redux/players/playersActions';
+import Icon from '../Icon';
 
 type Props = {
     name: string,
@@ -40,7 +41,7 @@ const Name: FC<Props> = ({ name, index }) => {
         <div className={styles.container}>
             <div className={styles.nameIndexContainer}>
                 <span>
-                    <i className="fa fa-user"></i>
+                    <Icon icon="user" />
                 </span>
                 {canEdit ? (
                     <form onSubmit={submitHandler} className={styles.formContainer}>
@@ -58,10 +59,9 @@ const Name: FC<Props> = ({ name, index }) => {
                     <h1>{shorten(currentName)}</h1>
                 )}
             </div>
-            <i
-                className='fa fa-edit'
-                onClick={() => setCanEdit((prevStatus) => !prevStatus)}
-            ></i>
+            <button className={styles.editButton} onClick={() => setCanEdit((prevStatus) => !prevStatus)}>
+                <Icon icon="edit" />
+            </button>
         </div>
     );
 };

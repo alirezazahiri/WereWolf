@@ -1,11 +1,10 @@
 .container {
     text-align: center;
-    margin: 15px 30px;
-    padding: 40px 25px;
+    margin: 1.5rem 3rem;
+    padding: 4rem 2.5rem;
     border-radius: 12px;
     backdrop-filter: blur(30px);
     transition: all 0.2s ease;
-    font-family: 'Cairo', sans-serif;
 }
 
 .container:hover {
@@ -13,18 +12,18 @@
 }
 
 .container div h1 {
-    font-size: 22px;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 
 .container div p {
     color: white;
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 .htmlContainer {
-    margin: 12px;
-    padding: 12px;
+    margin: 1.2rem;
+    padding: 1.2rem;
 }
 
 .htmlContainer div {
@@ -35,8 +34,8 @@
     padding-bottom: 5px;
     color: rgb(165, 89, 165);
     border-bottom: 1px solid white;
-    margin: 0 20px;
-    font-size: 18px;
+    margin: 0 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
@@ -46,6 +45,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 15px;
-    font-size: 15px;
-    margin: 0 20px;
+    font-size: 1.5rem;
+    margin: 0 2rem;
 }

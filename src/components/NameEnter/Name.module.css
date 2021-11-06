@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(71, 58, 121, 0.5);
@@ -13,7 +12,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .nameIndexContainer span {
@@ -52,16 +50,32 @@
 }
 
 .formContainer button {
-    color: #50cb93;
+    color: rgb(92, 53, 150);
+    border: 1px solid rgb(85, 75, 122);
     transition: all 0.2s;
-    border: 1px solid #50cb93;
     font-size: 1.1rem;
     padding: 0 5px;
 }
 
 .formContainer button:hover {
-    border: 1px solid rgb(85, 75, 122);
+    color: #50cb93;
+    border: 1px solid #50cb93;
+}
+
+.editButton {
+    background-color: none;
+    border: none;
+    outline: none;
+    width: fit-content;
+}
+
+.editButton{
     color: rgb(92, 53, 150);
+    font-size: 2.5rem;
+}
+
+.editButton:hover {
+    color: rgb(114, 90, 148);
 }
 
 @media only screen and (max-width: 600px) {
