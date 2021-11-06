@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { editName } from '../../redux/players/playersActions';
 import Icon from '../Icon';
 import { AppState } from '../../redux/store';
-import { stat } from 'fs';
+import checkName from '../../services/checkName';
 
 type Props = {
     name: string,
@@ -15,7 +15,10 @@ type Props = {
 
 const Name: FC<Props> = ({ name, index }) => {
     const dispatch = useDispatch()
-    const { language } = useSelector((state: AppState) => state.languageState)
+    const { language, names } = useSelector((state: AppState) => ({
+        ...state.languageState,
+        ...state.playersState
+    }))
     const [canEdit, setCanEdit] = useState(false)
     const [newName, setNewName] = useState(name)
     const [currentName, setCurrentName] = useState(name);
@@ -29,9 +32,12 @@ const Name: FC<Props> = ({ name, index }) => {
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch(editName(newName, index))
-        setCanEdit(false)
-        setCurrentName(newName)
+        const checkedName = checkName(names, newName.trim(), "unknown", language, name.trim())
+        if (checkedName) {
+            dispatch(editName(newName, index))
+            setCanEdit(false)
+            setCurrentName(newName)
+        }
     }
 
     useEffect(() => {

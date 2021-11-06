@@ -23,6 +23,18 @@ export const MODAL_HEADER_ERROR_EN = (num: number) =>
 export const MODAL_HEADER_ERROR_FA = (num: number) =>
     `!لطفا ${toFarsiNumber(`${num}`)} نام دیگر وارد کنید`;
 
+export const MODAL_HEADER_ERROR_CHAR_EN = (num: number) =>
+    `please choose ${num} more character${num > 1 ? "s" : ""}!`;
+export const MODAL_HEADER_ERROR_CHAR_FA = (num: number) =>
+    `!لطفا ${toFarsiNumber(`${num}`)} کاراکتر دیگر انتخاب کنید`;
+
 // MODAL HEADER SUCCEEDS
-export const MODAL_HEADER_SUCCESS_EN = "choose characters for your scenario";
-export const MODAL_HEADER_SUCCESS_FA = "کاراکتر های مناسب برای سناریو خود را انتخاب کنید";
+export const MODAL_HEADER_SUCCESS_EN = "pick characters for the scenario";
+export const MODAL_HEADER_SUCCESS_FA = "سناریو خود را بچینید";
+
+export const MODAL_HEADER_SUCCESS_CHARS_EN = "tap on the name to see player's role";
+export const MODAL_HEADER_SUCCESS_CHARS_FA = "برای دیدن نقش ها روی بازیکن ها کلیک کنید";
+
+// NAME EDIT ERRORS
+export const NAME_EDIT_ERROR_EN = "Error! invalid name!";
+export const NAME_EDIT_ERROR_FA = "!خطا! نام نامعتبر است";

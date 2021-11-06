@@ -27,13 +27,12 @@ const GameSetup = () => {
     const [state, dispatch] = useReducer(gameSetupReducer, initialState);
 
     useEffect(() => {
-        console.log(playersCount)
         if (playersCount < 4 || playersCount > 80 || typeof playersCount !== "number") {
             const message = language === "persian" ?
                 GAME_SETUP_MOUNT_ERROR_FA : GAME_SETUP_MOUNT_ERROR_EN
             showToast("error", message)
         }
-    }, [])
+    }, [language, playersCount])
 
     return (
         <div className={styles.container}>
@@ -64,6 +63,7 @@ const GameSetup = () => {
                 type={state.type}
                 backHandler={() => dispatch(openNameEnter())}
                 closeHandler={() => dispatch(closeCharSelect())}
+                startHandler={() => dispatch(closeCharSelect())}
                 show={state.charSelect}
             />
         </div>

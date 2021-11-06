@@ -5,9 +5,7 @@ import { AppState } from '../../redux/store';
 import { getNameEnter } from '../../services/getPageData';
 import { addName, resetPlayers } from '../../redux/players/playersActions';
 import Name from './Name';
-import toFarsiNumber from '../../services/convertNumbersToFa';
-import showToast from '../../services/showToast';
-import { NAME_ENTER_ERROR_FA, NAME_ENTER_ERROR_EN } from '../../translations/Toaster/toast-messages';
+import checkName from '../../services/checkName';
 
 const NameEnter = () => {
     const dispatch = useDispatch()
@@ -22,24 +20,12 @@ const NameEnter = () => {
 
     useEffect(() => {
         inputRef.current?.focus()
-    }, []);
-
-    const checkName = (): string | undefined => {
-        if (!name) {
-            return `${unknown} ${language === "persian" ?
-                toFarsiNumber(`${names.length + 1}`) : names.length + 1}`
-        } else if (names.includes(name)) {
-            const message = language === "persian" ?
-                NAME_ENTER_ERROR_FA : NAME_ENTER_ERROR_EN
-            showToast('error', message)
-            return
-        }
-        return name
-    }
+        inputRef.current?.select()
+    }, [names]);
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const checkedName = checkName()
+        const checkedName = checkName(names, name, unknown, language)
         if (checkedName)
             dispatch(addName(checkedName))
     }

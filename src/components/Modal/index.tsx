@@ -13,6 +13,7 @@ import { AppState } from '../../redux/store';
 import CharSelect from '../CharSelect/index';
 import ScenarioCard from '../ScenarioCard';
 import { CharType } from '../../redux/types';
+import toFarsiNumber from '../../services/convertNumbersToFa';
 
 interface Props {
     language: string,
@@ -22,6 +23,7 @@ interface Props {
     character?: CharType,
     closeHandler: (() => void),
     backHandler?: (() => void),
+    startHandler?: (() => void),
     gotoCharSelect?: (() => void)
 }
 
@@ -31,6 +33,7 @@ const ModalContainer: FC<Props> = ({
     show,
     closeHandler,
     backHandler,
+    startHandler,
     gotoCharSelect,
     character
 }) => {
@@ -43,8 +46,10 @@ const ModalContainer: FC<Props> = ({
     let title
     if (type === "nameEnter")
         title = playersCount - names.length
-    else if (type === "nameEnter")
+    else if (type === "charSelect")
         title = playersCount - characters.length
+    else
+        title = ""
 
     return (
         <Modal show={show}
@@ -60,7 +65,7 @@ const ModalContainer: FC<Props> = ({
             >
                 <Modal.Title>
                     <h2>
-                        {title}
+                        {language === "persian" ? toFarsiNumber(`${title}`) : title}
                     </h2>
                 </Modal.Title>
                 <div className={styles.buttonsContainer}>
@@ -72,6 +77,7 @@ const ModalContainer: FC<Props> = ({
                         closeHandler={closeHandler}
                         backHandler={backHandler}
                         gotoCharSelect={gotoCharSelect}
+                        startGame={startHandler}
                         remaining={title}
                     />
                 </div>
