@@ -14,6 +14,9 @@ import {
     MODAL_HEADER_ERROR_CHAR_FA,
     MODAL_HEADER_ERROR_CHAR_EN
 } from '../../translations/Toaster/toast-messages';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from '../../redux/store';
+import { createDataDictionary, createRoleDictionary, updateRoleDictionary } from '../../redux/playersData/playersDataActions';
 
 type Props = {
     language: string,
@@ -42,6 +45,11 @@ const HeaderButtons: FC<Props> = ({
     startGame
 }) => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { names, characters } = useSelector((state: AppState) => ({
+        ...state.charactersState,
+        ...state.playersState
+    }))
     const handleGoto = () => {
         if (gotoCharSelect) {
             if (remaining !== 0) {
@@ -53,6 +61,8 @@ const HeaderButtons: FC<Props> = ({
                 const message = language === "persian" ?
                     MODAL_HEADER_SUCCESS_FA : MODAL_HEADER_SUCCESS_EN
                 showToast('success', message)
+                dispatch(createRoleDictionary(names))
+                dispatch(createDataDictionary(names))
                 gotoCharSelect()
             }
         }
@@ -69,6 +79,7 @@ const HeaderButtons: FC<Props> = ({
                 const message = language === "persian" ?
                     MODAL_HEADER_SUCCESS_CHARS_FA : MODAL_HEADER_SUCCESS_CHARS_EN
                 showToast('success', message)
+                dispatch(updateRoleDictionary(names, characters))
                 navigate("/players-roles")
                 startGame()
             }
