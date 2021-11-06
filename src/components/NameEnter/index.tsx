@@ -25,7 +25,7 @@ const NameEnter = () => {
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const checkedName = checkName(names, name, unknown, language)
+        const checkedName = checkName(names, name.trim(), unknown, language)
         if (checkedName)
             dispatch(addName(checkedName))
     }
