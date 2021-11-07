@@ -1,4 +1,4 @@
-import { CharType, ICharactersActions, ICharactersState } from "../types";
+import { ICharactersActions, ICharactersState } from "../types";
 
 const initialState: ICharactersState = {
     characters: [],
@@ -8,10 +8,9 @@ export const countOfCharacter = (characters: number[], charID: number) => {
     return characters.filter((id) => id === charID).length;
 };
 
-const removeCharacter = (characters: number[], character: CharType) => {
-    const index = characters.findIndex((id) => id === character.id);
+const removeCharacter = (characters: number[], charID: number) => {
+    const index = characters.findIndex((id) => id === charID);
     return characters.filter((id, idx) => idx !== index);
-    
 };
 
 const charactersReducer = (
@@ -23,7 +22,7 @@ const charactersReducer = (
             if (
                 state.characters.length < action.payload.MAX_ALLOWED &&
                 countOfCharacter(state.characters, action.payload.id) <
-                action.payload.max
+                    action.payload.max
             )
                 return {
                     ...state,
@@ -31,20 +30,20 @@ const charactersReducer = (
                 };
             return state;
         case "DECREASE_CHARACTER":
-            if (countOfCharacter(state.characters, action.payload) > 0)
+            if (countOfCharacter(state.characters, action.payload.id) > 0)
                 return {
                     ...state,
                     characters: removeCharacter(
                         state.characters,
-                        action.payload
+                        action.payload.id
                     ),
                 };
             return state;
-        case "RESET_CHARACTERS": 
-                return {
-                    ...state,
-                    characters: []
-                }
+        case "RESET_CHARACTERS":
+            return {
+                ...state,
+                characters: [],
+            };
         default:
             return state;
     }

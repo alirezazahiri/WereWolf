@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import showToast from '../../services/showToast';
 import { useNavigate } from 'react-router-dom';
 import styles from "./HeaderButtons.module.css"
@@ -50,6 +50,7 @@ const HeaderButtons: FC<Props> = ({
         ...state.charactersState,
         ...state.playersState
     }))
+
     const handleGoto = () => {
         if (gotoCharSelect) {
             if (remaining !== 0) {
@@ -85,6 +86,18 @@ const HeaderButtons: FC<Props> = ({
             }
         }
     }
+
+    useEffect(() => {
+        if (remaining === 0 && type==="nameEnter")
+            showToast("success", buttons.go_to_char_select)
+        else if (remaining === 0 && type==="charSelect")
+            showToast("success", buttons.start)
+    }, [
+        remaining,
+        buttons.start,
+        buttons.go_to_char_select,
+        gotoCharSelect, startGame
+    ])
 
     return (
         <>
