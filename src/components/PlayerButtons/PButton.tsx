@@ -16,7 +16,7 @@ const PButton: FC<Props> = ({ name, character }) => {
     const {language} = useSelector((state: AppState) => state.languageState)
     return (
         <div className={styles.container}>
-            <button onClick={() => setShow(true)}>{shorten(name, 30, 27)}</button>
+            <button onClick={() => setShow(true)}>{shorten(name)}</button>
             <ModalContainer
                 type="showRole"
                 language={language}

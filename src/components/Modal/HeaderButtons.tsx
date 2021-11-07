@@ -96,7 +96,7 @@ const HeaderButtons: FC<Props> = ({
         remaining,
         buttons.start,
         buttons.go_to_char_select,
-        gotoCharSelect, startGame
+        type
     ])
 
     return (
