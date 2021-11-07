@@ -15,6 +15,9 @@ const CharSelect = () => {
   }))
   const { characters } = getChars(language)
   const { buttons } = getCharSelect(language)
+  const filteredCharacters = characters.filter((character) =>
+    filter === "all" ? true : character.type === filter
+  )
 
   return (
     <div className={styles.container}>
@@ -25,14 +28,12 @@ const CharSelect = () => {
         {buttons.reset}
       </button>
       <FilterCharacters />
-      {characters
-        .filter((character) =>
-          filter === "all" ? true : character.type === filter
-        )
-        .map((character) => (
+      {filteredCharacters
+        .map((character, index) => (
           <CharacterButton
             key={character.id}
             character={character}
+            isLastChild={index === filteredCharacters.length - 1}
           />
         ))}
     </div>

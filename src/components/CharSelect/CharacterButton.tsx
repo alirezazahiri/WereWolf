@@ -7,6 +7,7 @@ import { increaseCharacter, decreaseCharacter } from '../../redux/characters/cha
 import styles from "./CharacterButton.module.css"
 import ModalContainer from '../Modal/index';
 import Icon from '../Icon';
+import toFarsiNumber from '../../services/convertNumbersToFa';
 
 type Props = {
     character: {
@@ -17,10 +18,11 @@ type Props = {
         max: number,
         html?: string,
         type: string,
-    }
+    },
+    isLastChild: boolean
 }
 
-const CharacterButton: FC<Props> = ({ character }) => {
+const CharacterButton: FC<Props> = ({ character, isLastChild }) => {
     const color = getColor(character.type)
     const dispatch = useDispatch()
     const { language, playersCount, characters } = useSelector((state: AppState) => ({
@@ -43,7 +45,10 @@ const CharacterButton: FC<Props> = ({ character }) => {
     return (
         <div
             className={styles.container}
-            style={{ color: color, borderBottom: `1px solid ${color}` }}
+            style={{
+                color: color,
+                borderBottom: `${isLastChild ? "none" : `1px solid ${color}`}`
+            }}
         >
             <button
                 disabled={playersCount === characters.length}
@@ -51,7 +56,7 @@ const CharacterButton: FC<Props> = ({ character }) => {
                 style={buttonStyle}
             >
                 <span>
-                    {count > 0 ? count : <Icon icon="plus" />}
+                    {count > 0 ? (language === "persian" ? toFarsiNumber(`${count}`) : count) : <Icon icon="plus" />}
                 </span>
             </button>
             <button onClick={() => setShow(true)} style={buttonStyle}>
