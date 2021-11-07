@@ -27,7 +27,7 @@ const GodVision = () => {
             listsMissmatch(names, Object.keys(roleDictionary))) {
             dispatch(updateRoleDictionary(names, characters))
         }
-    }, [names, characters])
+    }, [names, characters, dispatch, playersCount, roleDictionary])
 
     return (
         <div className={styles.container}>

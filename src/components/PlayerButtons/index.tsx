@@ -20,13 +20,13 @@ const PlayerButtons = () => {
     }))
 
     const { buttons, update_message } = getPlayerButtons(language)
-    console.log(roleDictionary)
+
     useEffect(() => {
         if ((!isObjAvailable(roleDictionary) && names.length === playersCount) || 
         listsMissmatch(names, Object.keys(roleDictionary))) {
             dispatch(updateRoleDictionary(names, characters))
         }
-    }, [names, characters])
+    }, [names, characters, dispatch, playersCount, roleDictionary])
 
     const updateHandler = () => {
         dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters))
