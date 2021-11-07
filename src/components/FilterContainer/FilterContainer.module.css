@@ -1,34 +1,3 @@
 .filterContainer {
     margin: 50px 30px 30px;
 }
-
-.searchInput {
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgb(102, 222, 147);
-    text-align: center;
-    font-size: 1.6rem;
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 2px;
-    border-image-source: linear-gradient(to left, #66de943a, #d6013650);
-
-    box-shadow: -5px 0 25px 0 #5c527f38,
-        0 0 25px 0 #d6013650,
-        5px 0 5px 0 #66de943a;
-    
-    transition: all 0.2s;
-    margin-bottom: 30px;
-}
-
-.searchInput:focus {
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: none;
-    border-image-source: linear-gradient(to left, #66de94, #d60136);
-    box-shadow: -5px 0 25px 0 #5c527f,
-        0 0 25px 0 #d60136,
-        5px 0 5px 0 #66de94;
-    border-radius: 12px;
-}

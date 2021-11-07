@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import FilterCharacters from '../FilterCharacters';
+import Search from '../Search';
 import styles from "./FilterContainer.module.css"
 
 type Props = {
@@ -11,12 +12,10 @@ type Props = {
 const FilterContainer: FC<Props> = ({ value, changeHandler, language }) => {
     return (
         <div className={styles.filterContainer}>
-            <input
-                className={styles.searchInput}
-                type="text"
+            <Search
+                language={language}
                 value={value}
-                onChange={changeHandler}
-                placeholder={language === "persian" ? "...جستجو کن" : "Search..."}
+                changeHandler={changeHandler}
             />
             <FilterCharacters />
         </div>
