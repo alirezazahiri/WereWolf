@@ -1,4 +1,3 @@
-import { CharType } from "../types";
 export const createRoleDictionary = (players: string[]) => ({
     type: "CREATE_ROLE_DICTIONARY",
     payload: players,
@@ -11,7 +10,7 @@ export const createDataDictionary = (players: string[]) => ({
 
 export const updateRoleDictionary = (
     players: string[],
-    characters: CharType[]
+    characters: (number | string)[]
 ) => ({
     type: "UPDATE_ROLE_DICTIONARY",
     payload: { players, characters },
