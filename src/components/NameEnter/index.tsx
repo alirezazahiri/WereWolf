@@ -13,6 +13,7 @@ const NameEnter = () => {
         ...state.languageState,
         ...state.playersState
     }))
+    const remaining = playersCount - names.length
 
     const { buttons, unknown } = getNameEnter(language);
     const [name, setName] = useState("")
@@ -26,7 +27,7 @@ const NameEnter = () => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const checkedName = checkName(names, name.trim(), unknown, language)
-        if (checkedName)
+        if (checkedName && !(remaining === 0))
             dispatch(addName(checkedName))
     }
 
@@ -46,7 +47,11 @@ const NameEnter = () => {
             <div>
                 {names.map((name, index) => <Name key={`${index + 1}`} name={name} index={index} />)}
             </div>
-            <form onSubmit={submitHandler} className={styles.formContainer}>
+            <form
+                onSubmit={submitHandler}
+                className={styles.formContainer}
+                style={{ display: `${remaining === 0 ? "none" : ""}` }}
+            >
                 <input
                     ref={inputRef}
                     type="text"
@@ -56,8 +61,6 @@ const NameEnter = () => {
                 <button
                     className={styles.submitButton}
                     type="submit"
-                    disabled={playersCount - names.length === 0}
-                // disable the add button, when all players added
                 >
                     {buttons.add}
                 </button>
