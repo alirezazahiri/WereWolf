@@ -4,11 +4,19 @@ import getColor from "../../services/getColor";
 // Styles
 import styles from "./FilterCharacters.module.css";
 
-// Contexts
+// react-redux 
 import { useDispatch, useSelector } from "react-redux";
+
+// state type 
 import { AppState } from "../../redux/store";
+
+// services 
 import { getFilterCharacters } from "../../services/getPageData";
+
+// Actions (outer)
 import { setFilter } from '../../redux/filter/filterActions';
+
+// reducers (inner)
 import reducer, { initialState } from "./reducer";
 
 type HoverType = "mafia" | "citizen" | "all" | "independent" | "mid-independent"
@@ -37,7 +45,6 @@ const FilterCharacters = () => {
     }
 
     const getStyles = (type: string) => {
-
         return {
             color: getColor(type),
             border: `1px solid ${getColor(type)}`,

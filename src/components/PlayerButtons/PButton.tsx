@@ -1,10 +1,20 @@
 import React, { FC, useState } from 'react';
+
+// react-redux 
 import { useSelector } from 'react-redux';
-import { AppState } from '../../redux/store';
-import { shorten } from '../../services/shorten';
-import ModalContainer from '../Modal/index';
-import styles from "./PButton.module.css"
+
+// types 
 import { CharType } from '../../redux/types';
+import { AppState } from '../../redux/store';
+
+// styles 
+import { shorten } from '../../services/shorten';
+
+// components 
+import ModalContainer from '../Modal/index';
+
+// styles 
+import styles from "./PButton.module.css"
 
 type Props = {
     name: string,
@@ -13,7 +23,7 @@ type Props = {
 
 const PButton: FC<Props> = ({ name, character }) => {
     const [show, setShow] = useState(false);
-    const {language} = useSelector((state: AppState) => state.languageState)
+    const { language } = useSelector((state: AppState) => state.languageState)
     return (
         <div className={styles.container}>
             <button onClick={() => setShow(true)}>{shorten(name)}</button>

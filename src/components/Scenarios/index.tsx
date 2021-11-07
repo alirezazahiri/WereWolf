@@ -1,9 +1,18 @@
+// react-redux
 import { useSelector } from 'react-redux';
+
+// state type 
 import { AppState } from '../../redux/store';
-import getChars from "../../services/getPageData"
-import ScenarioCard from '../ScenarioCard';
-import FilterContainer from '../FilterContainer';
+
+// custom hooks 
 import useSearch from '../../hooks/useSearch';
+
+// components 
+import FilterContainer from '../FilterContainer';
+import ScenarioCard from '../ScenarioCard';
+
+// services 
+import getChars from "../../services/getPageData"
 
 const Scenarios = () => {
     const { language, filter } = useSelector((state: AppState) => ({
@@ -15,7 +24,11 @@ const Scenarios = () => {
     const { characters, names } = getChars(language)
     return (
         <div>
-            <FilterContainer value={value} changeHandler={changeHandler} language={language} />
+            <FilterContainer
+                value={value}
+                changeHandler={changeHandler}
+                language={language}
+            />
             {characters
                 .filter((character) =>
                     filter === "all" ? true : character.type === filter

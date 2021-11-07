@@ -1,13 +1,27 @@
 import React, { FC, useState } from 'react';
+
+// react-redux 
 import { useDispatch, useSelector } from 'react-redux';
+
+// services 
+import toFarsiNumber from '../../services/convertNumbersToFa';
 import getColor from '../../services/getColor';
+
+// state type
 import { AppState } from '../../redux/store';
-import { countOfCharacter } from '../../redux/characters/charactersReducer';
+
+//Actions 
 import { increaseCharacter, decreaseCharacter } from '../../redux/characters/charactersActions';
+
+// reducers 
+import { countOfCharacter } from '../../redux/characters/charactersReducer';
+
+// styles 
 import styles from "./CharacterButton.module.css"
+
+// components 
 import ModalContainer from '../Modal/index';
 import Icon from '../Icon';
-import toFarsiNumber from '../../services/convertNumbersToFa';
 
 type Props = {
     character: {

@@ -1,10 +1,22 @@
 import React from 'react';
+
+// react-redux 
 import { useDispatch, useSelector } from 'react-redux';
+
+// services 
 import getChars, { getCharSelect } from '../../services/getPageData';
-import FilterCharacters from '../FilterCharacters/index';
+
+// state type 
 import { AppState } from '../../redux/store';
+
+// components 
+import FilterCharacters from '../FilterCharacters/index';
 import CharacterButton from './CharacterButton';
+
+// Actions 
 import { resetCharacters } from '../../redux/characters/charactersActions';
+
+// styles 
 import styles from "./CharSelect.module.css"
 
 const CharSelect = () => {

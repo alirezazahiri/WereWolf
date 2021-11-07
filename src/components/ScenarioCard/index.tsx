@@ -1,8 +1,16 @@
 import React, { FC } from 'react';
+
+// types 
 import { CharType } from '../../redux/types';
+
+// services 
 import getColor from '../../services/getColor';
-import Icon from '../Icon';
+
+// styles 
 import styles from "./ScenarioCard.module.css"
+
+// components 
+import Icon from '../Icon';
 
 type Props = {
     character: CharType
@@ -24,7 +32,10 @@ const ScenarioCard: FC<Props> = ({ character }) => {
             </div>
             <div>
                 <p>{description}</p>
-                {html && <div dangerouslySetInnerHTML={{ __html: html }} className={styles.htmlContainer}></div>}
+                {html && <div
+                    dangerouslySetInnerHTML={{ __html: html }}
+                    className={styles.htmlContainer}></div>
+                }
             </div>
         </div>
     );

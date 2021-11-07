@@ -6,16 +6,28 @@ import { useSelector } from 'react-redux';
 
 // services 
 import { getGameSetup } from '../../services/getPageData';
+import showToast from '../../services/showToast';
 
 // styles
 import styles from "./GameSetup.module.css"
 
-// reducer 
+// Reducer & Actions (inner)
 import gameSetupReducer, { initialState } from './reducer';
-import { openNameEnter, closeNameEnter, closeCharSelect, openCharSelect } from './actions';
+import {
+    openNameEnter,
+    closeNameEnter,
+    closeCharSelect,
+    openCharSelect
+} from './actions';
+
+// components 
 import ModalContainer from '../Modal';
-import showToast from '../../services/showToast';
-import { GAME_SETUP_MOUNT_ERROR_EN, GAME_SETUP_MOUNT_ERROR_FA } from '../../translations/Toaster/toast-messages';
+
+// messages 
+import {
+    GAME_SETUP_MOUNT_ERROR_EN,
+    GAME_SETUP_MOUNT_ERROR_FA
+} from '../../translations/Toaster/toast-messages';
 
 const GameSetup = () => {
     const { language, playersCount } = useSelector((state: AppState) => ({
@@ -46,8 +58,6 @@ const GameSetup = () => {
             >
                 {prompt_1}
             </button>
-            {/* Modals */}
-
             {/* NAME ENTER MODAL */}
             <ModalContainer
                 language={language}

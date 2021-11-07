@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     playersState: playersReducer,
     filterState: filterReducer,
     charactersState: charactersReducer,
-    playersDataState: playersDataReducer
+    playersDataState: playersDataReducer,
 });
 
 export default rootReducer;

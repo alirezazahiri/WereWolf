@@ -30,7 +30,8 @@
     border: 1px solid rgb(100, 98, 98);
     border-radius: 12px;
 }
-.htmlContainer div span{
+
+.htmlContainer div span {
     padding-bottom: 5px;
     color: rgb(165, 89, 165);
     border-bottom: 1px solid white;
@@ -39,7 +40,7 @@
     font-weight: 700;
 }
 
-.htmlContainer div p{
+.htmlContainer div p {
     border-bottom: 1px solid rgb(100, 98, 98);
     display: flex;
     flex-direction: column;

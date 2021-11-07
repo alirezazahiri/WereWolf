@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-// styles
+// styles 
 import styles from "./Layout.module.css";
 
 const Layout: FC = () => {

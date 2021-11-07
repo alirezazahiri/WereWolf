@@ -1,3 +1,4 @@
+// types
 import { DictType } from "../redux/types";
 
 const isObjAvailable = (roleDictionary: DictType): boolean => {

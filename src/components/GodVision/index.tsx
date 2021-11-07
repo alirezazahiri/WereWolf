@@ -1,15 +1,27 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+// custom hooks
 import useSearch from '../../hooks/useSearch';
-import { AppState } from '../../redux/store';
-import toFarsiNumber from '../../services/convertNumbersToFa';
-import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
+
+// components 
 import FilterContainer from '../FilterContainer';
-import styles from "./GodVision.module.css"
 import ManagePlayerCard from './ManagePlayerCard';
+
+// state type 
+import { AppState } from '../../redux/store';
+
+// redux stores 
 import { updateRoleDictionary } from '../../redux/playersData/playersDataActions';
+
+// services 
+import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
+import toFarsiNumber from '../../services/convertNumbersToFa';
 import isObjAvailable from '../../services/isObjAvailable';
 import listsMissmatch from '../../services/listsMismatch';
+
+// styles 
+import styles from "./GodVision.module.css"
 
 const GodVision = () => {
     const dispatch = useDispatch()

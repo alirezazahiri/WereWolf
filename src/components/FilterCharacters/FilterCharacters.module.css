@@ -13,7 +13,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .container button{
+    .container button {
         font-size: 8px;
     }
 }

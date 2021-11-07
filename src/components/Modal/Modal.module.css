@@ -3,7 +3,7 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.container div{
+.container div {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -21,7 +21,7 @@
     display: flex;
 }
 
-.headerContainer button{
+.headerContainer button {
     border: none;
     font-size: 1.4rem;
 }

@@ -1,7 +1,18 @@
 import React, { FC, useEffect } from 'react';
+
+// services 
 import showToast from '../../services/showToast';
+
+// navigate 
 import { useNavigate } from 'react-router-dom';
-import styles from "./HeaderButtons.module.css"
+
+// react-redux 
+import { useDispatch, useSelector } from 'react-redux';
+
+// state type 
+import { AppState } from '../../redux/store';
+
+// messages
 import {
     MODAL_HEADER_SUCCESS_CHARS_FA,
     MODAL_HEADER_SUCCESS_CHARS_EN
@@ -14,9 +25,16 @@ import {
     MODAL_HEADER_ERROR_CHAR_FA,
     MODAL_HEADER_ERROR_CHAR_EN
 } from '../../translations/Toaster/toast-messages';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../redux/store';
-import { createDataDictionary, createRoleDictionary, updateRoleDictionary } from '../../redux/playersData/playersDataActions';
+
+// redux actions 
+import {
+    createDataDictionary,
+    createRoleDictionary,
+    updateRoleDictionary
+} from '../../redux/playersData/playersDataActions';
+
+// styles 
+import styles from "./HeaderButtons.module.css"
 
 type Props = {
     language: string,
@@ -88,9 +106,9 @@ const HeaderButtons: FC<Props> = ({
     }
 
     useEffect(() => {
-        if (remaining === 0 && type==="nameEnter")
+        if (remaining === 0 && type === "nameEnter")
             showToast("success", buttons.go_to_char_select)
-        else if (remaining === 0 && type==="charSelect")
+        else if (remaining === 0 && type === "charSelect")
             showToast("success", buttons.start)
     }, [
         remaining,

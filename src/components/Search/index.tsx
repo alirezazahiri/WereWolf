@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+
+// styles 
 import styles from "./Search.module.css"
 
 type Props = {
@@ -7,7 +9,7 @@ type Props = {
     language: string
 }
 
-const Search: FC<Props> = ({value, changeHandler, language}) => {
+const Search: FC<Props> = ({ value, changeHandler, language }) => {
     return <input
         className={styles.searchInput}
         type="text"

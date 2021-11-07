@@ -1,8 +1,5 @@
-import {
-    IPlayersDataState,
-    IPlayersDataActions,
-    DictType,
-} from "../types";
+// types 
+import { IPlayersDataState, IPlayersDataActions, DictType } from "../types";
 
 const initialState: IPlayersDataState = {
     dataDictionary: {},

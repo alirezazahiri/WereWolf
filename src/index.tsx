@@ -1,6 +1,7 @@
 // react-router-dom
 import { BrowserRouter } from "react-router-dom";
 
+// DOM Renderer
 import ReactDOM from 'react-dom';
 
 // Components 

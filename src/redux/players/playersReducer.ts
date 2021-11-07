@@ -1,3 +1,4 @@
+// types
 import { IPlayersActions, IPlayersState } from "../types";
 
 const initialState: IPlayersState = {

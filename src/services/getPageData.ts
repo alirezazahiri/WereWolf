@@ -35,55 +35,59 @@ import { player_buttons_objects_en } from "../translations/PlayerButtons/PlayerB
 import { player_buttons_objects_fa } from "../translations/PlayerButtons/PlayerButtons-fa";
 
 const getChars = (language: string) => {
-  return language === "english" ? chars_en : chars_fa;
+    return language === "english" ? chars_en : chars_fa;
 };
 
 const getHome = (language: string) => {
-  return language === "english" ? home_objects_en : home_objects_fa;
+    return language === "english" ? home_objects_en : home_objects_fa;
 };
 
 const getGameSetup = (language: string) => {
-  return language === "english" ? game_setup_objects_en : game_setup_objects_fa;
+    return language === "english"
+        ? game_setup_objects_en
+        : game_setup_objects_fa;
 };
 
 const getNavbar = (language: string) => {
-  return language === "english" ? navbar_objects_en : navbar_objects_fa;
+    return language === "english" ? navbar_objects_en : navbar_objects_fa;
 };
 
 const getModal = (language: string) => {
-  return language === "english" ? modal_objects_en : modal_objects_fa;
+    return language === "english" ? modal_objects_en : modal_objects_fa;
 };
 
 const getCharSelect = (language: string) => {
-  return language === "english"
-    ? char_select_objects_en
-    : char_select_objects_fa;
+    return language === "english"
+        ? char_select_objects_en
+        : char_select_objects_fa;
 };
 
 const getNameEnter = (language: string) => {
-  return language === "english" ? name_enter_objects_en : name_enter_objects_fa;
+    return language === "english"
+        ? name_enter_objects_en
+        : name_enter_objects_fa;
 };
 
 const getFilterCharacters = (language: string) => {
-  return language === "english"
-    ? filter_characters_objects_en
-    : filter_characters_objects_fa;
+    return language === "english"
+        ? filter_characters_objects_en
+        : filter_characters_objects_fa;
 };
 
 const getPlayerButtons = (language: string) => {
-  return language === "english"
-    ? player_buttons_objects_en
-    : player_buttons_objects_fa;
+    return language === "english"
+        ? player_buttons_objects_en
+        : player_buttons_objects_fa;
 };
 
 export {
-  getChars as default,
-  getHome,
-  getGameSetup,
-  getNavbar,
-  getModal,
-  getCharSelect,
-  getNameEnter,
-  getFilterCharacters,
-  getPlayerButtons,
+    getChars as default,
+    getHome,
+    getGameSetup,
+    getNavbar,
+    getModal,
+    getCharSelect,
+    getNameEnter,
+    getFilterCharacters,
+    getPlayerButtons,
 };

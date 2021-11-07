@@ -1,12 +1,26 @@
-import React, { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from 'react';
-import { shorten } from '../../services/shorten';
+import React, {
+    ChangeEvent,
+    FC,
+    FormEvent,
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 
-import styles from "./Name.module.css"
+// react-redux 
 import { useDispatch, useSelector } from 'react-redux';
-import { editName } from '../../redux/players/playersActions';
-import Icon from '../Icon';
+
+// redux store
 import { AppState } from '../../redux/store';
+import styles from "./Name.module.css"
+import { editName } from '../../redux/players/playersActions';
+
+// services 
+import { shorten } from '../../services/shorten';
 import checkName from '../../services/checkName';
+
+// components 
+import Icon from '../Icon';
 
 type Props = {
     name: string,

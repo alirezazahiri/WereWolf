@@ -1,13 +1,16 @@
+// messages 
 import {
     NAME_ENTER_ERROR_FA,
     NAME_ENTER_ERROR_EN,
 } from "../translations/Toaster/toast-messages";
-import toFarsiNumber from "./convertNumbersToFa";
-import showToast from "./showToast";
 import {
     NAME_EDIT_ERROR_FA,
     NAME_EDIT_ERROR_EN,
 } from "../translations/Toaster/toast-messages";
+
+// services 
+import toFarsiNumber from "./convertNumbersToFa";
+import showToast from "./showToast";
 
 const checkName = (
     names: string[],

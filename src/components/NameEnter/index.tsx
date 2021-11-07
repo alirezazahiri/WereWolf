@@ -1,11 +1,23 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styles from "./NameEnter.module.css"
+
+// react-redux 
 import { useSelector, useDispatch } from 'react-redux';
+
+// state type 
 import { AppState } from '../../redux/store';
-import { getNameEnter } from '../../services/getPageData';
+
+// redux actions 
 import { addName, resetPlayers } from '../../redux/players/playersActions';
+
+// components 
 import Name from './Name';
+
+// services
+import { getNameEnter } from '../../services/getPageData';
 import checkName from '../../services/checkName';
+
+// styles 
+import styles from "./NameEnter.module.css"
 
 const NameEnter = () => {
     const dispatch = useDispatch()
@@ -45,7 +57,13 @@ const NameEnter = () => {
                 {buttons.reset}
             </button>
             <div>
-                {names.map((name, index) => <Name key={`${index + 1}`} name={name} index={index} />)}
+                {names.map((name, index) => (
+                    <Name
+                        key={`${index + 1}`}
+                        name={name}
+                        index={index}
+                    />
+                ))}
             </div>
             <form
                 onSubmit={submitHandler}

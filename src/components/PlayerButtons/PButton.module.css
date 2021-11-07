@@ -22,7 +22,7 @@
 .container:hover,
 .container:active,
 .container:focus,
-.container:focus-visible{
+.container:focus-visible {
     outline: none;
     border-image-source: linear-gradient(to left, #66de94, #d60136);
     box-shadow: -5px 0 25px 0 #5c527f,

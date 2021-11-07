@@ -1,18 +1,36 @@
 import React, { useEffect } from 'react';
+
+// react-redux 
 import { useDispatch, useSelector } from 'react-redux';
+
+// types 
 import { AppState } from '../../redux/store';
-import { getPlayerButtons } from '../../services/getPageData';
-import PButton from './PButton';
-import styles from "./PlayerButtons.module.css"
+
+// redux store 
 import { updateRoleDictionary } from '../../redux/playersData/playersDataActions';
-import showToast from '../../services/showToast';
+
+// services 
 import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
+import { getPlayerButtons } from '../../services/getPageData';
 import isObjAvailable from '../../services/isObjAvailable';
 import listsMissmatch from '../../services/listsMismatch';
+import showToast from '../../services/showToast';
+
+// components 
+import PButton from './PButton';
+
+// styles 
+import styles from "./PlayerButtons.module.css"
 
 const PlayerButtons = () => {
     const dispatch = useDispatch()
-    const { language, roleDictionary, characters, names, playersCount } = useSelector((state: AppState) => ({
+    const {
+        language,
+        roleDictionary,
+        characters,
+        names,
+        playersCount
+    } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState,
         ...state.playersDataState,
@@ -22,8 +40,8 @@ const PlayerButtons = () => {
     const { buttons, update_message } = getPlayerButtons(language)
 
     useEffect(() => {
-        if ((!isObjAvailable(roleDictionary) && names.length === playersCount) || 
-        listsMissmatch(names, Object.keys(roleDictionary))) {
+        if ((!isObjAvailable(roleDictionary) && names.length === playersCount) ||
+            listsMissmatch(names, Object.keys(roleDictionary))) {
             dispatch(updateRoleDictionary(names, characters))
         }
     }, [names, characters, dispatch, playersCount, roleDictionary])

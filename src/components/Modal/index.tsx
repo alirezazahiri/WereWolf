@@ -1,19 +1,27 @@
 import React, { FC } from 'react';
 
+// react-redux 
+import { useSelector } from 'react-redux';
+
 // styles
 import styles from "./Modal.module.css"
 
+// types 
+import { CharType } from '../../redux/types';
+import { AppState } from '../../redux/store';
+
 // UI Components 
 import Modal from "react-bootstrap/Modal";
-import NameEnter from '../NameEnter/index';
-import { getModal } from '../../services/getPageData';
-import HeaderButtons from './HeaderButtons';
-import { useSelector } from 'react-redux';
-import { AppState } from '../../redux/store';
+
+// components 
 import CharSelect from '../CharSelect/index';
+import HeaderButtons from './HeaderButtons';
+import NameEnter from '../NameEnter/index';
 import ScenarioCard from '../ScenarioCard';
-import { CharType } from '../../redux/types';
+
+// services
 import toFarsiNumber from '../../services/convertNumbersToFa';
+import { getModal } from '../../services/getPageData';
 
 interface Props {
     language: string,

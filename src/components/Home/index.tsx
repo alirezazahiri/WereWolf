@@ -7,20 +7,27 @@ import { useNavigate } from 'react-router-dom';
 import { AppState } from '../../redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 
-
 // services 
-import { getHome } from '../../services/getPageData';
 import fixNumbers from '../../services/convertNumbersToEn';
+import { getHome } from '../../services/getPageData';
+import showToast from '../../services/showToast';
+
+
+// redux actions 
+import { setCountOfPlayers, resetPlayers } from '../../redux/players/playersActions';
+import { resetCharacters } from '../../redux/characters/charactersActions';
+import { setFilter } from '../../redux/filter/filterActions';
+
+// toast messages 
+import {
+    HOME_SUCCESS_MESSAGE_EN,
+    HOME_SUCCESS_MESSAGE_FA,
+    HOME_ERROR_MESSAGE_FA,
+    HOME_ERROR_MESSAGE_EN
+} from '../../translations/Toaster/toast-messages';
 
 // styles 
 import styles from "./Home.module.css"
-import { setCountOfPlayers, resetPlayers } from '../../redux/players/playersActions';
-import showToast from '../../services/showToast';
-
-// toast messages 
-import { HOME_SUCCESS_MESSAGE_EN, HOME_SUCCESS_MESSAGE_FA, HOME_ERROR_MESSAGE_FA, HOME_ERROR_MESSAGE_EN } from '../../translations/Toaster/toast-messages';
-import { resetCharacters } from '../../redux/characters/charactersActions';
-import { setFilter } from '../../redux/filter/filterActions';
 
 const Home: FC = () => {
     const dispatch = useDispatch()

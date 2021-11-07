@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
+
+
+// components 
 import FilterCharacters from '../FilterCharacters';
 import Search from '../Search';
+
+// styles 
 import styles from "./FilterContainer.module.css"
 
 type Props = {

@@ -1,3 +1,4 @@
+// types 
 import { ILanguageAtion, ILanguageState } from "../types";
 
 const initialState: ILanguageState = {

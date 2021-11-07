@@ -1,11 +1,23 @@
 import React, { FC } from 'react';
-import getColor from '../../services/getColor';
-import { shorten } from '../../services/shorten';
-import styles from "./ManagePlayerCard.module.css"
-import { changeDataDictionary } from '../../redux/playersData/playersDataActions';
+
+// react-redux 
 import { useDispatch, useSelector } from 'react-redux';
+
+// services 
+import { shorten } from '../../services/shorten';
+import getColor from '../../services/getColor';
+
+// state type 
 import { AppState } from '../../redux/store';
+
+// redux actions 
+import { changeDataDictionary } from '../../redux/playersData/playersDataActions';
+
+// components 
 import Icon from '../Icon';
+
+// styles 
+import styles from "./ManagePlayerCard.module.css"
 
 type Props = {
     player: string,

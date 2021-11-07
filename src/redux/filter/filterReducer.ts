@@ -1,3 +1,4 @@
+// types 
 import { IFilterState, IFilterActions } from "../types";
 
 const initialState: IFilterState = {

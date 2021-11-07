@@ -1,3 +1,4 @@
+// types 
 import { ICharactersActions, ICharactersState } from "../types";
 
 const initialState: ICharactersState = {
