@@ -1,20 +1,22 @@
-// react-redux 
 import { FC } from "react";
+
+// react-redux 
+import { useDispatch, useSelector } from "react-redux";
 
 // redux 
 import { changeLanguage } from '../../redux/language/languageActions';
-import { AppDispatch } from '../../redux/store';
+import { AppState } from '../../redux/store';
 
 // utils 
 import { IR_FLAG, UK_FLAG } from "./utils";
 
 type Props = {
-    dispatch: AppDispatch
-    language: string
     className: string
 }
 
-const LanguageChanger: FC<Props> = ({ dispatch, language, className }) => {
+const LanguageChanger: FC<Props> = ({ className }) => {
+    const dispatch = useDispatch()
+    const { language } = useSelector((state: AppState) => state.languageState)
     return (
         <img
             className={className}

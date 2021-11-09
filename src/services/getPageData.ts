@@ -34,6 +34,10 @@ import { filter_characters_objects_fa } from "../translations/FilterCharacters/F
 import { player_buttons_objects_en } from "../translations/PlayerButtons/PlayerButtons-en";
 import { player_buttons_objects_fa } from "../translations/PlayerButtons/PlayerButtons-fa";
 
+// Guide 
+import { guide_objects_en } from "../translations/Guide/Guide-en";
+import { guide_objects_fa } from "../translations/Guide/Guide-fa";
+
 const getChars = (language: string) => {
     return language === "english" ? chars_en : chars_fa;
 };
@@ -80,6 +84,12 @@ const getPlayerButtons = (language: string) => {
         : player_buttons_objects_fa;
 };
 
+const getGuide = (language: string) => {
+    return language === "english" 
+    ? guide_objects_en 
+    : guide_objects_fa;
+};
+
 export {
     getChars as default,
     getHome,
@@ -90,4 +100,5 @@ export {
     getNameEnter,
     getFilterCharacters,
     getPlayerButtons,
+    getGuide,
 };

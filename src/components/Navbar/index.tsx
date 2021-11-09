@@ -1,7 +1,7 @@
 import { FC } from "react"
 
 // react-redux
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 // router
 import { NavLink, Link } from "react-router-dom";
@@ -24,10 +24,10 @@ import LanguageChanger from "./LanguageChanger";
 import { getNavbar } from '../../services/getPageData';
 
 const NavBar: FC = () => {
-    const dispatch = useDispatch()
     const { language } = useSelector((state: AppState) => state.languageState)
     const {
         title,
+        guide,
         senarios,
         players,
         gods_room,
@@ -42,7 +42,7 @@ const NavBar: FC = () => {
         >
             <Container className={styles.content}>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.hamburger} />
-                <LanguageChanger className={styles.flag} dispatch={dispatch} language={language} />
+                <LanguageChanger className={styles.flag}/>
                 <div>
                     <Link to="/" className={styles.title}>
                         {title}
@@ -54,6 +54,7 @@ const NavBar: FC = () => {
                         <NavLink to="/players-roles">{players}</NavLink>
                         <NavLink to="/god-vision">{gods_room}</NavLink>
                         <NavLink to="/scenarios">{senarios}</NavLink>
+                        <NavLink to="/guide">{guide}</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

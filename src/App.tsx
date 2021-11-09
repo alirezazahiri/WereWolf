@@ -16,6 +16,7 @@ import GameSetup from "./components/GameSetup/index";
 import GodVision from "./components/GodVision/index";
 import NavBar from "./components/Navbar/index";
 import Layout from "./components/Layout/index";
+import Guide from "./components/Guide/index";
 import Home from "./components/Home/index";
 
 // Toast
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/players-roles" element={<PlayerButtons />} />
             <Route path="/god-vision" element={<GodVision />} />
             <Route path="/scenarios" element={<Scenarios />} />
+            <Route path="/guide" element={<Guide />} />
           </Routes>
           <Layout />
         </PersistGate>

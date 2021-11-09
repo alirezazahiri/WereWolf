@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+}
+
+.headerContainer {
+    margin: 12rem 8rem;
+}
+
+.headerContainer h1 {
+    color: rgb(71, 58, 121);
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.headerContainer p {
+    color: #50cb93;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-top: 2.5rem;
+}
