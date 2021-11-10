@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 1.2rem;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, .8);
+    border: 1px solid rgb(71, 58, 121);
+}
+
+.container h1 {
+    font-size: 2rem;
+    color: rgb(71, 58, 121);
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 1.4rem;
+    color: #f0f0f0;
+}

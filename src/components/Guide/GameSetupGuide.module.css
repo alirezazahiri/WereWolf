@@ -1,0 +1,39 @@
+.titleContainer {
+
+}
+
+.featureContainer {
+    margin-top: 2rem;
+}
+
+.enhance {
+    border-bottom: 1px solid rgb(71, 58, 121);
+}
+
+.featureContainer img {
+    width: 40rem;
+    border: 1px solid rgb(71, 58, 121);
+    border-radius: 1.2rem;
+}
+
+.featureContainer p {
+    margin: 1rem 15rem 1rem;
+}
+
+@media (max-width: 480px) {
+    .featureContainer img {
+        width: 100%;
+    }
+    .featureContainer p {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featureContainer img {
+        width: 35rem;
+    }
+    .featureContainer p {
+        margin: 1rem 5rem 1rem;
+    }
+}

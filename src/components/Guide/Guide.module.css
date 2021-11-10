@@ -3,12 +3,12 @@
 }
 
 .headerContainer {
-    margin: 12rem 8rem;
+    margin: 8rem 8rem;
 }
 
 .headerContainer h1 {
     color: rgb(71, 58, 121);
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 700;
 }
 

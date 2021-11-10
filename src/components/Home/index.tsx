@@ -100,7 +100,7 @@ const Home: FC = () => {
                 <form onSubmit={submitHandler} className={styles.formContainer}>
                     <input
                         ref={inputRef}
-                        pattern="[\d | ^[\u06F0-\u06F90-9]+$]*"
+                        pattern="\d*"
                         type="text"
                         placeholder={placeholder_1}
                         value={playersCount}
