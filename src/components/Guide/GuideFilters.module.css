@@ -6,7 +6,6 @@
 
 .filtersContainer button{
     background-color: rgba(0, 0, 0, 0.6);
-    background-color: none;
     border: 1px solid rgb(71, 58, 121);
     color: rgb(71, 58, 121);
     padding: 2rem;
@@ -18,4 +17,15 @@
     color: rgb(80, 203, 147);
     background-color: rgba(80, 203, 147, 0.3);
     border: 1px solid #50cb93;
+}
+
+@media (max-width: 480px) {
+    .filtersContainer {
+        margin: .5rem;
+    }
+
+    .filtersContainer button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
 }
