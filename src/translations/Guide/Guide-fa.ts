@@ -1,4 +1,11 @@
-import { GameSetupObj, NavObj, StartGameObj } from "./types";
+import {
+    GameSetupObj,
+    GodVisionObj,
+    NavObj,
+    PlayersObj,
+    ScenariosObj,
+    StartGameObj,
+} from "./types";
 
 // images
 import nameEnterImg from "../../assets/guide/game-setup_nameEnter_fa.jpg";
@@ -17,13 +24,13 @@ const navbar: NavObj = {
     nav_brand: "مافیا",
 };
 
-const startGame: StartGameObj = {
+const startGameGuide: StartGameObj = {
     title: "شروع بازی",
     description:
         "در این بخش شما باید تعداد بازیکن ها را وارد کنید. این تعداد باید بین ۴ تا ۸۰ نفر باشد",
 };
 
-const gameSetup: GameSetupObj = {
+const gameSetupGuide: GameSetupObj = {
     title: "آماده سازی بازی",
     description:
         "در این بخش شما میتوانید نام بازیکن ها را وارد کنید و نقش هایی که میخواهید در سناریو خود داشته باشید انتخاب کنید",
@@ -35,4 +42,30 @@ const gameSetup: GameSetupObj = {
         "در این بخش همانطور که گفته شد میتوانید با زدن بر روی علامت + به تعداد نقش اضافه کنید و به وسیله - از تعداد آن کم کنید و با زدن بر روی 'نام' نقش توضیحات آن نقش را ببینید. توجه کنید که نقش های خاص را نمیتوان بیشتر از ۱ مورد اضافه کرد. سپس میتوانید 'شروع بازی' را بزنید و به صفحه بازیکن ها منتقل شوید",
 };
 
-export const guide_objects_fa = { title, navbar, startGame, gameSetup };
+const playersGuide: PlayersObj = {
+    title: "بازیکن ها",
+    description:
+        "در این بخش شما نام بازیکن ها را خواهید دید که در آن با کلیک کردن بر روی نام هر بازیکن میتوانید به نقش آن بازیکن پی ببرید. همچنین یک دکمه 'بروزرسانی' قرار دارد که با آن میتوانید نقش ها را برای بار دیگر بین بازیکن ها پخش کنید",
+};
+
+const godVisionGuide: GodVisionObj = {
+    title: "اتاق گرداننده",
+    description:
+        "در این صفحه شما هر بازیکن و نقش آن را در یک کارت مخصوص دارید که میتوانید در آن یادداشت کنید. و با جستجوی نام و نقش آنها به بازیکن ها دسترسی راحت تری داشته باشید",
+};
+
+const scenariosGuide: ScenariosObj = {
+    title: "سناریو ها",
+    description:
+        "در این بخش میتوانید توضیحات مربوط به هر نقش را بخوانید و نحوه بازی کردن با هر نقش را یاد بگیرید",
+};
+
+export const guide_objects_fa = {
+    title,
+    navbar,
+    startGameGuide,
+    gameSetupGuide,
+    playersGuide,
+    godVisionGuide,
+    scenariosGuide,
+};

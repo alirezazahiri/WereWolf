@@ -17,6 +17,21 @@ export type GameSetupObj = {
     description: string;
     nameEnterImg: any;
     charSelectImg: any;
-    nameEnterDescription: string,
-    charSelectDescription: string
-}
+    nameEnterDescription: string;
+    charSelectDescription: string;
+};
+
+export type PlayersObj = {
+    title: string;
+    description: string;
+};
+
+export type GodVisionObj = {
+    title: string;
+    description: string;
+};
+
+export type ScenariosObj = {
+    title: string;
+    description: string;
+};
