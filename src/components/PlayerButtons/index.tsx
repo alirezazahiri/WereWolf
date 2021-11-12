@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
 
 // redux store 
-import { updateRoleDictionary } from '../../redux/playersData/playersDataActions';
+import { updateRoleDictionary, createDataDictionary } from '../../redux/playersData/playersDataActions';
 
 // services 
 import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
@@ -47,6 +47,7 @@ const PlayerButtons = () => {
     }, [names, characters, dispatch, playersCount, roleDictionary])
 
     const updateHandler = () => {
+        dispatch(createDataDictionary(Object.keys(roleDictionary)))
         dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters))
         showToast("success", update_message)
     }
