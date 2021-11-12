@@ -69,7 +69,7 @@ const Home: FC = () => {
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         const newValue = fixNumbers(value);
-        if (/^\d*$/.test(newValue)) setPlayersCount(value); // set newValue if it is a empty string or a number
+        if (/^\d*$/.test(newValue)) setPlayersCount(newValue); // set newValue if it is a empty string or a number
     };
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
