@@ -1,0 +1,69 @@
+.container {
+    padding: 1rem;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerContainer a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: rgba(250, 0, 0, 0.7);
+}
+
+.headerContainer a:hover {
+    color: rgb(250, 0, 0);
+}
+
+.container textarea {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.container textarea:focus {
+    outline: none;
+}
+
+.playerTextContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px white;
+}
+
+.playerTextContainer button {
+    margin-top: 15px;
+    background-color: none;
+    border: none;
+    color: rgba(218, 0, 55, .7);
+    height: 8rem;
+    width: 4rem;
+    font-size: 2rem;
+}
+
+.playerTextContainer button:hover {
+    color: rgb(218, 0, 55);
+}
+
+.playerBrief {
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1.2rem;
+}
+
+.playerBrief > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}

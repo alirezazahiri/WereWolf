@@ -43,7 +43,7 @@ const playersDataReducer = (
         case "CREATE_DATA_DICTIONARY":
             const dataDictionary: DictType = {};
             action.payload.forEach((player: string) => {
-                dataDictionary[player] = "";
+                dataDictionary[player] = { text: "" };
             });
             return { ...state, dataDictionary };
         case "UPDATE_ROLE_DICTIONARY":
@@ -54,10 +54,10 @@ const playersDataReducer = (
             );
             return { ...state, roleDictionary: roleDictionary_update };
         case "CHANGE_DATA_DICTIONARY":
-            const { player, text } = action.payload;
+            const { player, data } = action.payload;
             return {
                 ...state,
-                dataDictionary: { ...state.dataDictionary, [player]: text },
+                dataDictionary: { ...state.dataDictionary, [player]: data },
             };
         default:
             return state;

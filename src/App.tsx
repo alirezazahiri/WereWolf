@@ -11,6 +11,7 @@ import store, { persistor } from './redux/store';
 
 // components 
 import PlayerButtons from "./components/PlayerButtons";
+import PlayerVision from "./components/PlayerVision";
 import Scenarios from "./components/Scenarios/index";
 import GameSetup from "./components/GameSetup/index";
 import GodVision from "./components/GodVision/index";
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/game-setup" element={<GameSetup />} />
             <Route path="/players-roles" element={<PlayerButtons />} />
+            <Route path="/god-vision/:playerName" element={<PlayerVision />} />
             <Route path="/god-vision" element={<GodVision />} />
             <Route path="/scenarios" element={<Scenarios />} />
             <Route path="/guide" element={<Guide />} />

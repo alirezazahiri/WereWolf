@@ -36,7 +36,7 @@ export interface ICharactersState {
     characters: number[];
 }
 
-export type DictType = { [player: string]: string | number };
+export type DictType = { [player: string]: any };
 
 export interface IPlayersDataState {
     dataDictionary: DictType;

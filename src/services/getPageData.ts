@@ -34,9 +34,13 @@ import { filter_characters_objects_fa } from "../translations/FilterCharacters/F
 import { player_buttons_objects_en } from "../translations/PlayerButtons/PlayerButtons-en";
 import { player_buttons_objects_fa } from "../translations/PlayerButtons/PlayerButtons-fa";
 
-// Guide 
+// Guide
 import { guide_objects_en } from "../translations/Guide/Guide-en";
 import { guide_objects_fa } from "../translations/Guide/Guide-fa";
+
+// PlayerVision
+import { player_vision_objects_en } from "../translations/PlayerVision/PlayerVision-en";
+import { player_vision_objects_fa } from "../translations/PlayerVision/PlayerVision-fa";
 
 const getChars = (language: string) => {
     return language === "english" ? chars_en : chars_fa;
@@ -85,9 +89,13 @@ const getPlayerButtons = (language: string) => {
 };
 
 const getGuide = (language: string) => {
-    return language === "english" 
-    ? guide_objects_en 
-    : guide_objects_fa;
+    return language === "english" ? guide_objects_en : guide_objects_fa;
+};
+
+const getPlayerVision = (language: string) => {
+    return language === "english"
+        ? player_vision_objects_en
+        : player_vision_objects_fa;
 };
 
 export {
@@ -101,4 +109,5 @@ export {
     getFilterCharacters,
     getPlayerButtons,
     getGuide,
+    getPlayerVision,
 };

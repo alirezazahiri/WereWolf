@@ -88,5 +88,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: fit-content;
+    }
+    .formContainer input {
+        margin-right: 0;
     }
 }

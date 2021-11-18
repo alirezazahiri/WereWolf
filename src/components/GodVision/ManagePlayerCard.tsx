@@ -18,6 +18,7 @@ import Icon from '../Icon';
 
 // styles 
 import styles from "./ManagePlayerCard.module.css"
+import { Link } from 'react-router-dom';
 
 type Props = {
     player: string,
@@ -32,11 +33,11 @@ const ManagePlayerCard: FC<Props> = ({ player, icon, role, type }) => {
     const { dataDictionary } = useSelector((state: AppState) => state.playersDataState)
 
     const changeHandler = (e: any) => {
-        dispatch(changeDataDictionary(player, e.target.value))
+        dispatch(changeDataDictionary(player, { text: e.target.value }))
     }
 
     const clearText = () => {
-        dispatch(changeDataDictionary(player, ""))
+        dispatch(changeDataDictionary(player, { text: "" }))
     }
 
     return (
@@ -48,15 +49,17 @@ const ManagePlayerCard: FC<Props> = ({ player, icon, role, type }) => {
             }}
         >
             <div className={styles.hedearContainer} style={{ color: color }}>
-                <h2>{shorten(player)}</h2>
-                <Icon icon={icon} />
-                <h2>{role}</h2>
+                <Link to={`/god-vision/${player}`} style={{ color: color }}>{shorten(player)}</Link>
+                <Link to={`/god-vision/${player}`} style={{ color: color }}>
+                    <Icon icon={icon} />
+                </Link>
+                <Link to={`/god-vision/${player}`} style={{ color: color }}>{role}</Link>
             </div>
             <div className={styles.playerStatusContainer}>
                 <textarea
-                    value={dataDictionary[player]}
+                    value={dataDictionary[player].text}
                     onChange={changeHandler}
-                    style={{ color: color }}
+                    style={{ color: color, border: `1px solid ${color}` }}
                 />
                 <button onClick={clearText}>
                     <Icon icon="minus-circle fa-lg" />
