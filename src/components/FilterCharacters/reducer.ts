@@ -26,6 +26,8 @@ const reducer = (state = initialState, action: string) => {
             return { ...initialState, independent: true };
         case "mid-independent":
             return { ...initialState, "mid-independent": true };
+        case "reset":
+            return { ...initialState };
         default:
             return state;
     }

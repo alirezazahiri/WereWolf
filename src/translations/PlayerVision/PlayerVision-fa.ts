@@ -13,8 +13,9 @@ const squads = {
 const stats = {
     alive: "زنده",
     dead: "مرده",
-    mute: "سکوت",
-    unmute: "میتواند صحبت کند"
+    mute: "ساکت",
+    unmute: "سخنگو",
+    all: "همه"
 }
 
 export const player_vision_objects_fa = { playerBrief, squads, stats };

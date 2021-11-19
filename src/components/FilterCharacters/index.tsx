@@ -26,6 +26,7 @@ const FilterCharacters = () => {
     const subscribe = useDispatch()
     const { language } = useSelector((state: AppState) => state.languageState)
     const { filters } = getFilterCharacters(language);
+    const {filter} = useSelector((state: AppState) => state.filterState)
 
     const clickHandler = (e: any) => {
         subscribe(setFilter(e.target.id))
@@ -48,7 +49,7 @@ const FilterCharacters = () => {
         return {
             color: getColor(type),
             border: `1px solid ${getColor(type)}`,
-            boxShadow: hover[getSquad(type)] ? `0 0 12px ${getColor(type)}` : "",
+            boxShadow: hover[getSquad(type)] || filter === getSquad(type) ? `0 0 12px ${getColor(type)}` : "",
             padding: "1px 5px",
             width: "18%",
             height: "80px",
@@ -67,6 +68,7 @@ const FilterCharacters = () => {
                     id={squad}
                     style={getStyles(squad)}
                     onMouseOver={() => dispatch(squad)}
+                    onMouseLeave={() => dispatch("reset")}
                 >
                     {filters[getSquad(squad)]}
                 </button>

@@ -9,7 +9,7 @@
 
 .container button {
     backdrop-filter: blur(20px);
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 600px) {

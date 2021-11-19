@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // custom hooks
@@ -22,10 +22,19 @@ import listsMissmatch from '../../services/listsMismatch';
 
 // styles 
 import styles from "./GodVision.module.css"
+import StatFilter from './StatFilter';
 
 const GodVision = () => {
     const dispatch = useDispatch()
-    const { language, names, roleDictionary, filter, playersCount, characters } = useSelector((state: AppState) => ({
+    const {
+        language,
+        names,
+        roleDictionary,
+        dataDictionary,
+        filter,
+        playersCount,
+        characters
+    } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState,
         ...state.playersDataState,
@@ -33,6 +42,9 @@ const GodVision = () => {
         ...state.filterState
     }))
     const [value, changeHandler] = useSearch()
+
+    // 
+    const [statFilter, setStatFilter] = useState("all")
 
     useEffect(() => {
         if ((!isObjAvailable(roleDictionary) && names.length === playersCount) ||
@@ -44,6 +56,7 @@ const GodVision = () => {
     return (
         <div className={styles.container}>
             <FilterContainer value={value} changeHandler={changeHandler} language={language} />
+            <StatFilter setStatFilter={setStatFilter} statFilter={statFilter}/>
             {names.map(name => {
                 const character = mapCharIdToCharacter(roleDictionary[name], language)
                 const role = character?.title
@@ -55,13 +68,23 @@ const GodVision = () => {
                 .filter(({ role, name }) =>
                     role?.toLowerCase().includes(value.trim().toLowerCase()) ||
                     toFarsiNumber(name)?.toLowerCase().includes(toFarsiNumber(value).trim().toLowerCase()))
-                .map(({ role, type, icon, name }) => <ManagePlayerCard
-                    key={name}
-                    type={type}
-                    role={role}
-                    icon={icon}
-                    player={name}
-                />)
+                .filter(({ name }) => {
+                    switch (statFilter) {
+                        case "silent": return !dataDictionary[name].unmute
+                        case "speaker": return dataDictionary[name].unmute
+                        case "alive": return dataDictionary[name].alive
+                        case "dead": return !dataDictionary[name].alive
+                        default: return true
+                    }
+                }) // filter by alive/death
+                .map(({ role, type, icon, name }) => (
+                    <ManagePlayerCard
+                        key={name}
+                        type={type}
+                        role={role}
+                        icon={icon}
+                        player={name}
+                    />))
             }
         </div>
     );

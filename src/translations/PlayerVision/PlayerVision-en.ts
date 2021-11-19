@@ -13,8 +13,9 @@ const squads = {
 const stats = {
     alive: "Alive",
     dead: "Dead",
-    mute: "Silenced",
-    unmute: "Can Speak"
+    mute: "Silent",
+    unmute: "Speaker",
+    all: "All"
 }
 
 export const player_vision_objects_en = { playerBrief, squads, stats };
