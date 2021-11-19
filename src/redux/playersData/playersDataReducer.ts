@@ -43,7 +43,7 @@ const playersDataReducer = (
         case "CREATE_DATA_DICTIONARY":
             const dataDictionary: DictType = {};
             action.payload.forEach((player: string) => {
-                dataDictionary[player] = { text: "" };
+                dataDictionary[player] = { text: "", alive: true, unmute: true };
             });
             return { ...state, dataDictionary };
         case "UPDATE_ROLE_DICTIONARY":

@@ -41,7 +41,7 @@
 }
 
 .playerTextContainer button {
-    margin-top: 15px;
+    margin-top: 1.5rem;
     background-color: none;
     border: none;
     color: rgba(218, 0, 55, .7);
@@ -63,7 +63,21 @@
 
 .playerBrief > div {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     margin-top: 1.4rem;
+}
+
+.errorNotFound {
+    color: rgb(218, 0, 55);
+    text-align: center;
+    margin-top: 20rem;
+}
+
+.statsContainer {
+    margin-top: 1.5rem;
+    border-radius: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
 }

@@ -10,4 +10,11 @@ const squads = {
     "mid-independent": "نیمه مستقل",
 };
 
-export const player_vision_objects_fa = { playerBrief, squads };
+const stats = {
+    alive: "زنده",
+    dead: "مرده",
+    mute: "سکوت",
+    unmute: "میتواند صحبت کند"
+}
+
+export const player_vision_objects_fa = { playerBrief, squads, stats };

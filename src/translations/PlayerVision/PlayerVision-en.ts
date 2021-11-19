@@ -1,13 +1,20 @@
 const playerBrief = {
-    role: "player's role",
-    type: "player's squad",
+    role: "Player's Role",
+    type: "Player's Squad",
 };
 
 const squads = {
     mafia: "Mafia",
-    citizen: "Citizens",
-    independent: "Independents",
-    "mid-independent": "Semi-Independents",
+    citizen: "Citizen",
+    independent: "Independent",
+    "mid-independent": "Semi-Independent",
 };
 
-export const player_vision_objects_en = { playerBrief, squads };
+const stats = {
+    alive: "Alive",
+    dead: "Dead",
+    mute: "Silenced",
+    unmute: "Can Speak"
+}
+
+export const player_vision_objects_en = { playerBrief, squads, stats };
