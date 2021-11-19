@@ -1,0 +1,12 @@
+.playerBrief {
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 1.2rem;
+}
+
+.playerBrief > div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}

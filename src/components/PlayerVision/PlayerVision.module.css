@@ -54,30 +54,9 @@
     color: rgb(218, 0, 55);
 }
 
-.playerBrief {
-    margin-top: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 2rem;
-    border-radius: 1.2rem;
-}
-
-.playerBrief > div {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.4rem;
-}
-
 .errorNotFound {
     color: rgb(218, 0, 55);
     text-align: center;
     margin-top: 20rem;
 }
 
-.statsContainer {
-    margin-top: 1.5rem;
-    border-radius: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
