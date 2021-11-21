@@ -15,7 +15,7 @@ const stats = {
     dead: "Dead",
     mute: "Silent",
     unmute: "Speaker",
-    all: "All"
+    all: "No Filters"
 }
 
 export const player_vision_objects_en = { playerBrief, squads, stats };

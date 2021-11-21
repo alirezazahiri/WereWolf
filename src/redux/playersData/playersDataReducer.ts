@@ -1,4 +1,4 @@
-// types 
+// types
 import { IPlayersDataState, IPlayersDataActions, DictType } from "../types";
 
 const initialState: IPlayersDataState = {
@@ -43,7 +43,11 @@ const playersDataReducer = (
         case "CREATE_DATA_DICTIONARY":
             const dataDictionary: DictType = {};
             action.payload.forEach((player: string) => {
-                dataDictionary[player] = { text: "", alive: true, unmute: true };
+                dataDictionary[player] = {
+                    text: "",
+                    alive: true,
+                    unmute: true,
+                };
             });
             return { ...state, dataDictionary };
         case "UPDATE_ROLE_DICTIONARY":
@@ -58,6 +62,19 @@ const playersDataReducer = (
             return {
                 ...state,
                 dataDictionary: { ...state.dataDictionary, [player]: data },
+            };
+        case "EDIT_PLAYER_DATA":
+            const { prevKey, newKey } = action.payload;
+            const newDataDictionary: DictType = state.dataDictionary;
+            const newRoleDictionary: DictType = state.roleDictionary;
+            newDataDictionary[newKey] = state.dataDictionary[prevKey];
+            newRoleDictionary[newKey] = state.roleDictionary[prevKey];
+            delete newDataDictionary[prevKey];
+            delete newRoleDictionary[prevKey];
+            return {
+                ...state,
+                dataDictionary: { ...newDataDictionary },
+                roleDictionary: { ...newRoleDictionary },
             };
         default:
             return state;

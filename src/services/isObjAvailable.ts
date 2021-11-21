@@ -1,9 +1,9 @@
 // types
 import { DictType } from "../redux/types";
 
-const isObjAvailable = (roleDictionary: DictType): boolean => {
-    for (const value of Object.values(roleDictionary)) {
-        if (!value) return false;
+const isObjAvailable = (roleDictionary: DictType, names: string[]): boolean => {
+    for (const name of names) {
+        if (!roleDictionary[name]) return false;
     }
     return true;
 };

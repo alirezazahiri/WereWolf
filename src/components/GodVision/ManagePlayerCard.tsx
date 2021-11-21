@@ -57,7 +57,7 @@ const ManagePlayerCard: FC<Props> = ({ player, icon, role, type }) => {
             </div>
             <div className={styles.playerStatusContainer}>
                 <textarea
-                    value={dataDictionary[player].text}
+                    value={dataDictionary[player]?.text}
                     onChange={changeHandler}
                     style={{ color: color, border: `1px solid ${color}` }}
                 />

@@ -22,6 +22,11 @@ export const changeDataDictionary = (player: string, data: DictType) => ({
     type: "CHANGE_DATA_DICTIONARY",
     payload: { player, data },
 });
+
+export const editPlayerData = (prevPlayer: string, player: string) => ({
+    type: "EDIT_PLAYER_DATA",
+    payload: { prevKey: prevPlayer, newKey: player },
+});
 /* for more features we
   need to update the text to an object of player's options
 */

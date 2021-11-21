@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 // custom hooks
 import useSearch from '../../hooks/useSearch';
@@ -11,29 +11,21 @@ import ManagePlayerCard from './ManagePlayerCard';
 // state type 
 import { AppState } from '../../redux/store';
 
-// redux stores 
-import { updateRoleDictionary } from '../../redux/playersData/playersDataActions';
-
 // services 
 import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
 import toFarsiNumber from '../../services/convertNumbersToFa';
-import isObjAvailable from '../../services/isObjAvailable';
-import listsMissmatch from '../../services/listsMismatch';
 
 // styles 
 import styles from "./GodVision.module.css"
 import StatFilter from './StatFilter';
 
 const GodVision = () => {
-    const dispatch = useDispatch()
     const {
         language,
         names,
         roleDictionary,
         dataDictionary,
         filter,
-        playersCount,
-        characters
     } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState,
@@ -46,17 +38,10 @@ const GodVision = () => {
     // 
     const [statFilter, setStatFilter] = useState("all")
 
-    useEffect(() => {
-        if ((!isObjAvailable(roleDictionary) && names.length === playersCount) ||
-            listsMissmatch(names, Object.keys(roleDictionary))) {
-            dispatch(updateRoleDictionary(names, characters))
-        }
-    }, [names, characters, dispatch, playersCount, roleDictionary])
-
     return (
         <div className={styles.container}>
             <FilterContainer value={value} changeHandler={changeHandler} language={language} />
-            <StatFilter setStatFilter={setStatFilter} statFilter={statFilter}/>
+            <StatFilter setStatFilter={setStatFilter} statFilter={statFilter} />
             {names.map(name => {
                 const character = mapCharIdToCharacter(roleDictionary[name], language)
                 const role = character?.title

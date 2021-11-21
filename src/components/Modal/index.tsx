@@ -22,6 +22,7 @@ import ScenarioCard from '../ScenarioCard';
 // services
 import toFarsiNumber from '../../services/convertNumbersToFa';
 import { getModal } from '../../services/getPageData';
+import { shorten } from '../../services/shorten';
 
 interface Props {
     language: string,
@@ -77,7 +78,7 @@ const ModalContainer: FC<Props> = ({
                 <Modal.Title>
                     <h2>
                         {type === "showRole" ?
-                            title
+                            shorten(title as string)
                             :
                             language === "persian" ? toFarsiNumber(`${title}`) : title}
                     </h2>

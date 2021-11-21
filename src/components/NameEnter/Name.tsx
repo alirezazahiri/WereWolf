@@ -21,6 +21,7 @@ import checkName from '../../services/checkName';
 
 // components 
 import Icon from '../Icon';
+import { changeDataDictionary, editPlayerData } from '../../redux/playersData/playersDataActions';
 
 type Props = {
     name: string,
@@ -29,9 +30,10 @@ type Props = {
 
 const Name: FC<Props> = ({ name, index }) => {
     const dispatch = useDispatch()
-    const { language, names } = useSelector((state: AppState) => ({
+    const { language, names, dataDictionary } = useSelector((state: AppState) => ({
         ...state.languageState,
-        ...state.playersState
+        ...state.playersState,
+        ...state.playersDataState
     }))
     const [canEdit, setCanEdit] = useState(false)
     const [newName, setNewName] = useState(name)
@@ -49,6 +51,8 @@ const Name: FC<Props> = ({ name, index }) => {
         const checkedName = checkName(names, newName.trim(), "unknown", language, name.trim())
         if (checkedName) {
             dispatch(editName(newName, index))
+            dispatch(changeDataDictionary(newName, {...dataDictionary[name], text: "", alive: true, unmute: true}))
+            dispatch(editPlayerData(name, newName))
             setCanEdit(false)
             setCurrentName(newName)
         }

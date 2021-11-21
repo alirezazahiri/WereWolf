@@ -20,6 +20,7 @@ import { AppState } from '../../redux/store';
 import { getPlayerVision } from '../../services/getPageData';
 import getChars from "../../services/getPageData"
 import getColor from '../../services/getColor';
+import { shorten } from '../../services/shorten';
 
 
 type SquadType = "mafia" | "citizen" | "independent" | "mid-independent"
@@ -55,7 +56,7 @@ const PlayerVision = () => {
     }
 
     // stats 
-    const { alive, unmute } = dataDictionary[player]
+    const { alive, unmute } = dataDictionary[player] ? dataDictionary[player] : { alive: true, unmute: true }
 
     const PLAYER_CHARACTER = getChars(language).characters[PLAYER_ROLE_ID - 1]
     const COLOR = getColor(PLAYER_CHARACTER.type)
@@ -69,19 +70,22 @@ const PlayerVision = () => {
     }
 
     const aliveChangeHandler = () => {
-        const alive = dataDictionary[player].alive
-        dispatch(changeDataDictionary(player, { ...dataDictionary[player], alive: !alive }))
+        if (alive)
+            dispatch(changeDataDictionary(player, { ...dataDictionary[player], alive: false, unmute: false }))
+        else
+            dispatch(changeDataDictionary(player, { ...dataDictionary[player], alive: true }))
     }
 
     const muteChangeHandler = () => {
         const unmute = dataDictionary[player].unmute
-        dispatch(changeDataDictionary(player, { ...dataDictionary[player], unmute: !unmute }))
+        if (dataDictionary[player].alive)
+            dispatch(changeDataDictionary(player, { ...dataDictionary[player], unmute: !unmute }))
     }
 
     return (
         <div className={styles.container} style={{ color: COLOR }}>
             <div className={styles.headerContainer}>
-                <h1>{playerName}</h1>
+                <h1>{shorten(playerName as string)}</h1>
                 <Link to="/god-vision"><Icon icon="arrow-left" /></Link>
             </div>
             {/* title */}
@@ -95,7 +99,7 @@ const PlayerVision = () => {
             {/* Text */}
             <div className={styles.playerTextContainer}>
                 <textarea
-                    value={dataDictionary[player].text}
+                    value={dataDictionary[player]?.text}
                     onChange={changeHandler}
                     style={{ color: COLOR, border: `1px solid ${COLOR}` }}
                 />
@@ -107,14 +111,14 @@ const PlayerVision = () => {
             {/* death stat */}
             <StatSwitch
                 onChange={aliveChangeHandler}
-                checked={alive}
+                checked={alive === undefined ? true : alive}
                 title={alive ? stats.alive : stats.dead}
                 color={COLOR}
             />
             {/* mute stat */}
             <StatSwitch
                 onChange={muteChangeHandler}
-                checked={unmute}
+                checked={unmute === undefined ? true : unmute}
                 title={unmute ? stats.unmute : stats.mute}
                 color={COLOR}
             />

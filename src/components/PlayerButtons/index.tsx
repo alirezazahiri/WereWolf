@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-
 // react-redux 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,8 +10,6 @@ import { updateRoleDictionary, createDataDictionary } from '../../redux/playersD
 // services 
 import mapCharIdToCharacter from '../../services/mapCharIdToCharacter';
 import { getPlayerButtons } from '../../services/getPageData';
-import isObjAvailable from '../../services/isObjAvailable';
-import listsMissmatch from '../../services/listsMismatch';
 import showToast from '../../services/showToast';
 
 // components 
@@ -28,8 +24,6 @@ const PlayerButtons = () => {
         language,
         roleDictionary,
         characters,
-        names,
-        playersCount
     } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState,
@@ -38,13 +32,6 @@ const PlayerButtons = () => {
     }))
 
     const { buttons, update_message } = getPlayerButtons(language)
-
-    useEffect(() => {
-        if ((!isObjAvailable(roleDictionary) && names.length === playersCount) ||
-            listsMissmatch(names, Object.keys(roleDictionary))) {
-            dispatch(updateRoleDictionary(names, characters))
-        }
-    }, [names, characters, dispatch, playersCount, roleDictionary])
 
     const updateHandler = () => {
         dispatch(createDataDictionary(Object.keys(roleDictionary)))

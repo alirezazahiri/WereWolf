@@ -15,7 +15,7 @@ const stats = {
     dead: "مرده",
     mute: "ساکت",
     unmute: "سخنگو",
-    all: "همه"
+    all: "بدون فیلتر"
 }
 
 export const player_vision_objects_fa = { playerBrief, squads, stats };
