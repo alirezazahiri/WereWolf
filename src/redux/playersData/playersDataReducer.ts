@@ -67,7 +67,11 @@ const playersDataReducer = (
             const { prevKey, newKey } = action.payload;
             const newDataDictionary: DictType = state.dataDictionary;
             const newRoleDictionary: DictType = state.roleDictionary;
-            newDataDictionary[newKey] = state.dataDictionary[prevKey];
+            newDataDictionary[newKey] = {
+                ...state.dataDictionary[prevKey],
+                alive: true,
+                unmute: true,
+            };
             newRoleDictionary[newKey] = state.roleDictionary[prevKey];
             delete newDataDictionary[prevKey];
             delete newRoleDictionary[prevKey];

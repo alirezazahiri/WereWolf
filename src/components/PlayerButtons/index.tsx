@@ -17,6 +17,7 @@ import PButton from './PButton';
 
 // styles 
 import styles from "./PlayerButtons.module.css"
+import { useEffect } from 'react';
 
 const PlayerButtons = () => {
     const dispatch = useDispatch()
@@ -38,6 +39,13 @@ const PlayerButtons = () => {
         dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters))
         showToast("success", update_message)
     }
+
+    useEffect(() => {
+        const values = Object.values(roleDictionary).reduce((prev, current) => prev + current, '')
+        if (values === "") {
+            dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters))
+        }
+    }, [characters, dispatch, roleDictionary])
 
     return (
         <div className={styles.container}>

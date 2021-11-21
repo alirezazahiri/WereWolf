@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // custom hooks
 import useSearch from '../../hooks/useSearch';
@@ -18,14 +18,17 @@ import toFarsiNumber from '../../services/convertNumbersToFa';
 // styles 
 import styles from "./GodVision.module.css"
 import StatFilter from './StatFilter';
+import { updateRoleDictionary } from '../../redux/playersData/playersDataActions';
 
 const GodVision = () => {
+    const dispatch = useDispatch()
     const {
         language,
         names,
         roleDictionary,
         dataDictionary,
         filter,
+        characters
     } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState,
@@ -37,6 +40,13 @@ const GodVision = () => {
 
     // 
     const [statFilter, setStatFilter] = useState("all")
+
+    useEffect(() => {
+        const values = Object.values(roleDictionary).reduce((prev, current) => prev + current, '')
+        if (values === "") {
+            dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters))
+        }
+    }, [characters, dispatch, roleDictionary])
 
     return (
         <div className={styles.container}>

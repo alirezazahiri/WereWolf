@@ -70,15 +70,14 @@ const PlayerVision = () => {
     }
 
     const aliveChangeHandler = () => {
-        if (alive)
+        if (alive || alive === undefined)
             dispatch(changeDataDictionary(player, { ...dataDictionary[player], alive: false, unmute: false }))
         else
             dispatch(changeDataDictionary(player, { ...dataDictionary[player], alive: true }))
     }
 
     const muteChangeHandler = () => {
-        const unmute = dataDictionary[player].unmute
-        if (dataDictionary[player].alive)
+        if (alive || alive === undefined)
             dispatch(changeDataDictionary(player, { ...dataDictionary[player], unmute: !unmute }))
     }
 
