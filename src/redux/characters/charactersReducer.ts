@@ -1,4 +1,4 @@
-// types 
+// types
 import { ICharactersActions, ICharactersState } from "../types";
 
 const initialState: ICharactersState = {
@@ -44,6 +44,12 @@ const charactersReducer = (
             return {
                 ...state,
                 characters: [],
+            };
+
+        case "SET_CHARACTERS":
+            return {
+                ...state,
+                characters: action.payload,
             };
         default:
             return state;

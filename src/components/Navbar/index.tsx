@@ -29,6 +29,7 @@ const NavBar: FC = () => {
         title,
         guide,
         senarios,
+        suggested_scenarios,
         players,
         gods_room,
         game_setup } = getNavbar(language)
@@ -54,6 +55,7 @@ const NavBar: FC = () => {
                         <NavLink to="/players-roles">{players}</NavLink>
                         <NavLink to="/god-vision">{gods_room}</NavLink>
                         <NavLink to="/scenarios">{senarios}</NavLink>
+                        <NavLink to="/suggested-scenarios">{suggested_scenarios}</NavLink>
                         <NavLink to="/guide">{guide}</NavLink>
                     </Nav>
                 </Navbar.Collapse>

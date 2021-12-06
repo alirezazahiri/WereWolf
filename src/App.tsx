@@ -10,15 +10,17 @@ import { Provider } from "react-redux"
 import store, { persistor } from './redux/store';
 
 // components 
+import SuggestedScenarios from "./components/SuggestedScenarios";
+import SuggestionVision from "./components/SuggestionVision";
 import PlayerButtons from "./components/PlayerButtons";
 import PlayerVision from "./components/PlayerVision";
-import Scenarios from "./components/Scenarios/index";
-import GameSetup from "./components/GameSetup/index";
-import GodVision from "./components/GodVision/index";
-import NavBar from "./components/Navbar/index";
-import Layout from "./components/Layout/index";
-import Guide from "./components/Guide/index";
-import Home from "./components/Home/index";
+import Scenarios from "./components/Scenarios";
+import GameSetup from "./components/GameSetup";
+import GodVision from "./components/GodVision";
+import NavBar from "./components/Navbar";
+import Layout from "./components/Layout";
+import Guide from "./components/Guide";
+import Home from "./components/Home";
 
 // Toast
 import { Toaster } from "react-hot-toast";
@@ -38,6 +40,8 @@ const App = () => {
             <Route path="/game-setup" element={<GameSetup />} />
             <Route path="/players-roles" element={<PlayerButtons />} />
             <Route path="/god-vision/:playerName" element={<PlayerVision />} />
+            <Route path="/suggested-scenarios" element={<SuggestedScenarios />} />
+            <Route path="/suggested-scenarios/:id" element={<SuggestionVision />} />
             <Route path="/god-vision" element={<GodVision />} />
             <Route path="/scenarios" element={<Scenarios />} />
             <Route path="/guide" element={<Guide />} />

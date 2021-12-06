@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.container button {
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+    align-items: center;
+    transition: all 0.2s;
+    font-family: 'Cairo', sans-serif;
+}
+
+.container button:hover {
+    border-radius: 12px;
+}

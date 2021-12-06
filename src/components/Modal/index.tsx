@@ -14,6 +14,7 @@ import { AppState } from '../../redux/store';
 import Modal from "react-bootstrap/Modal";
 
 // components 
+import ScenarioCharSet from '../SuggestionVision/ScenarioCharSet';
 import CharSelect from '../CharSelect/index';
 import HeaderButtons from './HeaderButtons';
 import NameEnter from '../NameEnter/index';
@@ -29,7 +30,9 @@ interface Props {
     type: string,
     show: boolean,
     character?: CharType,
+    charactersSet?: CharType[],
     pName?: string,
+    scenarioName?: string,
     closeHandler: (() => void),
     backHandler?: (() => void),
     startHandler?: (() => void),
@@ -41,11 +44,13 @@ const ModalContainer: FC<Props> = ({
     type,
     show,
     pName,
+    scenarioName,
     closeHandler,
     backHandler,
     startHandler,
     gotoCharSelect,
-    character
+    character,
+    charactersSet
 }) => {
     const { buttons } = getModal(language)
     const { playersCount, names, characters } = useSelector((state: AppState) => ({
@@ -60,6 +65,8 @@ const ModalContainer: FC<Props> = ({
         title = playersCount - characters.length
     else if (type === "showRole")
         title = pName
+    else if (type === "showScenario")
+        title = scenarioName
     else
         title = ""
 
@@ -77,7 +84,7 @@ const ModalContainer: FC<Props> = ({
             >
                 <Modal.Title>
                     <h2>
-                        {type === "showRole" ?
+                        {(type === "showRole" || type === "showScenario") ?
                             shorten(title as string)
                             :
                             language === "persian" ? toFarsiNumber(`${title}`) : title}
@@ -102,6 +109,7 @@ const ModalContainer: FC<Props> = ({
                 {type === "nameEnter" && <NameEnter />}
                 {type === "charSelect" && <CharSelect />}
                 {(type === "charInfo" || type === "showRole") && character && <ScenarioCard character={character} />}
+                {type === "showScenario" && <ScenarioCharSet characters={charactersSet as CharType[]} />}
             </Modal.Body>
         </Modal>
     );

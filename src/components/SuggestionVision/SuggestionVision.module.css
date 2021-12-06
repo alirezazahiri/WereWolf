@@ -1,0 +1,24 @@
+.showCharSetBtn {
+    color: #50cb93;
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    transition: all 0.3s;
+    background-color: none;
+    border: 1px solid;
+    padding: 1.5rem 1.6rem;
+    display: flex;
+    box-shadow: -5px 0 25px 0 #5c527f38,
+        0 0 25px 0 #d6013650,
+        5px 0 5px 0 #66de943a;
+}
+
+.showCharSetBtn:hover {
+    color: rgb(71 58 121);
+    box-shadow: -5px 0 25px 0 #5c527f,
+        0 0 25px 0 #d60136,
+        5px 0 5px 0 #66de94;
+}

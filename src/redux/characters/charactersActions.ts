@@ -16,3 +16,8 @@ export const decreaseCharacter = (character: CharType) => ({
 export const resetCharacters = () => ({
     type: "RESET_CHARACTERS",
 });
+
+export const setCharacters = (characters: number[]) => ({
+    type: "SET_CHARACTERS",
+    payload: characters,
+})
