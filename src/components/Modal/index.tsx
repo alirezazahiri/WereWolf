@@ -28,20 +28,24 @@ import { shorten } from '../../services/shorten';
 interface Props {
     language: string,
     type: string,
+    allowGameStart?: boolean,
     show: boolean,
     character?: CharType,
     charactersSet?: CharType[],
     pName?: string,
     scenarioName?: string,
+    countOfPlayers?: number,
     closeHandler: (() => void),
     backHandler?: (() => void),
     startHandler?: (() => void),
-    gotoCharSelect?: (() => void)
+    gotoCharSelect?: (() => void),
+    gotoSeeCharacters?: (() => void)
 }
 
 const ModalContainer: FC<Props> = ({
     language,
     type,
+    allowGameStart,
     show,
     pName,
     scenarioName,
@@ -49,18 +53,21 @@ const ModalContainer: FC<Props> = ({
     backHandler,
     startHandler,
     gotoCharSelect,
+    gotoSeeCharacters,
     character,
-    charactersSet
+    charactersSet,
+    countOfPlayers,
 }) => {
     const { buttons } = getModal(language)
     const { playersCount, names, characters } = useSelector((state: AppState) => ({
         ...state.playersState,
         ...state.charactersState
     }))
-
     let title
     if (type === "nameEnter")
         title = playersCount - names.length
+    else if (type === "scenarioNameEnter" && countOfPlayers)
+        title = countOfPlayers - names.length
     else if (type === "charSelect")
         title = playersCount - characters.length
     else if (type === "showRole")
@@ -99,6 +106,8 @@ const ModalContainer: FC<Props> = ({
                         closeHandler={closeHandler}
                         backHandler={backHandler}
                         gotoCharSelect={gotoCharSelect}
+                        gotoSeeCharacters={gotoSeeCharacters}
+                        allowGameStart={allowGameStart}
                         startGame={startHandler}
                         remaining={title}
                     />
@@ -107,9 +116,10 @@ const ModalContainer: FC<Props> = ({
             <Modal.Body>
                 {/* components */}
                 {type === "nameEnter" && <NameEnter />}
+                {type === "scenarioNameEnter" && <NameEnter countOfPlayers={countOfPlayers} />}
                 {type === "charSelect" && <CharSelect />}
                 {(type === "charInfo" || type === "showRole") && character && <ScenarioCard character={character} />}
-                {type === "showScenario" && <ScenarioCharSet characters={charactersSet as CharType[]} />}
+                {type === "showScenario" && <ScenarioCharSet characters={charactersSet as (CharType & { count: number })[]} />}
             </Modal.Body>
         </Modal>
     );

@@ -10,19 +10,7 @@ import suggestions from './utils';
 
 const SuggestedScenarios = () => {
     const { language } = useSelector((state: AppState) => state.languageState)
-    // const dispatch = useDispatch()
-
-    // const getStartedWithScenario = (characters: number[]) => {
-    //     /* 
-    //      * fetch number of players
-    //      * open NameEnterModal (with unique status)
-    //      * if names count is equal to playersCount
-    //      */
-
-    //     const playersCount = characters.length
-    //     dispatch(setCountOfPlayers(`${playersCount}`))
-    //     /* TODO: MOVE THIS TO A RELATED COMPONENT! */
-    // }
+    
 
     return (
         <div>

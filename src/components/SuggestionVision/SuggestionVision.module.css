@@ -1,3 +1,24 @@
+.container {
+    text-align: center;
+}
+
+.headerContainer {
+    margin: 12rem 8rem;
+}
+
+.headerContainer h1 {
+    color: rgb(71, 58, 121);
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.headerContainer p {
+    color: #50cb93;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-top: 2.5rem;
+}
+
 .showCharSetBtn {
     color: #50cb93;
     font-size: 4rem;
@@ -21,4 +42,20 @@
     box-shadow: -5px 0 25px 0 #5c527f,
         0 0 25px 0 #d60136,
         5px 0 5px 0 #66de94;
+}
+
+.nameEnterBtn {
+    color: rgb(80, 203, 147);
+    border: 1px solid rgba(71, 58, 121, 0.8);
+    padding: 20px 30px;
+
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(71, 58, 121, 0.8);
+    backdrop-filter: blur(15px);
+    background-color: rgba(71, 58, 121, 0.1);
+    transition: all 0.2s ease;
+}
+
+.nameEnterBtn:hover {
+    border-radius: 1.2rem;
 }

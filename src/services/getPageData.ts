@@ -41,6 +41,8 @@ import { guide_objects_fa } from "../translations/Guide/Guide-fa";
 // PlayerVision
 import { player_vision_objects_en } from "../translations/PlayerVision/PlayerVision-en";
 import { player_vision_objects_fa } from "../translations/PlayerVision/PlayerVision-fa";
+import { suggestion_vision_objects_en } from "../translations/SuggestionVision/suggestionVision-en";
+import { suggestion_vision_objects_fa } from "../translations/SuggestionVision/suggestionVision-fa";
 
 const getChars = (language: string) => {
     return language === "english" ? chars_en : chars_fa;
@@ -98,6 +100,12 @@ const getPlayerVision = (language: string) => {
         : player_vision_objects_fa;
 };
 
+const getSuggestionVision = (language: string) => {
+    return language === "english"
+        ? suggestion_vision_objects_en
+        : suggestion_vision_objects_fa;
+};
+
 export {
     getChars as default,
     getHome,
@@ -110,4 +118,5 @@ export {
     getPlayerButtons,
     getGuide,
     getPlayerVision,
+    getSuggestionVision,
 };

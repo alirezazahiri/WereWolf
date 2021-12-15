@@ -35,20 +35,25 @@ import {
 
 // styles 
 import styles from "./HeaderButtons.module.css"
+import { MODAL_HEADER_SUCCESS_SUGGESTION_FA, MODAL_HEADER_SUCCESS_SUGGESTION_EN } from '../../translations/Toaster/toast-messages';
+import { setCountOfPlayers } from '../../redux/players/playersActions';
 
 type Props = {
     language: string,
     remaining: any,
     type: string,
+    allowGameStart?: boolean,
     buttons: {
         close: string,
         back_to_name_enter: string,
         start: string,
         go_to_char_select: string,
+        see_characters: string
     },
     closeHandler?: (() => void),
     backHandler?: (() => void),
     gotoCharSelect?: (() => void),
+    gotoSeeCharacters?: (() => void),
     startGame?: (() => void)
 }
 
@@ -56,10 +61,12 @@ const HeaderButtons: FC<Props> = ({
     language,
     remaining,
     type,
+    allowGameStart,
     buttons,
     closeHandler,
     backHandler,
     gotoCharSelect,
+    gotoSeeCharacters,
     startGame
 }) => {
     const navigate = useNavigate()
@@ -70,6 +77,22 @@ const HeaderButtons: FC<Props> = ({
     }))
 
     const handleGoto = () => {
+        if (type === "scenarioNameEnter" && gotoSeeCharacters) {
+            if (remaining !== 0) {
+                const message = language === "persian" ?
+                    MODAL_HEADER_ERROR_FA : MODAL_HEADER_ERROR_EN
+                showToast('error', message(remaining))
+            } else {
+                const message = language === "persian" ?
+                    MODAL_HEADER_SUCCESS_SUGGESTION_FA : MODAL_HEADER_SUCCESS_SUGGESTION_EN
+                showToast('success', message)
+                dispatch(setCountOfPlayers(`${names.length}`))
+                dispatch(createRoleDictionary(names))
+                dispatch(createDataDictionary(names))
+                gotoSeeCharacters()
+            }
+            return
+        }
         if (gotoCharSelect) {
             if (remaining !== 0) {
                 const message = language === "persian" ?
@@ -88,6 +111,15 @@ const HeaderButtons: FC<Props> = ({
     }
 
     const handleStart = () => {
+        if (type === "showScenario" && startGame) {
+            const message = language === "persian" ?
+                MODAL_HEADER_SUCCESS_CHARS_FA : MODAL_HEADER_SUCCESS_CHARS_EN
+            showToast('success', message)
+            dispatch(updateRoleDictionary(names, characters))
+            navigate("/players-roles")
+            startGame()
+            return
+        }
         if (startGame) {
             if (remaining !== 0) {
                 const message = language === "persian" ?
@@ -108,12 +140,15 @@ const HeaderButtons: FC<Props> = ({
     useEffect(() => {
         if (remaining === 0 && type === "nameEnter")
             showToast("success", buttons.go_to_char_select)
+        if (remaining === 0 && type === "scenarioNameEnter")
+            showToast("success", buttons.see_characters)
         else if (remaining === 0 && type === "charSelect")
             showToast("success", buttons.start)
     }, [
         remaining,
         buttons.start,
         buttons.go_to_char_select,
+        buttons.see_characters,
         type
     ])
 
@@ -131,6 +166,23 @@ const HeaderButtons: FC<Props> = ({
                     </button>
                     <button className={styles.start} onClick={handleStart}>
                         {buttons.start}
+                    </button>
+                </>
+            }
+            {type === "scenarioNameEnter" &&
+
+                <button className={styles.goto} onClick={handleGoto}>
+                    {buttons.see_characters}
+                </button>
+
+            }
+            {
+                type === "showScenario" &&
+                allowGameStart && <><button className={styles.start} onClick={handleStart}>
+                    {buttons.start}
+                </button>
+                    <button className={styles.back} onClick={backHandler}>
+                        {buttons.back_to_name_enter}
                     </button>
                 </>
             }

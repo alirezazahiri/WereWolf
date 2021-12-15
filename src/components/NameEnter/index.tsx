@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, FC } from 'react';
 
 // react-redux 
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,13 +19,17 @@ import checkName from '../../services/checkName';
 // styles 
 import styles from "./NameEnter.module.css"
 
-const NameEnter = () => {
+type Props = {
+    countOfPlayers?: number
+}
+
+const NameEnter: FC<Props> = ({ countOfPlayers }) => {
     const dispatch = useDispatch()
     const { language, names, playersCount } = useSelector((state: AppState) => ({
         ...state.languageState,
         ...state.playersState
     }))
-    const remaining = playersCount - names.length
+    const remaining = (countOfPlayers ? countOfPlayers : playersCount) - names.length
 
     const { buttons, unknown } = getNameEnter(language);
     const [name, setName] = useState("")

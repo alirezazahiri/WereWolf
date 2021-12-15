@@ -2,13 +2,14 @@ import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
 import { CharType } from '../../redux/types';
+import toFarsiNumber from '../../services/convertNumbersToFa';
 import getColor from '../../services/getColor';
 import Icon from '../Icon';
 import ModalContainer from '../Modal';
 import styles from "./CharSetItem.module.css"
 
 type Props = {
-    character: CharType,
+    character: CharType & { count: number },
     isLastChild: boolean
 }
 
@@ -36,7 +37,12 @@ const CharSetItem: FC<Props> = ({ character, isLastChild }) => {
         >
             <button onClick={() => setShow(true)} style={buttonStyle}>
                 <Icon icon={character.icon} />
-                <p>{character.title}</p>
+                <p>{character.title} {
+                    character.count > 1 ? language === "persian" ?
+                        toFarsiNumber(`x${character.count}`) :
+                        `x${character.count}` : ""
+                }
+                </p>
             </button>
             <ModalContainer
                 language={language}

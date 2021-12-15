@@ -32,6 +32,10 @@ export const MODAL_HEADER_ERROR_CHAR_FA = (num: number) =>
 export const MODAL_HEADER_SUCCESS_EN = "pick characters for the scenario";
 export const MODAL_HEADER_SUCCESS_FA = "سناریو خود را بچینید";
 
+// MODAL HEADER SUCCESS SUGGESTION
+export const MODAL_HEADER_SUCCESS_SUGGESTION_EN = "See characters of the scenario";
+export const MODAL_HEADER_SUCCESS_SUGGESTION_FA = "سناریو خود را ببینید";
+
 export const MODAL_HEADER_SUCCESS_CHARS_EN = "tap on the name to see player's role";
 export const MODAL_HEADER_SUCCESS_CHARS_FA = "برای دیدن نقش ها روی بازیکن ها کلیک کنید";
 
