@@ -6,7 +6,7 @@ const mapCharIdToCharacter = (
     language: string
 ): CharType | undefined => {
     const { characters } = getChars(language);
-    return characters.find((ch: CharType) => ch.id === id);
+    return characters.find((ch: CharType) => `${ch.id}` === `${id}`);
 };
 
 export default mapCharIdToCharacter;

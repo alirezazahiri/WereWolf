@@ -20,6 +20,7 @@ import styles from "./GodVision.module.css";
 import StatFilter from "./StatFilter";
 import { updateRoleDictionary } from "../../redux/playersData/playersDataActions";
 import { CharType } from "../../redux/types";
+import Statistics from "../Statistics";
 
 const GodVision = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const GodVision = () => {
 
   return (
     <div className={styles.container}>
+      <Statistics />
       <FilterContainer
         value={value}
         changeHandler={changeHandler}

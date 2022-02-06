@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useEffect, useReducer } from "react"
 
 // react-redux 
 import { useSelector } from "react-redux"
@@ -20,13 +20,15 @@ import PlayersGuide from "./PlayersGuide"
 import GodVisionGuide from "./GodVisionGuide"
 import ScenariosGuide from "./ScenariosGuide"
 import GuideFilters from "./GuideFilters"
+import SuggestedScenariosGuide from "./SuggestedScenariosGuide"
 
 const initialState = {
-    navbar: true,
+    navbar: false,
     startGame: false,
     gameSetup: false,
     players: false,
     godVision: false,
+    suggestionedScenarios: false,
     scenarios: false,
 }
 
@@ -35,15 +37,17 @@ const reducer = (state = initialState, action: string) => {
         case "NAVBAR":
             return { ...initialState, navbar: true }
         case "START_GAME":
-            return { ...initialState, navbar: false, startGame: true }
+            return { ...initialState, startGame: true }
         case "GAME_SETUP":
-            return { ...initialState, navbar: false, gameSetup: true }
+            return { ...initialState, gameSetup: true }
         case "PLAYERS":
-            return { ...initialState, navbar: false, players: true }
+            return { ...initialState, players: true }
         case "GOD_VISION":
-            return { ...initialState, navbar: false, godVision: true }
+            return { ...initialState, godVision: true }
+        case "SUGGESTED_SCENARIOS":
+            return { ...initialState, suggestionedScenarios: true }
         case "SCENARIOS":
-            return { ...initialState, navbar: false, scenarios: true }
+            return { ...initialState, scenarios: true }
         default: return state
     }
 }
@@ -58,8 +62,13 @@ const Guide = () => {
         gameSetupGuide,
         playersGuide,
         godVisionGuide,
-        scenariosGuide
+        scenariosGuide,
+        suggestionedScenarios
     } = getGuide(language)
+
+    useEffect(() => {
+        dispatch("NAVBAR")
+    }, [])
 
     return (
         <div className={styles.container}>
@@ -72,6 +81,7 @@ const Guide = () => {
             {filter.gameSetup && <GameSetupGuide {...gameSetupGuide} />}
             {filter.players && <PlayersGuide {...playersGuide} />}
             {filter.godVision && <GodVisionGuide {...godVisionGuide} />}
+            {filter.suggestionedScenarios && <SuggestedScenariosGuide {...suggestionedScenarios} />}
             {filter.scenarios && <ScenariosGuide {...scenariosGuide} />}
         </div>
     )

@@ -18,6 +18,7 @@ import {
   createDataDictionary,
   createRoleDictionary,
 } from "../../redux/playersData/playersDataActions";
+import Statistics from "../Statistics";
 
 const SuggestionVision = () => {
   const [characters, setCharacters] = useState<CharType[]>([]);
@@ -66,6 +67,7 @@ const SuggestionVision = () => {
 
   return (
     <>
+      <Statistics suggestion={suggestion} />
       {
         suggestion ? (
           <div className={styles.container}>
@@ -91,11 +93,7 @@ const SuggestionVision = () => {
             </button>
             <ModalContainer
               language={language}
-              scenarioName={
-                language === "persian"
-                  ? "سناریو"
-                  : "Scenario"
-              }
+              scenarioName={language === "persian" ? "سناریو" : "Scenario"}
               type="showScenario"
               allowGameStart={allow}
               show={show}

@@ -35,3 +35,7 @@ export type ScenariosObj = {
     title: string;
     description: string;
 };
+export type SuggestionedScenariosObj = {
+    title: string;
+    description: string;
+};
