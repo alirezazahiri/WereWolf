@@ -30,7 +30,7 @@ const SuggestionVision = () => {
   const [show2, setShow2] = useState(false);
   const [allow, setAllow] = useState(false);
   const params = useParams();
-  const { buttons, title, description } = getSuggestionVision(language);
+  const { buttons, description } = getSuggestionVision(language);
 
   const suggestion = suggestions.find(({ id }) => `${id}` === params.id);
 
@@ -62,7 +62,7 @@ const SuggestionVision = () => {
       dispatch(createRoleDictionary(newNames));
     }
     return getCharacters;
-  }, [language, getCharacters]);
+  }, [language, getCharacters, dispatch, names, suggestion?.characters.length]);
 
   return (
     <>
@@ -70,7 +70,11 @@ const SuggestionVision = () => {
         suggestion ? (
           <div className={styles.container}>
             <div className={styles.headerContainer}>
-              <h1>{title}</h1>
+              <h1>
+                {language === "persian"
+                  ? suggestion.fa_title
+                  : suggestion.en_title}
+              </h1>
               <p>{description}</p>
             </div>
             <button
@@ -89,8 +93,8 @@ const SuggestionVision = () => {
               language={language}
               scenarioName={
                 language === "persian"
-                  ? suggestion.fa_title
-                  : suggestion.en_title
+                  ? "سناریو"
+                  : "Scenario"
               }
               type="showScenario"
               allowGameStart={allow}

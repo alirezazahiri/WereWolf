@@ -14,7 +14,7 @@ const SuggestedScenarios = () => {
 
     return (
         <div>
-            {suggestions.map(({
+            {suggestions.sort((a, b) => a.characters.length - b.characters.length).map(({
                 id,
                 en_title,
                 fa_title

@@ -144,7 +144,7 @@ const citizens = [
     icon: "building-o",
     title: "Mayor",
     description:
-      "Once in a whole game it can cancel the second turn of voting, at the intro night it will see doctors and surgeon's hand",
+      "Once in a whole game it can cancel the second turn of voting, at the intro night it will see doctors and Dr. Lecter's hand",
     max: 1,
     type: "citizen",
   },
@@ -462,7 +462,7 @@ const mafias = [
     icon: "flask",
     title: "Pharmacist",
     description:
-      "# nights in the game it can choose a player to give 'em the Corona's cure, and also it gives the cure to the first none-mafia player, and the cure keeps him safe from being infected for 3 days",
+      "3 nights in the game it can choose a player to give 'em the Corona's cure, and also it gives the cure to the first none-mafia player, and the cure keeps him safe from being infected for 3 days",
     max: 1,
     type: "mafia",
   },
@@ -496,7 +496,7 @@ const mafias = [
   {
     id: 47,
     icon: "user-md",
-    title: "Surgeon",
+    title: "Dr. Lecter",
     description:
       "Everynight he can save one mafia (can choose himself only once), rises a hand with the Doctor at the introduction night for the Mayor",
     max: 1,
@@ -603,7 +603,7 @@ const independents = [
     icon: "odnoklassniki",
     title: "Deputy",
     description:
-      "He will not be killed at night as long as the doctor or surgeon is present. Knows the mayor. As an identity, it has a counterpart and will have a shot when the doctor and surgeon (both) are removed from the game. The condition for his victory is the victory of Thousand-Faced",
+      "He will not be killed at night as long as the doctor or Dr. Lecter is present. Knows the mayor. As an identity, it has a counterpart and will have a shot when the doctor and Dr. Lecter (both) are removed from the game. The condition for his victory is the victory of Thousand-Faced",
     max: 1,
     type: "independent",
   },
