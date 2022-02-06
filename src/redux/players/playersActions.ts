@@ -16,3 +16,8 @@ export const editName = (name: string, index: number) => ({
 export const resetPlayers = () => ({
     type: "RESET_NAMES",
 });
+
+export const setPlayersNames = (names: string[]) => ({
+    type: "SET_PLAYERS_NAMES",
+    payload: names
+})

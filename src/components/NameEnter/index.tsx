@@ -61,7 +61,7 @@ const NameEnter: FC<Props> = ({ countOfPlayers }) => {
                 {buttons.reset}
             </button>
             <div>
-                {names.map((name, index) => (
+                {names.map((name: string, index: number) => (
                     <Name
                         key={`${index + 1}`}
                         name={name}
