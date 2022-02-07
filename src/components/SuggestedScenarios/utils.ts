@@ -26,8 +26,8 @@ const suggestions: SuggestionType[] = [
   },
   {
     id: 4,
-    en_title: "13x - Advanced Classic Mafia",
-    fa_title: "مافیا کلاسیک پیشرفته - ۱۳ نفره",
+    en_title: "13x - Advanced Classic Mafia (WereWolf)",
+    fa_title: "مافیا کلاسیک پیشرفته (گرگ نما) - ۱۳ نفره",
     characters: [2, 3, 4, 6, 7, 11, 12, 22, 23, 36, 37, 50, 60],
   },
   {

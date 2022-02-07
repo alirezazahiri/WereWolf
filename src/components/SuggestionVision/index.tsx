@@ -67,7 +67,6 @@ const SuggestionVision = () => {
 
   return (
     <>
-      <Statistics suggestion={suggestion} />
       {
         suggestion ? (
           <div className={styles.container}>
@@ -78,6 +77,9 @@ const SuggestionVision = () => {
                   : suggestion.en_title}
               </h1>
               <p>{description}</p>
+            </div>
+            <div className={styles.statContainer}>
+              <Statistics suggestion={suggestion} />
             </div>
             <button
               onClick={() => setShow2(true)}

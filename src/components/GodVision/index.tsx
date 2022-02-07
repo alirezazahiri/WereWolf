@@ -55,7 +55,9 @@ const GodVision = () => {
 
   return (
     <div className={styles.container}>
-      <Statistics />
+      <div className={styles.statContainer}>
+        <Statistics />
+      </div>
       <FilterContainer
         value={value}
         changeHandler={changeHandler}
