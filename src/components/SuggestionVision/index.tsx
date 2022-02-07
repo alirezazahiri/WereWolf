@@ -8,7 +8,7 @@ import { AppState } from "../../redux/store";
 import ModalContainer from "../Modal";
 import styles from "./SuggestionVision.module.css";
 import Icon from "../Icon";
-import { getSuggestionVision } from "../../services/getPageData";
+import { getCaution, getSuggestionVision } from "../../services/getPageData";
 import {
   setCountOfPlayers,
   setPlayersNames,
@@ -19,6 +19,7 @@ import {
   createRoleDictionary,
 } from "../../redux/playersData/playersDataActions";
 import Statistics from "../Statistics";
+import { setCharactersStore } from '../../redux/characters/charactersActions';
 
 const SuggestionVision = () => {
   const [characters, setCharacters] = useState<CharType[]>([]);
@@ -29,9 +30,11 @@ const SuggestionVision = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [showCaution, setShowCaution] = useState(false);
   const [allow, setAllow] = useState(false);
   const params = useParams();
   const { buttons, description } = getSuggestionVision(language);
+  const { suggested_scenarions_caution } = getCaution(language);
 
   const suggestion = suggestions.find(({ id }) => `${id}` === params.id);
 
@@ -43,8 +46,9 @@ const SuggestionVision = () => {
       ...mapCharIdToCharacter(charID, language),
       count: (charIdList as number[]).filter((id) => id === charID).length,
     }));
-    setCharacters(charactersInScenario as CharType[]);
-  }, [language, suggestion?.characters]);
+    setCharacters(charactersInScenario as CharType[])
+    dispatch(setCharactersStore(suggestion?.characters || []));
+  }, [language, suggestion?.characters, dispatch]);
 
   const handleStartScenario = () => {
     const playersCount = `${suggestion?.characters.length}`;
@@ -56,14 +60,21 @@ const SuggestionVision = () => {
 
   useEffect(() => {
     const playersCount = suggestion?.characters.length || 0;
-    if (names.length > playersCount) {
+    if (names.length > playersCount && show2) {
       const newNames = names.slice(0, playersCount);
       dispatch(setPlayersNames(newNames));
       dispatch(createDataDictionary(newNames));
       dispatch(createRoleDictionary(newNames));
     }
     return getCharacters;
-  }, [language, getCharacters, dispatch, names, suggestion?.characters.length]);
+  }, [
+    language,
+    getCharacters,
+    dispatch,
+    names,
+    suggestion?.characters.length,
+    show2,
+  ]);
 
   return (
     <>
@@ -82,7 +93,7 @@ const SuggestionVision = () => {
               <Statistics suggestion={suggestion} />
             </div>
             <button
-              onClick={() => setShow2(true)}
+              onClick={() => setShowCaution(true)}
               className={styles.nameEnterBtn}
             >
               {buttons.start}
@@ -124,6 +135,17 @@ const SuggestionVision = () => {
               }}
               show={show2}
               countOfPlayers={suggestion.characters.length}
+            />
+            <ModalContainer
+              language={language}
+              type="caution"
+              caution_message={suggested_scenarions_caution}
+              show={showCaution}
+              closeHandler={() => setShowCaution(false)}
+              startHandler={() => {
+                setShow2(true);
+                setShowCaution(false);
+              }}
             />
           </div>
         ) : (

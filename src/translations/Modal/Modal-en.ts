@@ -4,6 +4,7 @@ const buttons = {
     start: "Start Game",
     go_to_char_select: "Go to Character Select",
     see_characters: "Characters",
+    accept_and_continue: "Accept & Continue"
   };
 
 export const modal_objects_en = {buttons}

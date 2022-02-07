@@ -48,7 +48,8 @@ type Props = {
         back_to_name_enter: string,
         start: string,
         go_to_char_select: string,
-        see_characters: string
+        see_characters: string,
+        accept_and_continue: string
     },
     closeHandler?: (() => void),
     backHandler?: (() => void),
@@ -185,6 +186,12 @@ const HeaderButtons: FC<Props> = ({
                         {buttons.back_to_name_enter}
                     </button>
                 </>
+            }
+            {
+                type==="caution" &&
+                <button className={styles.start} onClick={startGame}>
+                    {buttons.accept_and_continue}
+                </button>
             }
             <button className={styles.close} onClick={closeHandler}>
                 {buttons.close}

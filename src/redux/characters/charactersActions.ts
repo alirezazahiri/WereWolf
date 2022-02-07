@@ -17,7 +17,7 @@ export const resetCharacters = () => ({
     type: "RESET_CHARACTERS",
 });
 
-export const setCharacters = (characters: number[]) => ({
+export const setCharactersStore = (characters: number[]) => ({
     type: "SET_CHARACTERS",
     payload: characters,
 })

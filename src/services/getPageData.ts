@@ -45,6 +45,8 @@ import { suggestion_vision_objects_en } from "../translations/SuggestionVision/s
 import { suggestion_vision_objects_fa } from "../translations/SuggestionVision/suggestionVision-fa";
 import { statistics_objects_fa } from "../translations/Statistics/statistics-fa";
 import { statistics_objects_en } from "../translations/Statistics/statistics-en";
+import { caution_objects_en } from '../translations/Caution/caution-en';
+import { caution_objects_fa } from '../translations/Caution/caution-fa';
 
 const getChars = (language: string) => {
     return language === "english" ? chars_en : chars_fa;
@@ -114,6 +116,12 @@ const getStatistics = (language: string) => {
         : statistics_objects_fa;
 };
 
+const getCaution = (language: string) => {
+    return language === "english"
+        ? caution_objects_en
+        : caution_objects_fa;
+};
+
 export {
     getChars as default,
     getHome,
@@ -127,5 +135,6 @@ export {
     getGuide,
     getPlayerVision,
     getSuggestionVision,
-    getStatistics
+    getStatistics,
+    getCaution,
 };
