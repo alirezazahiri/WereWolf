@@ -33,6 +33,8 @@ const names = [
   "hannah",
   "savior",
   "dentist",
+  "negotiator",
+  "reporter",
 
   // ----- Mafia -----
 
@@ -382,6 +384,15 @@ const citizens = [
     max: 1,
     type: "citizen",
   },
+  {
+    id: 66,
+    icon: "wifi",
+    title: "Reporter",
+    description:
+      "after Negotiation happens, he can guess the negotioted player to reveal it to others",
+    max: 1,
+    type: "citizen",
+  },
 ];
 // ----------------------- MAFIA -------------------------------
 const mafias = [
@@ -538,6 +549,15 @@ const mafias = [
     max: 1,
     type: "mafia",
   },
+  {
+    id: 67,
+    icon: "refresh",
+    title: "Negotiator",
+    description:
+      "at night, it can choose a simple citizen to negotiate it and change it's side to mafia, and it has NO EFFECT on roled citizens",
+    max: 1,
+    type: "mafia",
+  }
 ];
 // ----------------------- MID INDEPENDENTS -------------------------------
 const mid_independents = [

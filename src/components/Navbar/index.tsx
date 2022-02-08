@@ -54,8 +54,8 @@ const NavBar: FC = () => {
                         <NavLink to="/game-setup">{game_setup}</NavLink>
                         <NavLink to="/players-roles">{players}</NavLink>
                         <NavLink to="/god-vision">{gods_room}</NavLink>
-                        <NavLink to="/scenarios">{senarios}</NavLink>
                         <NavLink to="/suggested-scenarios">{suggested_scenarios}</NavLink>
+                        <NavLink to="/scenarios">{senarios}</NavLink>
                         <NavLink to="/guide">{guide}</NavLink>
                     </Nav>
                 </Navbar.Collapse>

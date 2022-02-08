@@ -1,6 +1,6 @@
 const title = "مافیا";
 const guide = "راهنما";
-const senarios = "سناریو ها";
+const senarios = "نقش ها";
 const suggested_scenarios = "سناریوهای پیشنهادی";
 const players = "بازیکنان";
 const gods_room = "اتاق گرداننده";

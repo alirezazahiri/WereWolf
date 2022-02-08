@@ -1,6 +1,6 @@
 const title = "MAFIA";
 const guide = "Guide";
-const senarios = "Scenarios";
+const senarios = "Roles";
 const suggested_scenarios = "Suggested Scenarios";
 const players = "Players";
 const gods_room = "God's Room";
