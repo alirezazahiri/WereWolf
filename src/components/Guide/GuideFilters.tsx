@@ -38,7 +38,7 @@ const GuideFilters: FC<{ dispatch: any; language: string; filter: any }> = ({
       filterName: "suggestedScenarios",
     },
     {
-      name: language === "persian" ? "سناریو ها" : "Scenarios",
+      name: language === "persian" ? "نقش ها" : "Roles",
       type: "SCENARIOS",
       filterName: "scenarios",
     },
