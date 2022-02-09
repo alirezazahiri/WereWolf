@@ -57,7 +57,7 @@ const godVisionGuide: GodVisionObj = {
 };
 
 const scenariosGuide: ScenariosObj = {
-  title: "Scenarios",
+  title: "Roles",
   description:
     "you can checkout each role in the scenarios section. to find out the role of each character.",
 };

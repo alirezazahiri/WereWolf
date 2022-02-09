@@ -56,7 +56,7 @@ const godVisionGuide: GodVisionObj = {
 };
 
 const scenariosGuide: ScenariosObj = {
-  title: "سناریو ها",
+  title: "نقش ها",
   description:
     "در این بخش میتوانید توضیحات مربوط به هر نقش را بخوانید و نحوه بازی کردن با هر نقش را یاد بگیرید",
 };
