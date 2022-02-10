@@ -33,11 +33,11 @@ const ManagePlayerCard: FC<Props> = ({ player, icon, role, type }) => {
     const { dataDictionary } = useSelector((state: AppState) => state.playersDataState)
 
     const changeHandler = (e: any) => {
-        dispatch(changeDataDictionary(player, { text: e.target.value }))
+        dispatch(changeDataDictionary(player, { ...dataDictionary[player], text: e.target.value }))
     }
 
     const clearText = () => {
-        dispatch(changeDataDictionary(player, { text: "" }))
+        dispatch(changeDataDictionary(player, { ...dataDictionary[player], text: "" }))
     }
 
     return (
