@@ -4,7 +4,6 @@
     padding: 20px;
     border-radius: 12px;
     backdrop-filter: blur(20px);
-    font-family: 'Cairo', sans-serif;
 }
 
 .container textarea {
@@ -30,16 +29,22 @@
 
 .hedearContainer a {
     font-size: 2rem;
+    flex-grow: 1;
     font-weight: 600;
     text-decoration: none;
 }
 
+.hedearContainer a:first-child {
+    text-align: left;
+}
+
+.hedearContainer a:last-child {
+    text-align: right;
+}
+
 .hedearContainer i {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     font-size: 2.5rem;
+    margin: 0 auto;
 }
 
 .playerStatusContainer {

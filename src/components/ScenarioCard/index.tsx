@@ -24,7 +24,7 @@ const ScenarioCard: FC<Props> = ({ character }) => {
             className={styles.container}
             style={{ border: `1px solid ${color}`, boxShadow: `0 0 12px ${color}` }}
         >
-            <div>
+            <div className={styles.titleContainer} style={{ borderBottom: `1px solid ${color}66` }}>
                 <div>
                     <Icon style={{ color: color }} icon={icon + " fa-2x"} />
                 </div>

@@ -1,7 +1,7 @@
 .container {
     text-align: center;
     margin: 1.5rem 3rem;
-    padding: 4rem 2.5rem;
+    padding: 25px 25px 5px;
     border-radius: 12px;
     backdrop-filter: blur(30px);
     transition: all 0.2s ease;
@@ -48,4 +48,14 @@
     padding: 15px;
     font-size: 1.5rem;
     margin: 0 2rem;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.titleContainer i {
+    font-size: 3rem;
 }
