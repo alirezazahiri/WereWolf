@@ -76,7 +76,7 @@ const ModalContainer: FC<Props> = ({
   else if (type === "showRole") title = pName;
   else if (type === "showScenario") title = scenarioName;
   else if (type === "caution")
-    title = language === "persian" ? "Caution" : "توجه";
+    title = language === "persian" ? "توجه" : "Notice";
   else title = "";
 
   return (

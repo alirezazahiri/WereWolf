@@ -5,7 +5,7 @@ import {
   PlayersObj,
   GodVisionObj,
   ScenariosObj,
-  SuggestionedScenariosObj,
+  SuggestedScenariosObj,
 } from "./types";
 
 // images
@@ -62,7 +62,7 @@ const scenariosGuide: ScenariosObj = {
     "you can checkout each role in the scenarios section. to find out the role of each character.",
 };
 
-const suggestionedScenarios: SuggestionedScenariosObj = {
+const suggestedScenarios: SuggestedScenariosObj = {
   title: "Suggested Scenarios",
   description:
     "this section has provided some famous scenarios, used in TV, Youtube or other Reality Shows! You can select them and, only by adding the players names, you're able to start the game and play!",
@@ -76,5 +76,5 @@ export const guide_objects_en = {
   playersGuide,
   godVisionGuide,
   scenariosGuide,
-  suggestionedScenarios,
+  suggestedScenarios,
 };

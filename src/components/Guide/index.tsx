@@ -28,7 +28,7 @@ const initialState = {
     gameSetup: false,
     players: false,
     godVision: false,
-    suggestionedScenarios: false,
+    suggestedScenarios: false,
     scenarios: false,
 }
 
@@ -45,7 +45,7 @@ const reducer = (state = initialState, action: string) => {
         case "GOD_VISION":
             return { ...initialState, godVision: true }
         case "SUGGESTED_SCENARIOS":
-            return { ...initialState, suggestionedScenarios: true }
+            return { ...initialState, suggestedScenarios: true }
         case "SCENARIOS":
             return { ...initialState, scenarios: true }
         default: return state
@@ -63,7 +63,7 @@ const Guide = () => {
         playersGuide,
         godVisionGuide,
         scenariosGuide,
-        suggestionedScenarios
+        suggestedScenarios
     } = getGuide(language)
 
     useEffect(() => {
@@ -81,7 +81,7 @@ const Guide = () => {
             {filter.gameSetup && <GameSetupGuide {...gameSetupGuide} />}
             {filter.players && <PlayersGuide {...playersGuide} />}
             {filter.godVision && <GodVisionGuide {...godVisionGuide} />}
-            {filter.suggestionedScenarios && <SuggestedScenariosGuide {...suggestionedScenarios} />}
+            {filter.suggestedScenarios && <SuggestedScenariosGuide {...suggestedScenarios} />}
             {filter.scenarios && <ScenariosGuide {...scenariosGuide} />}
         </div>
     )

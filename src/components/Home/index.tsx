@@ -111,7 +111,7 @@ const Home: FC = () => {
                     </button>
                 </form>
             </div>
-            <p style={{ color: "rgb(100)" }}>
+            <p className={styles.copyright}>
                 All rights reserved by Alireza Zahiri&copy;
             </p>
         </div>

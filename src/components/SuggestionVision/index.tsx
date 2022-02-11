@@ -136,6 +136,7 @@ const SuggestionVision = () => {
               show={show2}
               countOfPlayers={suggestion.characters.length}
             />
+            
             <ModalContainer
               language={language}
               type="caution"

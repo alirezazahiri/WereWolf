@@ -5,7 +5,7 @@ import {
   PlayersObj,
   GodVisionObj,
   ScenariosObj,
-  SuggestionedScenariosObj,
+  SuggestedScenariosObj,
 } from "./types";
 
 // images
@@ -61,7 +61,7 @@ const scenariosGuide: ScenariosObj = {
     "در این بخش میتوانید توضیحات مربوط به هر نقش را بخوانید و نحوه بازی کردن با هر نقش را یاد بگیرید",
 };
 
-const suggestionedScenarios: SuggestionedScenariosObj = {
+const suggestedScenarios: SuggestedScenariosObj = {
   title: "سناریو های پیشنهادی",
   description:
     "این بخش یک سری از سناریو های معروف که در برنامه های تلویزیونی یا یوتیوب یا غیره را معرفی کرده و میتوان با استفاده از آنها (با توجه به تعداد مشخص بازیکن ها), تنها با وارد کردن اسامی بازیکنان به شروع بازی پرداخت",
@@ -75,5 +75,5 @@ export const guide_objects_fa = {
   playersGuide,
   godVisionGuide,
   scenariosGuide,
-  suggestionedScenarios,
+  suggestedScenarios,
 };

@@ -3,6 +3,7 @@
 }
 
 .updateButton {
+    border: .5px solid #5c527f;
     box-shadow: -5px 0 25px 0 #5c527f38,
         0 0 25px 0 #d6013650,
         5px 0 5px 0 #66de943a;
@@ -16,7 +17,8 @@
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
-    padding: 2rem 0.5rem;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
 }
 

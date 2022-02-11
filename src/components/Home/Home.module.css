@@ -63,3 +63,25 @@
 .formContainer button:hover {
     border-radius: 1.2rem;
 }
+
+.copyright {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    animation-name: bounce;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(2px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(2px);
+    }
+}

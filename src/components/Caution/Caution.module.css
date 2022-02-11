@@ -1,9 +1,10 @@
 .container {
     text-align: center;
+    padding: 50px 10px;
 }
 
 .container p {
     
-    color: yellow;
+    color: #DA0037;
     font-size: 1.6rem;
 }
