@@ -22,30 +22,13 @@ import LanguageChanger from "./LanguageChanger";
 
 // services
 import { getNavbar } from "../../services/getPageData";
+import { getNavLinks } from "./utils";
 
 const NavBar: FC = () => {
   const { language } = useSelector((state: AppState) => state.languageState);
-  const {
-    title,
-    guide,
-    senarios,
-    suggested_scenarios,
-    players,
-    gods_room,
-    game_setup,
-    start_game,
-  } = getNavbar(language);
-
-  const navLinks = [
-    { name: start_game, to: "/" },
-    { name: game_setup, to: "/game-setup" },
-    { name: players, to: "/players-roles" },
-    { name: gods_room, to: "/god-vision" },
-    { name: suggested_scenarios, to: "/suggested-scenarios" },
-    { name: senarios, to: "/scenarios" },
-    { name: guide, to: "/guide" },
-  ];
-
+  const { title, ...rest } = getNavbar(language);
+  const navLinks = getNavLinks({...rest});
+  
   return (
     <Navbar
       className={styles.container}
