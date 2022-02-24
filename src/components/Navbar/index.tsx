@@ -51,12 +51,12 @@ const NavBar: FC = () => {
                 </div>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className={styles.linksContainer}>
-                        <NavLink to="/game-setup">{game_setup}</NavLink>
-                        <NavLink to="/players-roles">{players}</NavLink>
-                        <NavLink to="/god-vision">{gods_room}</NavLink>
-                        <NavLink to="/suggested-scenarios">{suggested_scenarios}</NavLink>
-                        <NavLink to="/scenarios">{senarios}</NavLink>
-                        <NavLink to="/guide">{guide}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/game-setup">{game_setup}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/players-roles">{players}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/god-vision">{gods_room}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/suggested-scenarios">{suggested_scenarios}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/scenarios">{senarios}</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.active : styles.inactive} to="/guide">{guide}</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

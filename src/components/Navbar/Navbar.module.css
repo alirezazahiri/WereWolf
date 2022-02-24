@@ -39,12 +39,22 @@
 }
 
 .linksContainer a {
-    text-decoration: none;
-    float: right;
-    color: #50cb93;
     transition: all 0.2s ease-in-out;
     margin-right: 1.5rem;
     font-size: 1.5rem;
+}
+
+.inactive {
+    text-decoration: none;
+    float: right;
+    color: #50cb93;
+}
+
+.active {
+    color: rgb(71, 58, 121);
+    text-decoration: underline;
+    text-underline-position: under;
+    text-underline-offset: 3px;
 }
 
 .linksContainer a:hover {
