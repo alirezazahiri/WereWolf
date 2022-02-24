@@ -22,9 +22,13 @@ import PButton from "./PButton";
 import styles from "./PlayerButtons.module.css";
 import { useEffect, useState } from "react";
 import ModalContainer from "../Modal";
+import Search from "../Search";
+import useSearch from "../../hooks/useSearch";
+import toFarsiNumber from "../../services/convertNumbersToFa";
 
 const PlayerButtons = () => {
   const dispatch = useDispatch();
+  const [value, changeHandler] = useSearch();
   const { language, roleDictionary, characters } = useSelector(
     (state: AppState) => ({
       ...state.languageState,
@@ -39,7 +43,7 @@ const PlayerButtons = () => {
 
   const { update_roles_caution } = getCaution(language);
 
-  const updateHandler = (allow=false) => {
+  const updateHandler = (allow = false) => {
     !showCaution && setShowCaution(true);
     if (allow) {
       dispatch(createDataDictionary(Object.keys(roleDictionary)));
@@ -60,14 +64,30 @@ const PlayerButtons = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.searchContainer}>
+        <Search
+          value={value}
+          changeHandler={changeHandler}
+          language={language}
+        />
+      </div>
       {roleDictionary &&
-        Object.keys(roleDictionary).map((name) => (
-          <PButton
-            key={name}
-            name={name}
-            character={mapCharIdToCharacter(roleDictionary[name], language)}
-          />
-        ))}
+        Object.keys(roleDictionary)
+          .filter(
+            (name) =>
+              name
+                .trim()
+                .toLowerCase()
+                .includes(toFarsiNumber(value).trim().toLowerCase()) ||
+              name.trim().toLowerCase().includes(value.trim().toLowerCase())
+          )
+          .map((name) => (
+            <PButton
+              key={name}
+              name={name}
+              character={mapCharIdToCharacter(roleDictionary[name], language)}
+            />
+          ))}
       <button onClick={() => updateHandler()} className={styles.updateButton}>
         {buttons.update}
       </button>

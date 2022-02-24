@@ -1,10 +1,11 @@
-const title = "مافیا";
+const title = "گرگ نما";
 const guide = "راهنما";
 const senarios = "نقش ها";
 const suggested_scenarios = "سناریوهای پیشنهادی";
 const players = "بازیکنان";
 const gods_room = "اتاق گرداننده";
 const game_setup = "آماده سازی بازی";
+const start_game = "شروع بازی"
 
 export const navbar_objects_fa = {
     title,
@@ -14,4 +15,5 @@ export const navbar_objects_fa = {
     players,
     gods_room,
     game_setup,
+    start_game
 };
