@@ -22,8 +22,8 @@ const navbar: NavObj = {
   flag_description:
     "by clicking on this flag you can set english/persian language for your better experience",
   logo_description:
-    "by clicking on the name 'Mafia' you can navigate to the start page",
-  nav_brand: "Mafia",
+    "by clicking on the name 'WereWolf' you can navigate to the start page",
+  nav_brand: "WereWolf",
 };
 
 const startGameGuide: StartGameObj = {

@@ -21,8 +21,8 @@ const navbar: NavObj = {
   flag: "تغییر زبان",
   flag_description:
     "با کلیک کردن بر روی این پرچم شما میتوانید زبان برنامه را به انگلیسی/فارسی تغییر دهید",
-  logo_description: "با کلیک کردن روی اسم 'مافیا' به صفحه اول میروید",
-  nav_brand: "مافیا",
+  logo_description: "با کلیک کردن روی اسم 'گرگ نما' به صفحه اول میروید",
+  nav_brand: "گرگ نما",
 };
 
 const startGameGuide: StartGameObj = {
