@@ -1,7 +1,7 @@
 import { IPasswordActions } from "../types";
 
 const initialState = {
-  password: "",
+  password: undefined,
 };
 
 const passwordReducers = (state = initialState, action: IPasswordActions) => {
@@ -13,4 +13,4 @@ const passwordReducers = (state = initialState, action: IPasswordActions) => {
   }
 };
 
-export default passwordReducers
+export default passwordReducers;

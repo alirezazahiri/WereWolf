@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
+import { decrypt } from "../../services/hash";
 import styles from "./PasswordForm.module.css";
 
 interface IProps {
@@ -11,13 +12,14 @@ const PasswordForm: FC<IProps> = ({ setIsAllowed }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [clientPassword, setClientPassword] = useState("");
   const { password } = useSelector((state: AppState) => state.passwordState);
+  
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (clientPassword === password) setIsAllowed(true);
+    if (clientPassword === decrypt(password)) setIsAllowed(true);
     else console.log("ERROR: PASSWORD IS WRONG!");
   };
 

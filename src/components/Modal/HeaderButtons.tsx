@@ -171,11 +171,6 @@ const HeaderButtons: FC<Props> = ({
 
   return (
     <>
-      {type === "setPassword" && (
-        <button className={styles.goto} onClick={handleGoto}>
-          {buttons.submit}
-        </button>
-      )}
       {type === "nameEnter" && (
         <button className={styles.goto} onClick={handleGoto}>
           {buttons.go_to_char_select}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPassword } from "../../redux/password/passwordActions";
 import { AppState } from "../../redux/store";
 import styles from "./SetPasswordForm.module.css";
+import { decrypt, encrypt } from "../../services/hash";
 
 const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
   const [data, setData] = useState({
@@ -15,21 +16,20 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // save to store
-    if (data.currentPassword !== password)
+    if (data.currentPassword !== decrypt(password))
       console.log("ERROR: CURRENT PASSWORD IS NOT CORRECT!");
     else if (data.newPassword1 !== data.newPassword2)
       console.log("ERROR: NEW PASSWORDS DO NOT MATCH!");
     else if (data.newPassword2 === data.currentPassword)
       console.log("ERROR: NEW PASSWORD IS EQUAL TO CURRENT PASSWORD!");
     else if (
-      (password && !data.currentPassword) ||
+      (decrypt(password) && !data.currentPassword) ||
       !data.newPassword1 ||
       !data.newPassword2
     )
       console.log("ERROR: PLEASE FILL IN ALL THE BLANKS!");
     else {
-      dispatch(setPassword(data.newPassword1));
+      dispatch(setPassword(encrypt(data.newPassword1)));
       closeHandler();
     }
   };
@@ -40,7 +40,7 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
 
   return (
     <form onSubmit={submitHandler} className={styles.formContainer}>
-      {!!password && (
+      {!!decrypt(password) && (
         <input
           type="text"
           name="currentPassword"

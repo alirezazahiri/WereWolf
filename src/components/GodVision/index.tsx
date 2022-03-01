@@ -41,6 +41,7 @@ const GodVision = () => {
     ...state.filterState,
     ...state.passwordState
   }));
+
   const [value, changeHandler] = useSearch();
 
   //
@@ -52,7 +53,7 @@ const GodVision = () => {
       (prev, current) => prev + current,
       ""
     );
-    if (values === "") {
+    if (values === "" && characters.length !== 0) {
       dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters));
     }
   }, [characters, dispatch, roleDictionary]);

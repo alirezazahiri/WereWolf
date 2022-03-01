@@ -35,8 +35,9 @@ import ModalContainer from "../Modal";
 
 const Home: FC = () => {
   const dispatch = useDispatch();
-  const { language } = useSelector((state: AppState) => state.languageState);
-
+  const { language } = useSelector((state: AppState) => ({
+    ...state.languageState,
+  }));
   const { title, description, placeholder_1, start } = getHome(language);
 
   const [disable, setDisable] = useState(false);
@@ -92,10 +93,6 @@ const Home: FC = () => {
     }
   };
 
-  const submitPasswordhandler = () => {
-
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -128,7 +125,6 @@ const Home: FC = () => {
         type="setPassword"
         show={show}
         closeHandler={() => setShow(false)}
-        startHandler={submitPasswordhandler}
       />
     </div>
   );
