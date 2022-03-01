@@ -25,6 +25,7 @@ import toFarsiNumber from "../../services/convertNumbersToFa";
 import { getModal } from "../../services/getPageData";
 import { shorten } from "../../services/shorten";
 import Caution from "../Caution";
+import SetPasswordForm from "../SetPasswordForm";
 
 interface Props {
   language: string;
@@ -75,6 +76,8 @@ const ModalContainer: FC<Props> = ({
   else if (type === "charSelect") title = playersCount - characters.length;
   else if (type === "showRole") title = pName;
   else if (type === "showScenario") title = scenarioName;
+  else if (type === "setPassword")
+    title = language === "persian" ? "رمز عبور گرداننده" : "God's Password";
   else if (type === "caution")
     title = language === "persian" ? "توجه" : "Notice";
   else title = "";
@@ -132,6 +135,9 @@ const ModalContainer: FC<Props> = ({
         )}
         {type === "caution" &&
           <Caution caution_message={caution_message || ""}/>
+        }
+        {type === "setPassword" &&
+          <SetPasswordForm closeHandler={closeHandler}/>
         }
       </Modal.Body>
     </Modal>
