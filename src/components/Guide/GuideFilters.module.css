@@ -10,15 +10,26 @@
     border: 1px solid rgb(71, 58, 121);
     color: rgb(71, 58, 121);
     padding: 2rem 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: 16.75%;
+}
+
+.filtersContainer button:not(:last-child) {
+    border-right: none;
 }
 
 .filtersContainer button:hover,
 .filtersContainer .active {
     color: rgb(80, 203, 147);
     background-color: rgba(80, 203, 147, 0.3);
-    border: 1px solid #50cb93;
+    border: 1px solid #50cb93 !important;
+}
+
+@media (max-width: 768px) {
+    .filtersContainer button {
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -28,7 +39,7 @@
     }
 
     .filtersContainer button {
-        font-size: 1rem;
-        padding: 1rem;
+        font-size: 1.1rem;
+        padding: 5px;
     }
 }

@@ -1,13 +1,19 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Cairo', sans-serif;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cairo", sans-serif;
+  margin-bottom: 15px;
 }
 
 .container button {
-    backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  font-size: 1.4rem;
+}
+
+@media (max-width: 480px) {
+  .container button {
     font-size: 1.2rem;
+  }
 }
