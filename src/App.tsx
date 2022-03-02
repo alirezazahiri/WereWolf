@@ -17,6 +17,7 @@ import PlayerVision from "./components/PlayerVision";
 import Scenarios from "./components/Scenarios";
 import GameSetup from "./components/GameSetup";
 import GodVision from "./components/GodVision";
+import Settings from "./components/Settings";
 import NavBar from "./components/Navbar";
 import Layout from "./components/Layout";
 import Guide from "./components/Guide";
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/suggested-scenarios/:id" element={<SuggestionVision />} />
             <Route path="/god-vision" element={<GodVision />} />
             <Route path="/scenarios" element={<Scenarios />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/guide" element={<Guide />} />
           </Routes>
           <Layout />

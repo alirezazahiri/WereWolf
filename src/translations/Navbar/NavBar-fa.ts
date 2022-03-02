@@ -6,6 +6,7 @@ const players = "بازیکنان";
 const gods_room = "اتاق گرداننده";
 const game_setup = "آماده سازی بازی";
 const start_game = "شروع بازی"
+const settings = "تنظیمات"
 
 export const navbar_objects_fa = {
     title,
@@ -15,5 +16,6 @@ export const navbar_objects_fa = {
     players,
     gods_room,
     game_setup,
-    start_game
+    start_game,
+    settings
 };
