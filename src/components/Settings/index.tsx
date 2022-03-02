@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
+import { getSettings } from "../../services/getPageData";
 import ModalContainer from "../Modal";
 import styles from "./Settings.module.css";
 
 const Settings = () => {
   const { language } = useSelector((state: AppState) => state.languageState);
   const [show, setShow] = useState(false);
+  const { passwordSettings } = getSettings(language);
+
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
-        <button onClick={() => setShow(true)}>Set Password</button>
+        <button onClick={() => setShow(true)}>{passwordSettings}</button>
       </div>
       <ModalContainer
         language={language}

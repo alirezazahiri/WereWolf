@@ -4,6 +4,7 @@ import { setPassword } from "../../redux/password/passwordActions";
 import { AppState } from "../../redux/store";
 import styles from "./SetPasswordForm.module.css";
 import { decrypt, encrypt } from "../../services/hash";
+import { getSettings } from "../../services/getPageData";
 
 const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
   const [data, setData] = useState({
@@ -11,8 +12,12 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
     newPassword1: "",
     newPassword2: "",
   });
-  const { password } = useSelector((state: AppState) => state.passwordState);
+  const { password, language } = useSelector((state: AppState) => ({
+    ...state.passwordState,
+    ...state.languageState,
+  }));
   const dispatch = useDispatch();
+  const {proceed, currentPassPH, newPassPH, confirmPassPH} = getSettings(language);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,7 +49,7 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
         <input
           type="text"
           name="currentPassword"
-          placeholder="Current Password..."
+          placeholder={currentPassPH}
           value={data.currentPassword}
           onChange={changeHandler}
         />
@@ -52,18 +57,18 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
       <input
         type="text"
         name="newPassword1"
-        placeholder="New Password..."
+        placeholder={newPassPH}
         value={data.newPassword1}
         onChange={changeHandler}
       />
       <input
         type="text"
         name="newPassword2"
-        placeholder="Confirm New Password..."
+        placeholder={confirmPassPH}
         value={data.newPassword2}
         onChange={changeHandler}
       />
-      <button type="submit">Proceed</button>
+      <button type="submit">{proceed}</button>
     </form>
   );
 };
