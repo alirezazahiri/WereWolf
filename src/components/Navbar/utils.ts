@@ -5,6 +5,7 @@ import UK_FLAG from "../../assets/img/uk-flag-round-icon-64.png";
 interface IgetNavLinks {
   guide: string;
   senarios: string;
+  settings: string;
   suggested_scenarios: string;
   players: string;
   gods_room: string;
@@ -16,6 +17,7 @@ export const getNavLinks = ({
   start_game,
   game_setup,
   players,
+  settings,
   gods_room,
   suggested_scenarios,
   senarios,
@@ -27,6 +29,7 @@ export const getNavLinks = ({
   { name: gods_room, to: "/god-vision" },
   { name: suggested_scenarios, to: "/suggested-scenarios" },
   { name: senarios, to: "/scenarios" },
+  { name: settings, to: "/settings" },
   { name: guide, to: "/guide" },
 ];
 

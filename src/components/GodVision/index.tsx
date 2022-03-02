@@ -37,7 +37,9 @@ const GodVision = () => {
     ...state.playersDataState,
     ...state.charactersState,
     ...state.filterState,
+    ...state.passwordState,
   }));
+
   const [value, changeHandler] = useSearch();
 
   //
@@ -48,7 +50,7 @@ const GodVision = () => {
       (prev, current) => prev + current,
       ""
     );
-    if (values === "") {
+    if (values === "" && characters.length !== 0) {
       dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters));
     }
   }, [characters, dispatch, roleDictionary]);
@@ -98,7 +100,7 @@ const GodVision = () => {
             default:
               return true;
           }
-        }) // filter by alive/death
+        }) // filter by alive/death/silent/speaker
         .map(({ role, type, icon, name }: { [key: string]: string }) => (
           <ManagePlayerCard
             key={name}

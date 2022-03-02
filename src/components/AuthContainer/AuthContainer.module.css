@@ -1,0 +1,30 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 180px 80px 0;
+  }
+  
+  @media (max-width: 480px) {
+    .authContainer {
+      margin: 160px 80px 0;
+    }
+  }
+  
+  .authContainer h1 {
+    color: rgb(71, 58, 121);
+    font-size: 4.5rem;
+    font-weight: 700;
+  }
+  
+  .authContainer button {
+    color: rgb(80, 203, 147);
+    border: 1px solid rgba(71, 58, 121, 0.8);
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    box-shadow: 0 0 1rem rgba(71, 58, 121, 0.8);
+    backdrop-filter: blur(15px);
+    background-color: rgba(71, 58, 121, 0.1);
+    transition: all 0.2s ease;
+  }

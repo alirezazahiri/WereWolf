@@ -8,6 +8,7 @@ export interface IPlayersActions extends IAction {}
 export interface IFilterActions extends IAction {}
 export interface ICharactersActions extends IAction {}
 export interface IPlayersDataActions extends IAction {}
+export interface IPasswordActions extends IAction {}
 
 export interface ILanguageState {
     language: string;
