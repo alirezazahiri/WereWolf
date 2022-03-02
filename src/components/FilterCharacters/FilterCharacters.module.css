@@ -9,11 +9,12 @@
 
 .container button {
   backdrop-filter: blur(20px);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 480px) {
   .container button {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    overflow-wrap: break-word;
   }
 }

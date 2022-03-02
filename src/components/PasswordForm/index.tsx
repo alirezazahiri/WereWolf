@@ -3,8 +3,13 @@ import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import { getSettings } from "../../services/getPageData";
 import { decrypt } from "../../services/hash";
+import showToast from "../../services/showToast";
 import Icon from "../Icon";
 import styles from "./PasswordForm.module.css";
+import {
+  WRONG_PASSWORD_ERROR_EN,
+  WRONG_PASSWORD_ERROR_FA,
+} from "../../translations/Toaster/toast-messages";
 
 interface IProps {
   setIsAllowed: any;
@@ -22,12 +27,19 @@ const PasswordForm: FC<IProps> = ({ setIsAllowed }) => {
 
   useEffect(() => {
     inputRef.current?.focus();
-  }, []);
+    if (!password) setIsAllowed(true);
+  }, [password, setIsAllowed]);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (clientPassword === decrypt(password)) setIsAllowed(true);
-    else console.log("ERROR: PASSWORD IS WRONG!");
+    else
+      showToast(
+        "error",
+        language === "persian"
+          ? WRONG_PASSWORD_ERROR_FA
+          : WRONG_PASSWORD_ERROR_EN
+      );
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +61,7 @@ const PasswordForm: FC<IProps> = ({ setIsAllowed }) => {
           className={styles.hideShow}
           onClick={() => setShowPassword((prev) => !prev)}
         >
-          {showPassword ? <Icon icon="eye"/> : <Icon icon="eye-slash"/>}
+          {showPassword ? <Icon icon="eye" /> : <Icon icon="eye-slash" />}
         </button>
       </div>
       <button type="submit">{proceed}</button>
