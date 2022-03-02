@@ -21,8 +21,6 @@ import StatFilter from "./StatFilter";
 import { updateRoleDictionary } from "../../redux/playersData/playersDataActions";
 import { CharType } from "../../redux/types";
 import Statistics from "../Statistics";
-import PasswordForm from "../PasswordForm";
-import { getGodVision } from "../../services/getPageData";
 
 const GodVision = () => {
   const dispatch = useDispatch();
@@ -33,21 +31,19 @@ const GodVision = () => {
     dataDictionary,
     filter,
     characters,
-    password
   } = useSelector((state: AppState) => ({
     ...state.languageState,
     ...state.playersState,
     ...state.playersDataState,
     ...state.charactersState,
     ...state.filterState,
-    ...state.passwordState
+    ...state.passwordState,
   }));
-  const {title} = getGodVision(language)
+
   const [value, changeHandler] = useSearch();
 
   //
   const [statFilter, setStatFilter] = useState("all");
-  const [isAllowed, setIsAllowed] = useState(false);
 
   useEffect(() => {
     const values = Object.values(roleDictionary).reduce(
@@ -61,68 +57,59 @@ const GodVision = () => {
 
   return (
     <div className={styles.container}>
-      {!!!password || isAllowed ? (
-        <>
-          <div className={styles.statContainer}>
-            <Statistics />
-          </div>
-          <FilterContainer
-            value={value}
-            changeHandler={changeHandler}
-            language={language}
+      <div className={styles.statContainer}>
+        <Statistics />
+      </div>
+      <FilterContainer
+        value={value}
+        changeHandler={changeHandler}
+        language={language}
+      />
+      <StatFilter setStatFilter={setStatFilter} statFilter={statFilter} />
+      {names
+        .map((name: string) => {
+          const character: CharType | undefined = mapCharIdToCharacter(
+            roleDictionary[name],
+            language
+          );
+          const role: string | undefined = character?.title;
+          const icon: string | undefined = character?.icon;
+          const type: string | undefined = character?.type;
+          return { role, type, icon, name };
+        })
+        .filter(({ type }: { [key: string]: string }) =>
+          filter === "all" ? true : type === filter
+        )
+        .filter(
+          ({ role, name }: { [key: string]: string }) =>
+            role?.toLowerCase().includes(value.trim().toLowerCase()) ||
+            toFarsiNumber(name)
+              ?.toLowerCase()
+              .includes(toFarsiNumber(value).trim().toLowerCase())
+        )
+        .filter(({ name }: { [key: string]: string }) => {
+          switch (statFilter) {
+            case "silent":
+              return !dataDictionary[name].unmute;
+            case "speaker":
+              return dataDictionary[name].unmute;
+            case "alive":
+              return dataDictionary[name].alive;
+            case "dead":
+              return !dataDictionary[name].alive;
+            default:
+              return true;
+          }
+        }) // filter by alive/death/silent/speaker
+        .map(({ role, type, icon, name }: { [key: string]: string }) => (
+          <ManagePlayerCard
+            key={name}
+            type={type}
+            role={role}
+            icon={icon}
+            player={name}
           />
-          <StatFilter setStatFilter={setStatFilter} statFilter={statFilter} />
-          {names
-            .map((name: string) => {
-              const character: CharType | undefined = mapCharIdToCharacter(
-                roleDictionary[name],
-                language
-              );
-              const role: string | undefined = character?.title;
-              const icon: string | undefined = character?.icon;
-              const type: string | undefined = character?.type;
-              return { role, type, icon, name };
-            })
-            .filter(({ type }: { [key: string]: string }) =>
-              filter === "all" ? true : type === filter
-            )
-            .filter(
-              ({ role, name }: { [key: string]: string }) =>
-                role?.toLowerCase().includes(value.trim().toLowerCase()) ||
-                toFarsiNumber(name)
-                  ?.toLowerCase()
-                  .includes(toFarsiNumber(value).trim().toLowerCase())
-            )
-            .filter(({ name }: { [key: string]: string }) => {
-              switch (statFilter) {
-                case "silent":
-                  return !dataDictionary[name].unmute;
-                case "speaker":
-                  return dataDictionary[name].unmute;
-                case "alive":
-                  return dataDictionary[name].alive;
-                case "dead":
-                  return !dataDictionary[name].alive;
-                default:
-                  return true;
-              }
-            }) // filter by alive/death/silent/speaker
-            .map(({ role, type, icon, name }: { [key: string]: string }) => (
-              <ManagePlayerCard
-                key={name}
-                type={type}
-                role={role}
-                icon={icon}
-                player={name}
-              />
-            ))}
-        </>
-      ) : (
-        <div className={styles.authContainer}>
-          <h1>{title}</h1>
-          <PasswordForm setIsAllowed={setIsAllowed} />
-        </div>
-      )}
+        ))}
     </div>
   );
 };

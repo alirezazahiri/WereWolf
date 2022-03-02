@@ -14,7 +14,7 @@ const PasswordInput: FC<IProps> = ({ data, setData, name, placeholder }) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   const [show, setShow] = useState(false);
-  console.log(show, name, show ? "text" : "password")
+
   return (
     <div className={styles.inputContainer}>
       <input
