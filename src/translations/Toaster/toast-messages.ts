@@ -59,5 +59,5 @@ export const NEW_CURR_PASS_ERROR_FA = "!خطا! " + "گذرواژه جدید ب�
 export const EMPTY_FIELD_PASS_ERROR_EN = "Error! Please fill in all the blanks"
 export const EMPTY_FIELD_PASS_ERROR_FA = "!خطا! " + "لطفا تمام جاهای خالی را پر کنید"
 
-export const PASS_SUCCESS_FA = "Password has been changed successfully!"
-export const PASS_SUCCESS_EN = "!گذرواژه با موفقیت تغییر یافت"
+export const PASS_SUCCESS_EN = "Password has been changed successfully!"
+export const PASS_SUCCESS_FA = "!گذرواژه با موفقیت تغییر یافت"
