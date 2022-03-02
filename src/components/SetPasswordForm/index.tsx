@@ -6,6 +6,19 @@ import styles from "./SetPasswordForm.module.css";
 import { decrypt, encrypt } from "../../services/hash";
 import { getSettings } from "../../services/getPageData";
 import PasswordInput from "./PasswordInput";
+import showToast from "../../services/showToast";
+import {
+  CURRENT_PASS_ERROR_FA,
+  CURRENT_PASS_ERROR_EN,
+  NEW_PASS_ERROR_FA,
+  NEW_PASS_ERROR_EN,
+  NEW_CURR_PASS_ERROR_FA,
+  NEW_CURR_PASS_ERROR_EN,
+  EMPTY_FIELD_PASS_ERROR_FA,
+  EMPTY_FIELD_PASS_ERROR_EN,
+  PASS_SUCCESS_FA,
+  PASS_SUCCESS_EN,
+} from "../../translations/Toaster/toast-messages";
 
 const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
   const [data, setData] = useState({
@@ -25,18 +38,36 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (data.currentPassword !== decrypt(password))
-      console.log("ERROR: CURRENT PASSWORD IS NOT CORRECT!");
+      showToast(
+        "error",
+        language === "persian" ? CURRENT_PASS_ERROR_FA : CURRENT_PASS_ERROR_EN
+      );
     else if (data.newPassword1 !== data.newPassword2)
-      console.log("ERROR: NEW PASSWORDS DO NOT MATCH!");
+      showToast(
+        "error",
+        language === "persian" ? NEW_PASS_ERROR_FA : NEW_PASS_ERROR_EN
+      );
     else if (data.newPassword2 === data.currentPassword)
-      console.log("ERROR: NEW PASSWORD IS EQUAL TO CURRENT PASSWORD!");
+      showToast(
+        "error",
+        language === "persian" ? NEW_CURR_PASS_ERROR_FA : NEW_CURR_PASS_ERROR_EN
+      );
     else if (
       (decrypt(password) && !data.currentPassword) ||
       !data.newPassword1 ||
       !data.newPassword2
     )
-      console.log("ERROR: PLEASE FILL IN ALL THE BLANKS!");
+      showToast(
+        "error",
+        language === "persian"
+          ? EMPTY_FIELD_PASS_ERROR_FA
+          : EMPTY_FIELD_PASS_ERROR_EN
+      );
     else {
+      showToast(
+        "success",
+        language === "persian" ? PASS_SUCCESS_FA : PASS_SUCCESS_EN
+      );
       dispatch(setPassword(encrypt(data.newPassword1)));
       closeHandler();
     }
@@ -44,14 +75,14 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
 
   return (
     <form onSubmit={submitHandler} className={styles.formContainer}>
-      {!!decrypt(password) && 
+      {!!decrypt(password) && (
         <PasswordInput
           name="currentPassword"
           data={data}
           setData={setData}
           placeholder={currentPassPH}
         />
-      }
+      )}
       <PasswordInput
         name="newPassword1"
         data={data}

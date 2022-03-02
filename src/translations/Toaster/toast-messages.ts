@@ -42,3 +42,22 @@ export const MODAL_HEADER_SUCCESS_CHARS_FA = "برای دیدن نقش ها رو
 // NAME EDIT ERRORS
 export const NAME_EDIT_ERROR_EN = "Error! invalid name!";
 export const NAME_EDIT_ERROR_FA = "!خطا! نام نامعتبر است";
+
+// PASSWORD ERRORS 
+export const WRONG_PASSWORD_ERROR_EN = "Error! Password is wrong!"
+export const WRONG_PASSWORD_ERROR_FA = "!خطا! " + "گذرواژه اشتباه است"
+
+export const CURRENT_PASS_ERROR_EN = "Error! Current password is wrong!"
+export const CURRENT_PASS_ERROR_FA = "!خطا! " + "گذرواژه کنونی اشتباه است"
+
+export const NEW_PASS_ERROR_EN = "Error! New password confirmation failed!"
+export const NEW_PASS_ERROR_FA = "!خطا! " + "تایید گذرواژه با شکست مواجه شد"
+
+export const NEW_CURR_PASS_ERROR_EN = "Error! New password is equal to current password!"
+export const NEW_CURR_PASS_ERROR_FA = "!خطا! " + "گذرواژه جدید برابر با گذواژه کنونی میباشد"
+
+export const EMPTY_FIELD_PASS_ERROR_EN = "Error! Please fill in all the blanks"
+export const EMPTY_FIELD_PASS_ERROR_FA = "!خطا! " + "لطفا تمام جاهای خالی را پر کنید"
+
+export const PASS_SUCCESS_FA = "Password has been changed successfully!"
+export const PASS_SUCCESS_EN = "!گذرواژه با موفقیت تغییر یافت"

@@ -42,17 +42,17 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/game-setup" element={<GameSetup />} />
+            <Route path="/players-roles" element={<PlayerButtons />} />
             <Route
-              path="/players-roles"
+              path="/god-vision/:playerName"
               element={
                 !isAllowed ? (
                   <AuthContainer setIsAllowed={setIsAllowed} />
                 ) : (
-                  <PlayerButtons />
+                  <PlayerVision />
                 )
               }
             />
-            <Route path="/god-vision/:playerName" element={<PlayerVision />} />
             <Route
               path="/suggested-scenarios"
               element={<SuggestedScenarios />}
