@@ -22,6 +22,7 @@ import { updateRoleDictionary } from "../../redux/playersData/playersDataActions
 import { CharType } from "../../redux/types";
 import Statistics from "../Statistics";
 import PasswordForm from "../PasswordForm";
+import { getGodVision } from "../../services/getPageData";
 
 const GodVision = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const GodVision = () => {
     ...state.filterState,
     ...state.passwordState
   }));
-
+  const {title} = getGodVision(language)
   const [value, changeHandler] = useSearch();
 
   //
@@ -118,7 +119,7 @@ const GodVision = () => {
         </>
       ) : (
         <div className={styles.authContainer}>
-          <h1>Enter the key for the room!</h1>
+          <h1>{title}</h1>
           <PasswordForm setIsAllowed={setIsAllowed} />
         </div>
       )}

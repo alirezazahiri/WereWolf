@@ -5,6 +5,7 @@ import { AppState } from "../../redux/store";
 import styles from "./SetPasswordForm.module.css";
 import { decrypt, encrypt } from "../../services/hash";
 import { getSettings } from "../../services/getPageData";
+import PasswordInput from "./PasswordInput";
 
 const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
   const [data, setData] = useState({
@@ -12,12 +13,14 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
     newPassword1: "",
     newPassword2: "",
   });
+
   const { password, language } = useSelector((state: AppState) => ({
     ...state.passwordState,
     ...state.languageState,
   }));
   const dispatch = useDispatch();
-  const {proceed, currentPassPH, newPassPH, confirmPassPH} = getSettings(language);
+  const { proceed, currentPassPH, newPassPH, confirmPassPH } =
+    getSettings(language);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,34 +42,27 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
     }
   };
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
   return (
     <form onSubmit={submitHandler} className={styles.formContainer}>
-      {!!decrypt(password) && (
-        <input
-          type="text"
+      {!!decrypt(password) && 
+        <PasswordInput
           name="currentPassword"
+          data={data}
+          setData={setData}
           placeholder={currentPassPH}
-          value={data.currentPassword}
-          onChange={changeHandler}
         />
-      )}
-      <input
-        type="text"
+      }
+      <PasswordInput
         name="newPassword1"
+        data={data}
+        setData={setData}
         placeholder={newPassPH}
-        value={data.newPassword1}
-        onChange={changeHandler}
       />
-      <input
-        type="text"
+      <PasswordInput
         name="newPassword2"
+        data={data}
+        setData={setData}
         placeholder={confirmPassPH}
-        value={data.newPassword2}
-        onChange={changeHandler}
       />
       <button type="submit">{proceed}</button>
     </form>

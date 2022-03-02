@@ -1,7 +1,9 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
+import { getSettings } from "../../services/getPageData";
 import { decrypt } from "../../services/hash";
+import Icon from "../Icon";
 import styles from "./PasswordForm.module.css";
 
 interface IProps {
@@ -11,8 +13,13 @@ interface IProps {
 const PasswordForm: FC<IProps> = ({ setIsAllowed }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [clientPassword, setClientPassword] = useState("");
-  const { password } = useSelector((state: AppState) => state.passwordState);
-  
+  const [showPassword, setShowPassword] = useState(false);
+  const { password, language } = useSelector((state: AppState) => ({
+    ...state.passwordState,
+    ...state.languageState,
+  }));
+  const { proceed, passwordPH } = getSettings(language);
+
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
@@ -29,14 +36,23 @@ const PasswordForm: FC<IProps> = ({ setIsAllowed }) => {
 
   return (
     <form onSubmit={submitHandler} className={styles.formContainer}>
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder="God's Room Keyword..."
-        value={clientPassword}
-        onChange={changeHandler}
-      />
-      <button type="submit">Proceed</button>
+      <div className={styles.inputContainer}>
+        <input
+          ref={inputRef}
+          type={showPassword ? "text" : "password"}
+          placeholder={passwordPH}
+          value={clientPassword}
+          onChange={changeHandler}
+        />
+        <button
+          type="button"
+          className={styles.hideShow}
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {showPassword ? <Icon icon="eye"/> : <Icon icon="eye-slash"/>}
+        </button>
+      </div>
+      <button type="submit">{proceed}</button>
     </form>
   );
 };

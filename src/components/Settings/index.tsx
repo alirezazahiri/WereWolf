@@ -12,9 +12,12 @@ const Settings = () => {
 
   return (
     <div className={styles.container}>
+      {/* buttons */}
       <div className={styles.buttonContainer}>
         <button onClick={() => setShow(true)}>{passwordSettings}</button>
       </div>
+      
+      {/* modals */}
       <ModalContainer
         language={language}
         scenarioName={language === "persian" ? "سناریو" : "Scenario"}

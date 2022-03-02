@@ -49,6 +49,8 @@ import { caution_objects_en } from "../translations/Caution/caution-en";
 import { caution_objects_fa } from "../translations/Caution/caution-fa";
 import { settings_objects_en } from "../translations/Settings/Settings-en";
 import { settings_objects_fa } from "../translations/Settings/Settings-fa";
+import { godVision_objects_en } from "../translations/GodVision/GodVision-en";
+import { godVision_objects_fa } from "../translations/GodVision/GodVision-fa";
 
 const getChars = (language: string) => {
   return language === "english" ? chars_en : chars_fa;
@@ -120,6 +122,10 @@ const getSettings = (language: string) => {
   return language === "english" ? settings_objects_en : settings_objects_fa;
 };
 
+const getGodVision = (language: string) => {
+  return language === "english" ? godVision_objects_en : godVision_objects_fa;
+};
+
 export {
   getChars as default,
   getHome,
@@ -136,4 +142,5 @@ export {
   getStatistics,
   getCaution,
   getSettings,
+  getGodVision,
 };
