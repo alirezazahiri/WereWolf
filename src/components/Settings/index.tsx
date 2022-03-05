@@ -5,25 +5,48 @@ import { getSettings } from "../../services/getPageData";
 import ModalContainer from "../Modal";
 import styles from "./Settings.module.css";
 
+const initialState = {
+  passwordSettings: false,
+  languageSettings: false,
+};
+
 const Settings = () => {
   const { language } = useSelector((state: AppState) => state.languageState);
-  const [show, setShow] = useState(false);
-  const { passwordSettings } = getSettings(language);
+  const [show, setShow] = useState(initialState);
+  const { passwordSettings, languageSettings } = getSettings(language);
 
   return (
     <div className={styles.container}>
       {/* buttons */}
       <div className={styles.buttonContainer}>
-        <button onClick={() => setShow(true)}>{passwordSettings}</button>
+        <button
+          onClick={() => setShow({ ...initialState, passwordSettings: true })}
+        >
+          {passwordSettings}
+        </button>
       </div>
-      
+      <div className={styles.buttonContainer}>
+        <button
+          onClick={() => setShow({ ...initialState, languageSettings: true })}
+        >
+          {languageSettings}
+        </button>
+      </div>
+
       {/* modals */}
+      {/* Password */}
       <ModalContainer
         language={language}
-        scenarioName={language === "persian" ? "سناریو" : "Scenario"}
         type="setPassword"
-        show={show}
-        closeHandler={() => setShow(false)}
+        show={show.passwordSettings}
+        closeHandler={() => setShow({ ...initialState })}
+      />
+      {/* Language */}
+      <ModalContainer
+        language={language}
+        type="changeLanguage"
+        show={show.languageSettings}
+        closeHandler={() => setShow({ ...initialState })}
       />
     </div>
   );

@@ -1,6 +1,7 @@
 .container {
     /* backdrop-filter: blur(20px); */
     background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 
 .container div {
@@ -27,4 +28,14 @@
     justify-content: space-evenly;
     width: 50%;
     background-color: none;
+}
+
+.flag {
+    cursor: pointer;
+}
+
+.h1 {
+    color: rgb(98, 90, 129);
+    font-size: 1.8rem;
+    margin: 20px 0;
 }

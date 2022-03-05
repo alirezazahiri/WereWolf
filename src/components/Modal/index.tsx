@@ -15,17 +15,18 @@ import Modal from "react-bootstrap/Modal";
 
 // components
 import ScenarioCharSet from "../SuggestionVision/ScenarioCharSet";
+import LanguageChanger from "../Navbar/LanguageChanger";
+import SetPasswordForm from "../SetPasswordForm";
 import CharSelect from "../CharSelect/index";
 import HeaderButtons from "./HeaderButtons";
 import NameEnter from "../NameEnter/index";
 import ScenarioCard from "../ScenarioCard";
+import Caution from "../Caution";
 
 // services
 import toFarsiNumber from "../../services/convertNumbersToFa";
 import { getModal } from "../../services/getPageData";
 import { shorten } from "../../services/shorten";
-import Caution from "../Caution";
-import SetPasswordForm from "../SetPasswordForm";
 
 interface Props {
   language: string;
@@ -78,6 +79,8 @@ const ModalContainer: FC<Props> = ({
   else if (type === "showScenario") title = scenarioName;
   else if (type === "setPassword")
     title = language === "persian" ? "گذرواژه گرداننده" : "God's Password";
+  else if (type === "changeLanguage")
+    title = language === "persian" ? "تغییر زبان" : "Change Language";
   else if (type === "caution")
     title = language === "persian" ? "توجه" : "Notice";
   else title = "";
@@ -138,6 +141,16 @@ const ModalContainer: FC<Props> = ({
         )}
         {type === "setPassword" && (
           <SetPasswordForm closeHandler={closeHandler} />
+        )}
+        {type === "changeLanguage" && (
+          <>
+            <h1 className={styles.h1}>
+              {language === "persian"
+                ? "برای تغییر زبان کلیک کنید"
+                : "tap to change language"}
+            </h1>
+            <LanguageChanger className={styles.flag} />
+          </>
         )}
       </Modal.Body>
     </Modal>
