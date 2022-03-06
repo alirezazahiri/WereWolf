@@ -1,6 +1,6 @@
 const title = "Start Game";
 
-const description = `welcome to MAFIA app,
+const description = `welcome to WereWolf app,
                     with this app you can manage your game easily,
                     and enjoy playing this wonderful game with your friends`;
 
