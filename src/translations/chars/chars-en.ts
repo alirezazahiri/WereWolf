@@ -1,80 +1,80 @@
 const names = [
-  "simple-citizen",
-  "armored",
-  "detective",
-  "doctor",
-  "opium",
-  "sniper",
-  "priest",
-  "mayor",
-  "hero",
-  "judge",
-  "cowboy",
-  "badass",
-  "crooked-hands",
-  "revealer",
-  "pitman",
-  "spectre",
-  "contagious",
-  "prison-officer",
-  "fan",
-  "saba",
-  "elite",
-  "lawyer",
-  "spy",
-  "baker",
-  "nurse",
-  "quarantiner",
-  "hunter",
-  "simin",
-  "link",
-  "poplar",
-  "narrator",
-  "hannah",
-  "savior",
-  "dentist",
-  "reporter",
-  
+  "simple-citizen", // 1
+  "armored", // 2
+  "detective", // 3
+  "doctor", // 4
+  "opium", // 5
+  "sniper", // 6
+  "priest", // 7
+  "mayor", // 8
+  "hero", // 9
+  "judge", // 10
+  "cowboy", // 11
+  "badass", // 12
+  "crooked-hands", // 13
+  "revealer", // 14
+  "pitman", // 15
+  "spectre", // 16
+  "contagious", // 17
+  "prison-officer", // 18
+  "fan", // 19
+  "saba", // 20
+  "elite", // 21
+  "lawyer", // 22
+  "spy", // 23
+  "baker", // 24
+  "nurse", // 25
+  "quarantiner", // 26
+  "hunter", // 27
+  "simin", // 28
+  "link", // 29
+  "poplar", // 30
+  "narrator", // 31
+  "hannah", // 32
+  "savior", // 33
+  "dentist", // 34
+  "reporter", // 35
+
   // ----- Mafia -----
-  
-  "simple-mafia",
-  "godfather",
-  "regicide",
-  "sweetheart",
-  "psychologist",
-  "naughty",
-  "slayer",
-  "dark-blood",
-  "pharmacist",
-  "injector",
-  "nightmare",
-  "night-sleeper",
-  "surgeon",
-  "guard",
-  "double-faced",
-  "bomb-maker",
-  "charlatan",
-  "negotiator",
+
+  "simple-mafia", // 36
+  "godfather", // 37
+  "regicide", // 38
+  "sweetheart", // 39
+  "psychologist", // 40
+  "naughty", // 41
+  "slayer", // 42
+  "dark-blood", // 43
+  "pharmacist", // 44
+  "injector", // 45
+  "nightmare", // 46
+  "night-sleeper", // 47
+  "surgeon", // 48
+  "guard", // 49
+  "double-faced", // 50
+  "bomb-maker", // 51
+  "charlatan", // 52
+  "negotiator", // 53
 
   // ----- Mid Independents -----
 
-  "malefactor",
-  "unknown",
-  "twin",
-  "sick",
-  "dearest",
+  "malefactor", // 54
+  "unknown", // 55
+  "twin", // 56
+  "sick", // 57
+  "dearest", // 58
 
   // ----- Independents -----
 
-  "thousand-faces",
-  "deputy",
-  "evil",
-  "werewolf",
-  "hybrid",
-  "sandica",
-  "emad",
-  "corona",
-  "saghar",
+  "thousand-faces", // 59
+  "deputy", // 60
+  "evil", // 61
+  "werewolf", // 62
+  "hybrid", // 63
+  "sandica", // 64
+  "emad", // 65
+  "corona", // 66
+  "saghar", // 67
 ];
 
 const citizens = [
