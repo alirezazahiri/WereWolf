@@ -33,11 +33,10 @@ const names = [
   "hannah",
   "savior",
   "dentist",
-  "negotiator",
   "reporter",
-
+  
   // ----- Mafia -----
-
+  
   "simple-mafia",
   "godfather",
   "regicide",
@@ -55,6 +54,7 @@ const names = [
   "double-faced",
   "bomb-maker",
   "charlatan",
+  "negotiator",
 
   // ----- Mid Independents -----
 
@@ -79,7 +79,6 @@ const names = [
 
 const citizens = [
   {
-    id: 1,
     icon: "user",
     title: "شهروند ساده",
     description: "در پیدا کردن مافیا مشارکت میکند و توانایی ویژه ای ندارد",
@@ -87,7 +86,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 2,
     icon: "shield",
     title: "زره پوش",
     description:
@@ -96,7 +94,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 3,
     icon: "search",
     title: "کارآگاه",
     description:
@@ -105,7 +102,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 4,
     icon: "medkit",
     title: "دکتر",
     description:
@@ -114,7 +110,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 5,
     icon: "fire",
     title: "افیون",
     description:
@@ -123,7 +118,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 6,
     icon: "crosshairs",
     title: "اسنایپر",
     description:
@@ -132,7 +126,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 7,
     icon: "leaf",
     title: "کشیش",
     description:
@@ -141,7 +134,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 8,
     icon: "building-o",
     title: "شهردار",
     description:
@@ -150,7 +142,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 9,
     icon: "bolt",
     title: "قهرمان",
     description:
@@ -159,7 +150,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 10,
     icon: "gavel",
     title: "قاضی",
     description:
@@ -168,7 +158,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 11,
     icon: "user-times",
     title: "فدایی",
     description:
@@ -177,7 +166,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 12,
     icon: "male",
     title: "گردن کلفت",
     description:
@@ -186,7 +174,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 13,
     icon: "money",
     title: "دست کج",
     description:
@@ -195,7 +182,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 14,
     icon: "bullhorn",
     title: "افشاگر",
     description:
@@ -204,7 +190,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 15,
     icon: "sign-language",
     title: "گورکن",
     description:
@@ -213,7 +198,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 16,
     icon: "search-plus",
     title: "کارآگاه ویژه",
     description:
@@ -222,7 +206,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 17,
     icon: "eercast",
     title: "ناقل",
     description:
@@ -231,7 +214,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 18,
     icon: "lock",
     title: "زندانبان",
     description:
@@ -240,7 +222,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 19,
     icon: "life-ring",
     title: "هوادار",
     description:
@@ -249,7 +230,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 20,
     icon: "exchange",
     title: "صبا",
     description:
@@ -258,7 +238,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 21,
     icon: "graduation-cap",
     title: "نخبه",
     description:
@@ -267,7 +246,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 22,
     icon: "balance-scale",
     title: "وکیل",
     description:
@@ -276,7 +254,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 23,
     icon: "user-secret",
     title: "جاسوس",
     description:
@@ -285,7 +262,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 24,
     icon: "user",
     title: "نانوا",
     description:
@@ -294,7 +270,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 25,
     icon: "plus-square",
     title: "پرستار",
     description:
@@ -303,7 +278,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 26,
     icon: "ambulance",
     title: "قرنطینه چی",
     description:
@@ -312,7 +286,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 27,
     icon: "pied-piper-alt",
     title: "شکارچی",
     description:
@@ -321,7 +294,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 28,
     icon: "street-view",
     title: "سیمین",
     description:
@@ -330,7 +302,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 29,
     icon: "link",
     title: "پیوند",
     description:
@@ -339,7 +310,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 30,
     icon: "hourglass-1",
     title: "سپیدار",
     description:
@@ -348,7 +318,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 31,
     icon: "book",
     title: "راوی",
     description:
@@ -357,7 +326,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 32,
     icon: "female",
     title: "حنا",
     description:
@@ -366,7 +334,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 33,
     icon: "pagelines",
     title: "فرشته نجات",
     description:
@@ -375,7 +342,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 34,
     icon: "wrench",
     title: "دندان پزشک",
     description:
@@ -384,19 +350,17 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 66,
     icon: "wifi",
     title: "خبرنگار",
     description:
       "نقش مقابل مذاکره کننده است و تلاش بر افشا کردن فرد مذاکره شده دارد",
     max: 1,
     type: "citizen",
-  }
+  },
 ];
 // ----------------------- MAFIA -------------------------------
 const mafias = [
   {
-    id: 35,
     icon: "user",
     title: "مافیا ساده",
     description:
@@ -405,7 +369,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 36,
     icon: "black-tie",
     title: "پدر خوانده",
     description:
@@ -414,7 +377,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 37,
     icon: "tint",
     title: "شاه کش",
     description:
@@ -423,7 +385,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 38,
     icon: "heart",
     title: "معشوقه",
     description:
@@ -432,7 +393,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 39,
     icon: "handshake-o",
     title: "روانکاو",
     description:
@@ -441,7 +401,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 40,
     icon: "flickr",
     title: "جَلَب",
     description:
@@ -450,7 +409,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 41,
     icon: "500px",
     title: "قاتل حرفه ای",
     description:
@@ -459,7 +417,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 42,
     icon: "drupal",
     title: "سیاه زخم",
     description:
@@ -468,7 +425,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 43,
     icon: "flask",
     title: "داروساز",
     description:
@@ -477,7 +433,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 44,
     icon: "eyedropper",
     title: "آمپول زن",
     description:
@@ -486,7 +441,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 45,
     icon: "grav",
     title: "کابوس",
     description:
@@ -495,7 +449,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 46,
     icon: "hotel",
     title: "شب خٌسب",
     description:
@@ -504,7 +457,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 47,
     icon: "user-md",
     title: "دکتر لِکتر",
     description:
@@ -513,7 +465,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 48,
     icon: "car",
     title: "محافظ",
     description:
@@ -522,7 +473,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 49,
     icon: "american-sign-language-interpreting",
     title: "دو رو",
     description:
@@ -531,7 +481,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 50,
     icon: "bomb",
     title: "بمب ساز",
     description:
@@ -540,7 +489,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 51,
     icon: "hand-rock-o",
     title: "شارلاتان",
     description:
@@ -549,7 +497,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 67,
     icon: "refresh",
     title: "مذاکره کننده",
     description:
@@ -561,7 +508,6 @@ const mafias = [
 // ----------------------- MID INDEPENDENTS -------------------------------
 const mid_independents = [
   {
-    id: 52,
     icon: "hand-o-left",
     title: "جانی",
     description:
@@ -570,7 +516,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 53,
     icon: "question",
     title: "مجهول",
     description:
@@ -579,7 +524,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 54,
     icon: "slideshare",
     title: "همزاد",
     description:
@@ -588,7 +532,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 55,
     icon: "snowflake-o",
     title: "مریض",
     description:
@@ -597,7 +540,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 56,
     icon: "gratipay",
     title: "جانان",
     description:
@@ -609,7 +551,6 @@ const mid_independents = [
 // ----------------------- INDEPENDENTS -------------------------------
 const independents = [
   {
-    id: 57,
     icon: "users",
     title: "هزار چهره",
     description:
@@ -618,7 +559,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 58,
     icon: "odnoklassniki",
     title: "نایب",
     description:
@@ -627,7 +567,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 59,
     icon: "resistance",
     title: "شیطان صفت",
     description:
@@ -636,7 +575,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 60,
     icon: "gitlab",
     title: "گرگ نما",
     description:
@@ -645,7 +583,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 61,
     icon: "stumbleupon",
     title: "دو رگه",
     description:
@@ -654,7 +591,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 62,
     icon: "tencent-weibo",
     title: "سندیکا",
     description:
@@ -663,7 +599,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 63,
     icon: "usb",
     title: "عماد",
     description:
@@ -672,7 +607,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 64,
     icon: "bug",
     title: "کرونا",
     description:
@@ -681,7 +615,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 65,
     icon: "bandcamp",
     title: "ساغر",
     description:

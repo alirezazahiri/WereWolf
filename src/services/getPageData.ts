@@ -53,7 +53,14 @@ import { godVision_objects_en } from "../translations/GodVision/GodVision-en";
 import { godVision_objects_fa } from "../translations/GodVision/GodVision-fa";
 
 const getChars = (language: string) => {
-  return language === "english" ? chars_en : chars_fa;
+  const chars_obj = language === "english" ? chars_en : chars_fa;
+  return {
+    characters: chars_obj.characters.map((char, index) => ({
+      ...char,
+      id: index + 1,
+    })),
+    names: chars_obj.names,
+  };
 };
 
 const getHome = (language: string) => {

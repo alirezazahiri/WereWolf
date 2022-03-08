@@ -33,11 +33,10 @@ const names = [
   "hannah",
   "savior",
   "dentist",
-  "negotiator",
   "reporter",
-
+  
   // ----- Mafia -----
-
+  
   "simple-mafia",
   "godfather",
   "regicide",
@@ -55,6 +54,7 @@ const names = [
   "double-faced",
   "bomb-maker",
   "charlatan",
+  "negotiator",
 
   // ----- Mid Independents -----
 
@@ -79,7 +79,6 @@ const names = [
 
 const citizens = [
   {
-    id: 1,
     icon: "user",
     title: "Simple Citizen",
     description:
@@ -88,7 +87,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 2,
     icon: "shield",
     title: "Armored",
     description:
@@ -97,7 +95,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 3,
     icon: "search",
     title: "Detective",
     description:
@@ -106,7 +103,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 4,
     icon: "medkit",
     title: "Doctor",
     description:
@@ -115,7 +111,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 5,
     icon: "fire",
     title: "Opium",
     description:
@@ -124,7 +119,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 6,
     icon: "crosshairs",
     title: "Sniper",
     description:
@@ -133,7 +127,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 7,
     icon: "leaf",
     title: "Priest",
     description:
@@ -142,7 +135,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 8,
     icon: "building-o",
     title: "Mayor",
     description:
@@ -151,7 +143,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 9,
     icon: "bolt",
     title: "Hero",
     description:
@@ -160,7 +151,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 10,
     icon: "gavel",
     title: "Judge",
     description:
@@ -169,7 +159,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 11,
     icon: "user-times",
     title: "Devotee",
     description:
@@ -178,7 +167,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 12,
     icon: "male",
     title: "Bully",
     description:
@@ -187,7 +175,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 13,
     icon: "money",
     title: "Crooked Hands",
     description:
@@ -196,7 +183,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 14,
     icon: "bullhorn",
     title: "Revealer",
     description:
@@ -205,7 +191,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 15,
     icon: "sign-language",
     title: "Pitman",
     description:
@@ -214,7 +199,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 16,
     icon: "search-plus",
     title: "Spectre",
     description:
@@ -223,7 +207,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 17,
     icon: "eercast",
     title: "Contagious",
     description:
@@ -232,7 +215,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 18,
     icon: "lock",
     title: "Prison Officer",
     description:
@@ -241,7 +223,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 19,
     icon: "life-ring",
     title: "Advocate",
     description:
@@ -250,7 +231,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 20,
     icon: "exchange",
     title: "Saba",
     description:
@@ -259,7 +239,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 21,
     icon: "graduation-cap",
     title: "Elite",
     description:
@@ -268,7 +247,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 22,
     icon: "balance-scale",
     title: "Lawyer",
     description:
@@ -277,7 +255,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 23,
     icon: "user-secret",
     title: "Spy",
     description:
@@ -286,7 +263,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 24,
     icon: "user",
     title: "Baker",
     description:
@@ -295,7 +271,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 25,
     icon: "plus-square",
     title: "Nurse",
     description:
@@ -304,7 +279,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 26,
     icon: "ambulance",
     title: "Quarantine",
     description:
@@ -313,7 +287,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 27,
     icon: "pied-piper-alt",
     title: "hunter",
     description:
@@ -322,7 +295,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 28,
     icon: "street-view",
     title: "Simin",
     description:
@@ -331,7 +303,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 29,
     icon: "link",
     title: "Link",
     description:
@@ -340,7 +311,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 30,
     icon: "hourglass-1",
     title: "Poplar",
     description:
@@ -349,7 +319,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 31,
     icon: "book",
     title: "Narrator",
     description:
@@ -358,7 +327,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 32,
     icon: "female",
     title: "حنا",
     description:
@@ -367,7 +335,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 33,
     icon: "pagelines",
     title: "Savior",
     description:
@@ -376,7 +343,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 34,
     icon: "wrench",
     title: "Dentist",
     description:
@@ -385,7 +351,6 @@ const citizens = [
     type: "citizen",
   },
   {
-    id: 66,
     icon: "wifi",
     title: "Reporter",
     description:
@@ -397,7 +362,6 @@ const citizens = [
 // ----------------------- MAFIA -------------------------------
 const mafias = [
   {
-    id: 35,
     icon: "user",
     title: "Simple Mafia",
     description:
@@ -406,7 +370,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 36,
     icon: "black-tie",
     title: "Godfather",
     description:
@@ -415,7 +378,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 37,
     icon: "tint",
     title: "Regicide",
     description:
@@ -424,7 +386,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 38,
     icon: "heart",
     title: "Sweetheart",
     description:
@@ -433,7 +394,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 39,
     icon: "handshake-o",
     title: "Psychologist",
     description:
@@ -442,7 +402,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 40,
     icon: "flickr",
     title: "Naughty",
     description:
@@ -451,7 +410,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 41,
     icon: "500px",
     title: "Slayer",
     description:
@@ -460,7 +418,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 42,
     icon: "drupal",
     title: "Dark Blood",
     description:
@@ -469,7 +426,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 43,
     icon: "flask",
     title: "Pharmacist",
     description:
@@ -478,7 +434,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 44,
     icon: "eyedropper",
     title: "Injector",
     description:
@@ -487,7 +442,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 45,
     icon: "grav",
     title: "Nightmare",
     description:
@@ -496,7 +450,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 46,
     icon: "hotel",
     title: "Night SLeeper",
     description:
@@ -505,7 +458,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 47,
     icon: "user-md",
     title: "Dr. Lecter",
     description:
@@ -514,7 +466,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 48,
     icon: "car",
     title: "Guard",
     description:
@@ -523,7 +474,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 49,
     icon: "american-sign-language-interpreting",
     title: "Double-Faced",
     description:
@@ -532,7 +482,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 50,
     icon: "bomb",
     title: "Bomber",
     description:
@@ -541,7 +490,6 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 51,
     icon: "hand-rock-o",
     title: "Charlatan",
     description:
@@ -550,19 +498,17 @@ const mafias = [
     type: "mafia",
   },
   {
-    id: 67,
     icon: "refresh",
     title: "Negotiator",
     description:
       "at night, it can choose a simple citizen to negotiate it and change it's side to mafia, and it has NO EFFECT on roled citizens",
     max: 1,
     type: "mafia",
-  }
+  },
 ];
 // ----------------------- MID INDEPENDENTS -------------------------------
 const mid_independents = [
   {
-    id: 52,
     icon: "hand-o-left",
     title: "Malefactor",
     description:
@@ -571,7 +517,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 53,
     icon: "question",
     title: "Unknown",
     description:
@@ -580,7 +525,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 54,
     icon: "slideshare",
     title: "Twin",
     description:
@@ -589,7 +533,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 55,
     icon: "snowflake-o",
     title: "Sick",
     description:
@@ -598,7 +541,6 @@ const mid_independents = [
     type: "mid-independent",
   },
   {
-    id: 56,
     icon: "gratipay",
     title: "Dearest",
     description:
@@ -610,7 +552,6 @@ const mid_independents = [
 // ----------------------- INDEPENDENTS -------------------------------
 const independents = [
   {
-    id: 57,
     icon: "users",
     title: "Thousand-Faced",
     description:
@@ -619,7 +560,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 58,
     icon: "odnoklassniki",
     title: "Deputy",
     description:
@@ -628,7 +568,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 59,
     icon: "resistance",
     title: "Evil",
     description:
@@ -637,7 +576,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 60,
     icon: "gitlab",
     title: "Werewolf",
     description:
@@ -646,7 +584,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 61,
     icon: "stumbleupon",
     title: "Hybrid",
     description:
@@ -655,7 +592,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 62,
     icon: "tencent-weibo",
     title: "Sandica",
     description:
@@ -664,7 +600,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 63,
     icon: "usb",
     title: "Emad",
     description:
@@ -673,7 +608,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 64,
     icon: "bug",
     title: "Corona",
     description:
@@ -682,7 +616,6 @@ const independents = [
     type: "independent",
   },
   {
-    id: 65,
     icon: "bandcamp",
     title: "Saghar",
     description:
