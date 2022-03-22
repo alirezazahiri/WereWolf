@@ -20,17 +20,25 @@ import {
   PASS_SUCCESS_EN,
 } from "../../translations/Toaster/toast-messages";
 
-const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
-  const [data, setData] = useState({
-    currentPassword: "",
-    newPassword1: "",
-    newPassword2: "",
-  });
+interface ISetPasswordForm {
+  closeHandler: any;
+  isForgotten?: boolean;
+}
 
+const SetPasswordForm: FC<ISetPasswordForm> = ({
+  closeHandler,
+  isForgotten,
+}) => {
   const { password, language } = useSelector((state: AppState) => ({
     ...state.passwordState,
     ...state.languageState,
   }));
+
+  const [data, setData] = useState({
+    currentPassword: isForgotten ? decrypt(password) : "",
+    newPassword1: "",
+    newPassword2: "",
+  });
   const dispatch = useDispatch();
   const { proceed, currentPassPH, newPassPH, confirmPassPH } =
     getSettings(language);
@@ -75,7 +83,7 @@ const SetPasswordForm: FC<{ closeHandler: any }> = ({ closeHandler }) => {
 
   return (
     <form onSubmit={submitHandler} className={styles.formContainer}>
-      {!!decrypt(password) && (
+      {!!decrypt(password) && !isForgotten && (
         <PasswordInput
           name="currentPassword"
           data={data}

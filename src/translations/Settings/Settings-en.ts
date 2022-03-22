@@ -1,5 +1,6 @@
 const passwordSettings = "Set God's Password";
 const languageSettings = "Change Language";
+const forgetPassSettings = "Forgot Password";
 const proceed = "Proceed";
 const passwordPH = "Password...";
 const currentPassPH = "Current password...";
@@ -11,6 +12,7 @@ const hidePassPrompt = "Hide";
 export const settings_objects_en = {
   passwordSettings,
   languageSettings,
+  forgetPassSettings,
   proceed,
   passwordPH,
   currentPassPH,

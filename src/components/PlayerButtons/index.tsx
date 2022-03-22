@@ -20,7 +20,7 @@ import PButton from "./PButton";
 
 // styles
 import styles from "./PlayerButtons.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ModalContainer from "../Modal";
 import Search from "../Search";
 import useSearch from "../../hooks/useSearch";
@@ -28,6 +28,7 @@ import toFarsiNumber from "../../services/convertNumbersToFa";
 
 const PlayerButtons = () => {
   const dispatch = useDispatch();
+  const rerenderCountRef = useRef(0);
   const [value, changeHandler] = useSearch();
   const { language, roleDictionary, characters } = useSelector(
     (state: AppState) => ({
@@ -51,15 +52,17 @@ const PlayerButtons = () => {
       showToast("success", update_message);
     }
   };
-
+  console.log(rerenderCountRef);
   useEffect(() => {
-    const values = Object.values(roleDictionary).reduce(
-      (prev, current) => prev + current,
-      ""
-    );
-    if (values === "") {
-      dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters));
+    if (rerenderCountRef.current < 1) {
+      const values = Object.values(roleDictionary).reduce(
+        (prev, current) => prev + current,
+        ""
+      );
+      if (values === "")
+        dispatch(updateRoleDictionary(Object.keys(roleDictionary), characters));
     }
+    rerenderCountRef.current++;
   }, [characters, dispatch, roleDictionary]);
 
   return (

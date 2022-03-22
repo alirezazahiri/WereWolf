@@ -152,6 +152,9 @@ const ModalContainer: FC<Props> = ({
             <LanguageChanger className={styles.flag} />
           </>
         )}
+        {type === "forgetPassSettings" && (
+          <SetPasswordForm isForgotten={true} closeHandler={closeHandler} />
+        )}
       </Modal.Body>
     </Modal>
   );

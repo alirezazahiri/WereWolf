@@ -1,5 +1,6 @@
 const passwordSettings = "تغییر گذرواژه گرداننده";
 const languageSettings = "تغییر زبان";
+const forgetPassSettings = "فراموشی گذرواژه";
 const proceed = "تایید";
 const passwordPH = "...گذرواژه";
 const currentPassPH = "...گذرواژه کنونی";
@@ -11,6 +12,7 @@ const hidePassPrompt = "پنهان";
 export const settings_objects_fa = {
   passwordSettings,
   languageSettings,
+  forgetPassSettings,
   proceed,
   passwordPH,
   currentPassPH,

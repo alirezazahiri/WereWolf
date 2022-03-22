@@ -8,12 +8,14 @@ import styles from "./Settings.module.css";
 const initialState = {
   passwordSettings: false,
   languageSettings: false,
+  forgetPassSettings: false,
 };
 
 const Settings = () => {
   const { language } = useSelector((state: AppState) => state.languageState);
   const [show, setShow] = useState(initialState);
-  const { passwordSettings, languageSettings } = getSettings(language);
+  const { passwordSettings, languageSettings, forgetPassSettings } =
+    getSettings(language);
 
   return (
     <div className={styles.container}>
@@ -32,6 +34,13 @@ const Settings = () => {
           {languageSettings}
         </button>
       </div>
+      <div className={styles.buttonContainer}>
+        <button
+          onClick={() => setShow({ ...initialState, forgetPassSettings: true })}
+        >
+          {forgetPassSettings}
+        </button>
+      </div>
 
       {/* modals */}
       {/* Password */}
@@ -46,6 +55,13 @@ const Settings = () => {
         language={language}
         type="changeLanguage"
         show={show.languageSettings}
+        closeHandler={() => setShow({ ...initialState })}
+      />
+      {/* Forget Password Settings */}
+      <ModalContainer
+        language={language}
+        type="forgetPassSettings"
+        show={show.forgetPassSettings}
         closeHandler={() => setShow({ ...initialState })}
       />
     </div>
