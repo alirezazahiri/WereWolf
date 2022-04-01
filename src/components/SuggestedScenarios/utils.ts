@@ -13,6 +13,12 @@ const suggestions: SuggestionType[] = [
     characters: [1, 2, 3, 4, 6, 8, 15, 34, 36, 36, 37, 48],
   },
   {
+    id: 7,
+    en_title: "12x - Mafia Nights (Joker)",
+    fa_title: "شب های مافیا (جوکر) - ۱۲ نفره",
+    characters: [1, 2, 3, 4, 6, 8, 15, 34, 36, 37, 48, 54],
+  },
+  {
     id: 2,
     en_title: "8x - Mafia Nights",
     fa_title: "شب های مافیا - ۸ نفره",
@@ -28,7 +34,7 @@ const suggestions: SuggestionType[] = [
     id: 4,
     en_title: "13x - Advanced Classic Mafia (WereWolf)",
     fa_title: "مافیا کلاسیک پیشرفته (گرگ نما) - ۱۳ نفره",
-    characters: [2, 3, 4, 6, 7, 11, 12, 22, 23, 37, 38, 51, 62],
+    characters: [2, 3, 4, 6, 7, 11, 12, 22, 23, 37, 38, 51, 63],
   },
   {
     id: 5,

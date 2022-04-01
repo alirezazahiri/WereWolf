@@ -55,26 +55,27 @@ const names = [
   "bomb-maker", // 51
   "charlatan", // 52
   "negotiator", // 53
+  "joker", // 54
 
   // ----- Mid Independents -----
 
-  "malefactor", // 54
-  "unknown", // 55
-  "twin", // 56
-  "sick", // 57
-  "dearest", // 58
+  "malefactor", // 55
+  "unknown", // 56
+  "twin", // 57
+  "sick", // 58
+  "dearest", // 59
 
   // ----- Independents -----
 
-  "thousand-faces", // 59
-  "deputy", // 60
-  "evil", // 61
-  "werewolf", // 62
-  "hybrid", // 63
-  "sandica", // 64
-  "emad", // 65
-  "corona", // 66
-  "saghar", // 67
+  "thousand-faces", // 60
+  "deputy", // 61
+  "evil", // 62
+  "werewolf", // 63
+  "hybrid", // 64
+  "sandica", // 65
+  "emad", // 66
+  "corona", // 67
+  "saghar", // 68
 ];
 
 const citizens = [
@@ -502,6 +503,14 @@ const mafias = [
     title: "Negotiator",
     description:
       "at night, it can choose a simple citizen to negotiate it and change it's side to mafia, and it has NO EFFECT on roled citizens",
+    max: 1,
+    type: "mafia",
+  },
+  {
+    icon: "delicious",
+    title: "joker",
+    description:
+      "It can choose a person to reverse the side of their role for The Detective. meaning that, if the target is a citizen, it shows up as a mafia, and conversely. Joker can only use his ability 'once' on himself!",
     max: 1,
     type: "mafia",
   },

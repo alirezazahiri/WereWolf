@@ -55,26 +55,27 @@ const names = [
   "bomb-maker", // 51
   "charlatan", // 52
   "negotiator", // 53
+  "joker", // 54
 
   // ----- Mid Independents -----
 
-  "malefactor", // 54
-  "unknown", // 55
-  "twin", // 56
-  "sick", // 57
-  "dearest", // 58
+  "malefactor", // 55
+  "unknown", // 56
+  "twin", // 57
+  "sick", // 58
+  "dearest", // 59
 
   // ----- Independents -----
 
-  "thousand-faces", // 59
-  "deputy", // 60
-  "evil", // 61
-  "werewolf", // 62
-  "hybrid", // 63
-  "sandica", // 64
-  "emad", // 65
-  "corona", // 66
-  "saghar", // 67
+  "thousand-faces", // 60
+  "deputy", // 61
+  "evil", // 62
+  "werewolf", // 63
+  "hybrid", // 64
+  "sandica", // 65
+  "emad", // 66
+  "corona", // 67
+  "saghar", // 68
 ];
 
 const citizens = [
@@ -501,6 +502,14 @@ const mafias = [
     title: "مذاکره کننده",
     description:
       "او میتواند در شب با یک شهروند ساده مذاکره کند و او را به یک مافیا تبدیل کند. این عمل فقط روی شهروندان ساده ممکن است و بر شهروندان غیر ساده تاثیری ندارد",
+    max: 1,
+    type: "mafia",
+  },
+  {
+    icon: "delicious",
+    title: "جوکر",
+    description:
+      "هر شب یک نفر را انتخاب میکند و استعلام آن فرد را برای کارآگاه معکوس میکند. به این صورت که اگر شهروند باشد، مافیا نشان داده میشود و بالعکس. تنها یک بار میتواند از این قابلیت بر روی خودش استفاده کند.",
     max: 1,
     type: "mafia",
   },
