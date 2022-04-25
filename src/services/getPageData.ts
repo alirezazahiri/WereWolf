@@ -2,6 +2,10 @@
 import { chars_en } from "../translations/chars/chars-en";
 import { chars_fa } from "../translations/chars/chars-fa";
 
+// exit cards data 
+import { exit_cards_en } from "../translations/ExitCards/ExitCards-en";
+import { exit_cards_fa } from "../translations/ExitCards/ExitCards-fa";
+
 // Home data
 import { home_objects_en } from "../translations/Home/Home-en";
 import { home_objects_fa } from "../translations/Home/Home-fa";
@@ -41,14 +45,24 @@ import { guide_objects_fa } from "../translations/Guide/Guide-fa";
 // PlayerVision
 import { player_vision_objects_en } from "../translations/PlayerVision/PlayerVision-en";
 import { player_vision_objects_fa } from "../translations/PlayerVision/PlayerVision-fa";
+
+// suggestion vision
 import { suggestion_vision_objects_en } from "../translations/SuggestionVision/suggestionVision-en";
 import { suggestion_vision_objects_fa } from "../translations/SuggestionVision/suggestionVision-fa";
+
+// Statistics 
 import { statistics_objects_fa } from "../translations/Statistics/statistics-fa";
 import { statistics_objects_en } from "../translations/Statistics/statistics-en";
+
+// Caution messages 
 import { caution_objects_en } from "../translations/Caution/caution-en";
 import { caution_objects_fa } from "../translations/Caution/caution-fa";
+
+// settings prompts
 import { settings_objects_en } from "../translations/Settings/Settings-en";
 import { settings_objects_fa } from "../translations/Settings/Settings-fa";
+
+// Godvision
 import { godVision_objects_en } from "../translations/GodVision/GodVision-en";
 import { godVision_objects_fa } from "../translations/GodVision/GodVision-fa";
 
@@ -60,6 +74,16 @@ const getChars = (language: string) => {
       id: index + 1,
     })),
     names: chars_obj.names,
+  };
+};
+
+const getExitCards = (language: string) => {
+  const exit_cards_obj = language === "english" ? exit_cards_en : exit_cards_fa;
+  return {
+    exitCards: exit_cards_obj.cards.map((card, index) => ({
+      ...card,
+      id: index + 1,
+    })),
   };
 };
 
@@ -135,6 +159,7 @@ const getGodVision = (language: string) => {
 
 export {
   getChars as default,
+  getExitCards,
   getHome,
   getGameSetup,
   getNavbar,
