@@ -37,7 +37,7 @@ const App = () => {
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
