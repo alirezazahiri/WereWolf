@@ -10,6 +10,7 @@ export interface ICharactersActions extends IAction {}
 export interface IPlayersDataActions extends IAction {}
 export interface IPasswordActions extends IAction {}
 export interface IDayNightActions extends IAction {}
+export interface IExitCardsActions extends IAction {}
 
 export interface ILanguageState {
   language: string;
@@ -40,6 +41,11 @@ export interface ICharactersState {
 
 export interface IDayNightState {
   isDay: boolean;
+}
+
+export interface IExitCardsState {
+  cards: number[];
+  isFull: boolean;
 }
 
 export type DictType = { [player: string]: any };

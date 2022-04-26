@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 30px;
-  padding: 80px 40px 80px 80px;
+  padding: 0 15px 35px;
 }
 
 @media (min-width: 0) and (max-width: 870px) {
@@ -16,4 +16,8 @@
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.statContainer {
+  margin: 0 30px 40px;
 }

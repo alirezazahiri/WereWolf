@@ -1,15 +1,16 @@
 .container {
   text-align: center;
-  margin: 1.5rem 3rem;
-  padding: 25px 25px 5px;
+  margin: 5px 15px;
+  padding: 5px;
   border-radius: 12px;
   backdrop-filter: blur(30px);
   background-color: #5c527f2f;
   transition: all 0.2s ease;
-  border: 1px solid #5C527F;
+  border: 1px solid #5c527f;
 }
 
-.container:hover {
+.container:hover,
+.container.active {
   background-color: #5c527f75;
 }
 
@@ -19,8 +20,9 @@
 
 .container h1 {
   font-size: 2.2rem;
+  padding: 10px 0;
   font-weight: 700;
-  color: #F6D167;
+  color: #f6d167;
 }
 
 .container p {
