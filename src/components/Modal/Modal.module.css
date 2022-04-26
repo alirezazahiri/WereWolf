@@ -1,41 +1,56 @@
 .container {
-    /* backdrop-filter: blur(20px); */
-    background-color: rgba(0, 0, 0, 0.6);
-    text-align: center;
+  /* backdrop-filter: blur(20px); */
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
 .container div {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .container div div div div {
-    color: #50cb93;
+  color: #50cb93;
 }
 
 .headerContainer {
-    border: none;
-    overflow: hidden;
-    display: flex;
+  border: none;
+  overflow: hidden;
+  display: flex;
 }
 
 .headerContainer button {
-    border: none;
-    font-size: 1.4rem;
+  border: none;
+  font-size: 1.4rem;
 }
 
 .buttonsContainer {
-    display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-    background-color: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  background-color: none;
 }
 
 .flag {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .h1 {
-    color: rgb(98, 90, 129);
-    font-size: 1.8rem;
-    margin: 20px 0;
+  color: rgb(98, 90, 129);
+  font-size: 1.8rem;
+  margin: 20px 0;
+}
+
+.exitCardContainer {
+}
+
+.exitCardContainer h1 {
+  font-size: 2.2rem;
+  padding: 10px 0;
+  font-weight: 700;
+  color: #f6d167;
+}
+
+.exitCardContainer p {
+  color: white;
+  font-size: 1.5rem;
 }

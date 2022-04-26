@@ -18,6 +18,7 @@ const exitCardsReducer = (state = initialState, action: IExitCardsActions) => {
       }
       return state;
     case "REMOVE_EXIT_CARD":
+      console.log(state.cards.filter((id) => id !== action.payload))
       if (state.cards.includes(action.payload))
         return {
           ...state,

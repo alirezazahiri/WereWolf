@@ -39,6 +39,7 @@ interface Props {
   scenarioName?: string;
   countOfPlayers?: number;
   caution_message?: string;
+  exitCard?: { title: string; description: string };
   closeHandler: () => void;
   backHandler?: () => void;
   startHandler?: () => void;
@@ -62,6 +63,7 @@ const ModalContainer: FC<Props> = ({
   character,
   charactersSet,
   countOfPlayers,
+  exitCard,
 }) => {
   const { buttons } = getModal(language);
   const { playersCount, names, characters } = useSelector(
@@ -83,6 +85,8 @@ const ModalContainer: FC<Props> = ({
     title = language === "persian" ? "تغییر زبان" : "Change Language";
   else if (type === "caution")
     title = language === "persian" ? "توجه" : "Notice";
+  else if (type === "exitCardAnnouncement")
+    title = language === "persian" ? "کارت خروج" : "Exit Card";
   else title = "";
 
   return (
@@ -154,6 +158,12 @@ const ModalContainer: FC<Props> = ({
         )}
         {type === "forgetPassSettings" && (
           <SetPasswordForm isForgotten={true} closeHandler={closeHandler} />
+        )}
+        {type === "exitCardAnnouncement" && (
+          <div className={styles.exitCardContainer}>
+            <h1>{exitCard?.title}</h1>
+            <p>{exitCard?.description}</p>
+          </div>
         )}
       </Modal.Body>
     </Modal>
