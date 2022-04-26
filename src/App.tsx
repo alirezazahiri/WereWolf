@@ -11,6 +11,7 @@ import store, { persistor } from "./redux/store";
 
 // components
 import SuggestedScenarios from "./components/SuggestedScenarios";
+import ExitCardsContainer from "./components/ExitCardsContainer";
 import SuggestionVision from "./components/SuggestionVision";
 import AuthContainer from "./components/AuthContainer";
 import PlayerButtons from "./components/PlayerButtons";
@@ -27,7 +28,6 @@ import Home from "./components/Home";
 // Toast
 import { Toaster } from "react-hot-toast";
 import { useState } from "react";
-import ExitCardsContainer from "./components/ExitCardsContainer";
 
 const App = () => {
   const [isAllowed, setIsAllowed] = useState(false);
@@ -37,8 +37,8 @@ const App = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <Provider store={store}>
         <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+      <Provider store={store}>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -78,8 +78,8 @@ const App = () => {
             <Route path="/guide" element={<Guide />} />
           </Routes>
           <Layout />
-        </PersistGate>
       </Provider>
+        </PersistGate>
     </>
   );
 };
