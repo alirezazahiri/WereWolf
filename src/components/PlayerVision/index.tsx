@@ -6,7 +6,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 
 // components
 import BriefSection from './BriefSection';
-import StatSwitch from './StatSwitch';
+import StatSwitch from '../StatSwitch';
 import Icon from '../Icon';
 
 // styles 

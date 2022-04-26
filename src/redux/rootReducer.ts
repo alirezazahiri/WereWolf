@@ -7,6 +7,7 @@ import passwordReducers from "./password/passwordReducers";
 import languageReducer from "./language/languageReducers";
 import playersReducer from "./players/playersReducer";
 import filterReducer from "./filter/filterReducer";
+import dayNightReducer from "./dayNight/dayNightReducer";
 
 const rootReducer = combineReducers({
   languageState: languageReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   charactersState: charactersReducer,
   playersDataState: playersDataReducer,
   passwordState: passwordReducers,
+  dayNightState: dayNightReducer,
 });
 
 export default rootReducer;

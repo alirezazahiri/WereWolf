@@ -21,6 +21,8 @@ import StatFilter from "./StatFilter";
 import { updateRoleDictionary } from "../../redux/playersData/playersDataActions";
 import { CharType } from "../../redux/types";
 import Statistics from "../Statistics";
+import StatSwitch from "../StatSwitch";
+import { toggleDayNight } from "../../redux/dayNight/dayNightActions";
 
 const GodVision = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ const GodVision = () => {
     dataDictionary,
     filter,
     characters,
+    isDay,
   } = useSelector((state: AppState) => ({
     ...state.languageState,
     ...state.playersState,
@@ -38,6 +41,7 @@ const GodVision = () => {
     ...state.charactersState,
     ...state.filterState,
     ...state.passwordState,
+    ...state.dayNightState,
   }));
 
   const [value, changeHandler] = useSearch();
@@ -55,10 +59,25 @@ const GodVision = () => {
     }
   }, [characters, dispatch, roleDictionary]);
 
+  const getSwitchTitle = () => {
+    if (isDay) {
+      if (language === "english") return "Day";
+      return "روز";
+    }
+    if (language === "english") return "Night";
+    return "شب";
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.statContainer}>
         <Statistics />
+        <StatSwitch
+          onChange={() => dispatch(toggleDayNight())}
+          title={getSwitchTitle()}
+          checked={isDay}
+          color={isDay ? "#2ce071" : "#DA0037"}
+        />
       </div>
       <FilterContainer
         value={value}

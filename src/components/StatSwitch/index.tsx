@@ -10,7 +10,7 @@ type Props = {
     onChange: () => void,
     checked: boolean,
     title: string,
-    color: string | undefined
+    color?: string
 }
 
 const StatSwitch: FC<Props> = ({ onChange, checked, color, title }) => {
