@@ -37,8 +37,8 @@ const App = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
       <Provider store={store}>
+        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -78,8 +78,8 @@ const App = () => {
             <Route path="/guide" element={<Guide />} />
           </Routes>
           <Layout />
-      </Provider>
         </PersistGate>
+      </Provider>
     </>
   );
 };
