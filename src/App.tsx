@@ -27,6 +27,7 @@ import Home from "./components/Home";
 // Toast
 import { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import ExitCardsContainer from "./components/ExitCardsContainer";
 
 const App = () => {
   const [isAllowed, setIsAllowed] = useState(false);
@@ -73,6 +74,7 @@ const App = () => {
             />
             <Route path="/scenarios" element={<Scenarios />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/exit-cards" element={<ExitCardsContainer />} />
             <Route path="/guide" element={<Guide />} />
           </Routes>
           <Layout />

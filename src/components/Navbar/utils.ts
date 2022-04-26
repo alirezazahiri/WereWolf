@@ -11,6 +11,7 @@ interface IgetNavLinks {
   gods_room: string;
   game_setup: string;
   start_game: string;
+  exit_cards: string;
 }
 
 export const getNavLinks = ({
@@ -21,6 +22,7 @@ export const getNavLinks = ({
   gods_room,
   suggested_scenarios,
   senarios,
+  exit_cards,
   guide,
 }: IgetNavLinks) => [
   { name: start_game, to: "/" },
@@ -30,6 +32,7 @@ export const getNavLinks = ({
   { name: suggested_scenarios, to: "/suggested-scenarios" },
   { name: senarios, to: "/scenarios" },
   { name: settings, to: "/settings" },
+  { name: exit_cards, to: "/exit-cards" },
   { name: guide, to: "/guide" },
 ];
 

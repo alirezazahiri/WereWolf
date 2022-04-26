@@ -5,17 +5,19 @@ const suggested_scenarios = "سناریوهای پیشنهادی";
 const players = "بازیکنان";
 const gods_room = "اتاق گرداننده";
 const game_setup = "آماده سازی بازی";
-const start_game = "شروع بازی"
-const settings = "تنظیمات"
+const start_game = "شروع بازی";
+const settings = "تنظیمات";
+const exit_cards = "کارت های خروج";
 
 export const navbar_objects_fa = {
-    title,
-    guide,
-    senarios,
-    suggested_scenarios,
-    players,
-    gods_room,
-    game_setup,
-    start_game,
-    settings
+  title,
+  guide,
+  senarios,
+  suggested_scenarios,
+  players,
+  gods_room,
+  game_setup,
+  start_game,
+  settings,
+  exit_cards,
 };
