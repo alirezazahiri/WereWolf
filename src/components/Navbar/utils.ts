@@ -30,9 +30,9 @@ export const getNavLinks = ({
   { name: players, to: "/players-roles" },
   { name: gods_room, to: "/god-vision" },
   { name: suggested_scenarios, to: "/suggested-scenarios" },
+  { name: exit_cards, to: "/exit-cards" },
   { name: senarios, to: "/scenarios" },
   { name: settings, to: "/settings" },
-  { name: exit_cards, to: "/exit-cards" },
   { name: guide, to: "/guide" },
 ];
 
