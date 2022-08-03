@@ -76,6 +76,10 @@ const names = [
   "emad", // 66
   "corona", // 67
   "saghar", // 68
+
+   // ------ Updates ------
+  "salesman", // 69
+  "sleep-walker", // 70
 ];
 
 const citizens = [
@@ -675,11 +679,31 @@ const independents = [
   },
 ];
 
+const updates = [
+  {
+    icon: "address-card",
+    title: "فروشنده",
+    description:
+      "یکبار در طول بازی نقش یک بازیکن را (چه شهروند چه مافیا) از او میگیرد و آن بازیکن  تبدیل به یک ساده در ساید خود میشود. (توجه کنید که نقش گرفته شده به خود فروشنده انتقال نمیابد!)",
+    max: 1,
+    type: "citizen",
+  },
+  {
+    icon: "eye-slash",
+    title: "خوابگرد",
+    description:
+      "هرشب گرداننده قبل از بیدار کردن هر نقش دیگری از او میپرسد که آیا میخواهد از قابلیتش استفاده کند یا خیر. تنها یکبار در طول بازی خوابگردی میکند و جلوی بیدار شدن مافیا را میگیرد و در صبح روز بعد از بازی خارج میشود.",
+    max: 1,
+    type: "citizen",
+  },
+];
+
 const characters = [
   ...citizens,
   ...mafias,
   ...mid_independents,
   ...independents,
+  ...updates,
 ];
 
 export const chars_fa = { names, characters };

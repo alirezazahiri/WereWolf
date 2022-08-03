@@ -52,7 +52,7 @@ const PlayerButtons = () => {
       showToast("success", update_message);
     }
   };
-  console.log(rerenderCountRef);
+
   useEffect(() => {
     if (rerenderCountRef.current < 1) {
       const values = Object.values(roleDictionary).reduce(

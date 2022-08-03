@@ -76,6 +76,10 @@ const names = [
   "emad", // 66
   "corona", // 67
   "saghar", // 68
+
+  // ------ Updates ------
+  "salesman", // 69
+  "sleep-walker", // 70
 ];
 
 const citizens = [
@@ -676,11 +680,31 @@ const independents = [
   },
 ];
 
+const updates = [
+  {
+    icon: "address-card",
+    title: "Salesman",
+    description:
+      "He can use his ability once in a game, and he takes someone's ability away and turns the player to a simple player on each side he/she is playing on! (Notice that the taken roles aren't given to The Salesman)",
+    max: 1,
+    type: "citizen",
+  },
+  {
+    icon: "eye-slash",
+    title: "Night Walker",
+    description:
+      "Everynight, it wakes up before other players and it is asked by The God that it wants to use its ability or not, if yes then Mafia won't be woken up and it'll go out of the game in the morning.",
+    max: 1,
+    type: "citizen",
+  },
+];
+
 const characters = [
   ...citizens,
   ...mafias,
   ...mid_independents,
   ...independents,
+  ...updates,
 ];
 
 export const chars_en = { names, characters };
