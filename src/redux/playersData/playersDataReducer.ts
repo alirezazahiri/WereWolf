@@ -4,6 +4,7 @@ import { IPlayersDataState, IPlayersDataActions, DictType } from "../types";
 const initialState: IPlayersDataState = {
     dataDictionary: {},
     roleDictionary: {},
+    lifeStatDictionary: {} // TODO: use this instead of full player data object
 };
 
 const getList = (n: number): number[] => {

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import toFarsiNumber from "../../services/convertNumbersToFa";
@@ -6,22 +6,47 @@ import getColor from "../../services/getColor";
 import { getStatistics } from "../../services/getPageData";
 import styles from "./Statistics.module.css";
 import { countSides } from "./utils";
-import { SuggestionType } from '../SuggestedScenarios/utils';
+import { SuggestionType } from "../SuggestedScenarios/utils";
 
 interface IProps {
-    suggestion?: SuggestionType
+  suggestion?: SuggestionType;
 }
 
-const Statistics: FC<IProps> = ({suggestion}) => {
-  const { language, roleDictionary } = useSelector((state: AppState) => ({
-    ...state.charactersState,
-    ...state.languageState,
-    ...state.playersDataState,
-  }));
+const Statistics: FC<IProps> = ({ suggestion }) => {
+  const { language, roleDictionary, dataDictionary } = useSelector(
+    (state: AppState) => ({
+      ...state.charactersState,
+      ...state.languageState,
+      ...state.playersDataState,
+    })
+  );
+  const [stats, setStats] = useState(
+    countSides(
+      suggestion ? suggestion.characters : Object.values(roleDictionary),
+      language,
+      true,
+      {
+        dataDictionary,
+        roleDictionary,
+      }
+    )
+  );
 
   const { sides } = getStatistics(language);
-  const rolesInGame = suggestion ? suggestion.characters : Object.values(roleDictionary);
-  const stats = countSides(rolesInGame, language);
+
+  useEffect(() => {
+    setStats(
+      countSides(
+        suggestion ? suggestion.characters : Object.values(roleDictionary),
+        language,
+        true,
+        {
+          dataDictionary,
+          roleDictionary,
+        }
+      )
+    );
+  }, [suggestion, dataDictionary, roleDictionary, language]);
 
   return (
     <div className={styles.container}>
@@ -41,7 +66,11 @@ const Statistics: FC<IProps> = ({suggestion}) => {
               ]
             }
           </h3>
-          <h3>{language==="persian" ? toFarsiNumber(`${stats[side]}`) : stats[side]}</h3>
+          <h3>
+            {language === "persian"
+              ? toFarsiNumber(`${stats[side]}`)
+              : stats[side]}
+          </h3>
         </div>
       ))}
     </div>

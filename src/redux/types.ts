@@ -53,4 +53,5 @@ export type DictType = { [player: string]: any };
 export interface IPlayersDataState {
   dataDictionary: DictType;
   roleDictionary: DictType;
+  lifeStatDictionary: DictType;
 }
