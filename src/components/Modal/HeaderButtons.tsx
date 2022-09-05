@@ -197,6 +197,8 @@ const HeaderButtons: FC<Props> = ({
     buttons.start,
     buttons.go_to_char_select,
     buttons.see_characters,
+    handleGoto,
+    handleStart,
     type,
   ]);
 
