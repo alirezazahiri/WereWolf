@@ -94,7 +94,12 @@ const HeaderButtons: FC<Props> = ({
           language === "persian"
             ? MODAL_HEADER_SUCCESS_SUGGESTION_FA
             : MODAL_HEADER_SUCCESS_SUGGESTION_EN;
-        showToast("success", message);
+        showToast(
+          "success",
+          <button className={styles.start} onClick={handleStart}>
+            {message}
+          </button>
+        );
         dispatch(setCountOfPlayers(`${names.length}`));
         dispatch(createRoleDictionary(names));
         dispatch(createDataDictionary(names));
@@ -134,6 +139,17 @@ const HeaderButtons: FC<Props> = ({
       startGame();
       return;
     }
+    if (type === "scenarioNameEnter" && startGame === undefined) {
+      showToast(
+        "success",
+        <button className={styles.start} onClick={handleStart}>
+          {buttons.start}
+        </button>
+      );
+      dispatch(updateRoleDictionary(names, characters));
+      navigate("/players-roles");
+      return;
+    }
     if (startGame) {
       if (remaining !== 0) {
         const message =
@@ -156,11 +172,26 @@ const HeaderButtons: FC<Props> = ({
 
   useEffect(() => {
     if (remaining === 0 && type === "nameEnter")
-      showToast("success", buttons.go_to_char_select);
+      showToast(
+        "success",
+        <button className={styles.goto} onClick={handleGoto}>
+          {buttons.go_to_char_select}
+        </button>
+      );
     if (remaining === 0 && type === "scenarioNameEnter")
-      showToast("success", buttons.see_characters);
+      showToast(
+        "success",
+        <button className={styles.goto} onClick={handleGoto}>
+          {buttons.see_characters}
+        </button>
+      );
     else if (remaining === 0 && type === "charSelect")
-      showToast("success", buttons.start);
+      showToast(
+        "success",
+        <button className={styles.start} onClick={handleStart}>
+          {buttons.start}
+        </button>
+      );
   }, [
     remaining,
     buttons.start,

@@ -333,7 +333,7 @@ const citizens = [
   },
   {
     icon: "female",
-    title: "حنا",
+    title: "Hannah",
     description:
       "Everynight in the game it can choose a player, if that player is independent the target will be eliminated, either way nothing happens, but after two unsuccess tries Hannah will be eliminated",
     max: 1,

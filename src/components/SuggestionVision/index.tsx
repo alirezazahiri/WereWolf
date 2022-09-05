@@ -151,7 +151,7 @@ const SuggestionVision = () => {
           </div>
         ) : (
           <h1>NOT-FOUND</h1>
-        ) /* TODO: define a NOT-FOUND page */
+        ) // TODO: define a NOT-FOUND page
       }
     </>
   );

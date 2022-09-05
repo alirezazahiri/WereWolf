@@ -74,6 +74,7 @@ const GameSetup = () => {
                 backHandler={() => dispatch(openNameEnter())}
                 closeHandler={() => dispatch(closeCharSelect())}
                 startHandler={() => dispatch(closeCharSelect())}
+                gotoCharSelect={() => dispatch(openCharSelect())}
                 show={state.charSelect}
             />
         </div>

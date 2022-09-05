@@ -20,7 +20,7 @@ const ERROR_STYLE = {
     color: "#DA0037",
 };
 
-const showToast = (status: string, message: string) => {
+const showToast = (status: string, message: string | JSX.Element) => {
     toast.dismiss();
     if (status === "success") {
         toast.success(message, {
