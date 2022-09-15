@@ -28,6 +28,7 @@ import Home from "./components/Home";
 // Toast
 import { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [isAllowed, setIsAllowed] = useState(false);
@@ -76,6 +77,7 @@ const App = () => {
             <Route path="/settings" element={<Settings />} />
             <Route path="/exit-cards" element={<ExitCardsContainer />} />
             <Route path="/guide" element={<Guide />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Layout />
         </PersistGate>
