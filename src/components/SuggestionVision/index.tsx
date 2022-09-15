@@ -20,6 +20,7 @@ import {
 } from "../../redux/playersData/playersDataActions";
 import Statistics from "../Statistics";
 import { setCharactersStore } from '../../redux/characters/charactersActions';
+import NotFound from "../NotFound";
 
 const SuggestionVision = () => {
   const [characters, setCharacters] = useState<CharType[]>([]);
@@ -150,7 +151,7 @@ const SuggestionVision = () => {
             />
           </div>
         ) : (
-          <h1>NOT-FOUND</h1>
+          <NotFound />
         ) // TODO: define a NOT-FOUND page
       }
     </>

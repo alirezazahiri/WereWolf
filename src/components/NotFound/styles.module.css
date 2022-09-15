@@ -1,0 +1,18 @@
+.button:hover {
+  outline: none;
+  border-image-source: linear-gradient(to left, #66de94, #d60136);
+  box-shadow: -5px 0 25px 0 #5c527f, 0 0 25px 0 #d60136, 5px 0 5px 0 #66de94;
+  background-color: #5c527f66;
+}
+
+.button {
+  color: rgb(115, 190, 108);
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 32px;
+  padding: 0 1rem;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease;
+}
