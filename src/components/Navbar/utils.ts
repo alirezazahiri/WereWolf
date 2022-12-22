@@ -1,6 +1,6 @@
 // img
-import IR_FLAG from "../../assets/img/iran-flag-round-icon-64.png";
-import UK_FLAG from "../../assets/img/uk-flag-round-icon-64.png";
+import IR_FLAG from "../../assets/img/FA.png";
+import UK_FLAG from "../../assets/img/EN.png";
 
 interface IgetNavLinks {
   guide: string;
