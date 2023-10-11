@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import  { useEffect, useMemo, useState } from "react";
 import { CharType } from "../../redux/types";
 import { useParams } from "react-router-dom";
 import suggestions, { SuggestionType } from "../SuggestedScenarios/utils";

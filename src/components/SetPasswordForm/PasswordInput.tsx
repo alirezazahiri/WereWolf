@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import  { FC, useState } from "react";
 import Icon from "../Icon";
 import styles from "./SetPasswordForm.module.css";
 

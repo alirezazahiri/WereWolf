@@ -48,6 +48,18 @@ const suggestions: SuggestionType[] = [
     fa_title: "مافیا هیلر کیلر - ۶ نفره",
     characters: [1, 1, 3, 4, 36, 37],
   },
+  {
+    id: 8,
+    en_title: "12x - Godfather Mafia (Jack)",
+    fa_title: "مافیا پدرخوانده (جک اسپارو) - ۱۲ نفره",
+    characters: [1, 1, 1, 4, 74, 71, 75, 78, 37, 76, 77, 73],
+  },
+  {
+    id: 9,
+    en_title: "12x - Godfather Mafia (Nostradamus)",
+    fa_title: "مافیا پدرخوانده (نوستراداموس) - ۱۲ نفره",
+    characters: [1, 1, 1, 4, 74, 71, 75, 78, 37, 76, 77, 72],
+  },
 ];
 
 export default suggestions;

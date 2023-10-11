@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { CharType } from '../../redux/types';
 import FilterCharacters from '../FilterCharacters';

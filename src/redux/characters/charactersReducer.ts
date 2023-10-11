@@ -11,7 +11,7 @@ export const countOfCharacter = (characters: number[], charID: number) => {
 
 const removeCharacter = (characters: number[], charID: number) => {
     const index = characters.findIndex((id) => id === charID);
-    return characters.filter((id, idx) => idx !== index);
+    return characters.filter((_, idx) => idx !== index);
 };
 
 const charactersReducer = (

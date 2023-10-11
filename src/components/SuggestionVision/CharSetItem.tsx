@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import  { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
 import { CharType } from '../../redux/types';

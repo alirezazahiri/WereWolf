@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import  { FC } from "react";
 
 // react-redux
 import { useSelector } from "react-redux";

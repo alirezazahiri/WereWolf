@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import  { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chooseCard, removeCard } from "../../redux/exitCards/exitCardsActions";
 import { AppState } from "../../redux/store";

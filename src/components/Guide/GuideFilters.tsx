@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import  { FC } from "react";
 import styles from "./GuideFilters.module.css";
 
 const GuideFilters: FC<{ dispatch: any; language: string; filter: any }> = ({

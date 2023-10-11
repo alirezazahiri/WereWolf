@@ -9,9 +9,12 @@
   border: 1px solid #5c527f;
 }
 
-.container:hover,
-.container.active {
+.container:hover {
   background-color: #5c527f75;
+}
+
+.container.active {
+  background-color: #ad97fc75;
 }
 
 .container:hover {

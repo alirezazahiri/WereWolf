@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import useSearch from "../../hooks/useSearch";
 import { AppState } from "../../redux/store";

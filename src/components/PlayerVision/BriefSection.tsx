@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 
 import styles from "./BriefSection.module.css"
 
 type Props = {
     color: string | undefined,
-    language: string,
+    language: "persian" | "english",
     playerBrief: { role: string, type: string },
     charTitle: string,
     charSquad: string
@@ -16,7 +16,7 @@ const BriefSection: FC<Props> = ({ color, language, playerBrief, charTitle, char
             className={styles.playerBrief}
             style={{
                 border: `1px solid ${color}`,
-                flexDirection: `${language === "persian" ? "row-reverse" : "row"}`
+                flexDirection: `${language === "persian" ? "row-reverse" : "row"}` 
             }}
         >
             <div

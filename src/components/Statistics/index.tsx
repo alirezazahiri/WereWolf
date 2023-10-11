@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import  { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import toFarsiNumber from "../../services/convertNumbersToFa";

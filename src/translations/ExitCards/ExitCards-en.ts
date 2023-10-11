@@ -70,7 +70,7 @@ const cards = [
     description: "You will take tonight's shot",
   },
   {
-    title: "Disclosure of a Player's Identity",
+    title: "Disclosure of Identity",
     description:
       "Choose a player and God will reveal their role to all the players",
   },
@@ -81,6 +81,18 @@ const cards = [
   {
     title: "Day of Silence",
     description: "Choose a player and silence them for one day",
+  },
+  {
+    title: "Face-Off",
+    description: "Choose a player and exchange your role with them.",
+  },
+  {
+    title: "Silence of the Lambs",
+    description: "Choose two players and they won't be able to talk the next day.",
+  },
+  {
+    title: "Handcuff",
+    description: "Choose a player and he won't be able to use his ability at the following night",
   },
 ];
 

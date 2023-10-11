@@ -80,6 +80,14 @@ const names = [
   // ------ Updates ------
   "salesman", // 69
   "sleep-walker", // 70
+  "citizen-kane", // 71
+  "nostradamus", // 72
+  "jack", // 73
+  "leon", // 74
+  "constantine", // 75
+  "matador", // 76
+  "saul-goodman", // 77
+  "rifleman", // 78
 ];
 
 const citizens = [
@@ -697,6 +705,62 @@ const updates = [
     max: 1,
     type: "citizen",
   },
+  {
+    icon: "id-card-o",
+    title: "همشهری کین",
+    description: "Citizen Kane can choose one player at one night in the whole game. If he had chosen his target correctly from the mafia, god will reveal the targetted player's role. Citizen Kane will be killed the next day. Doctor won't be able to save him. However, if he chooses a player which is not a mafia he will stay in game and he won't be able to use his ability again and god will not reveal anything. If him or his target has been killed during the night, no revelation would take place and his ability would be recharged. Godfather is considered to be shown as mafia to Citizen Kane.",
+    max: 1,
+    type: "citizen",
+  },
+  {
+    icon: "magic",
+    title: "Nostradamus",
+    description: "In the first night, Nostradamus would be awakened by god and should choose three players, and god will tell him the count of mafias in the targetted group. God will ask him for his perception of the winner then he would play for the group he has predicted to be the winner of the match. He will win if the side he had chosen to play along with, win the match otherwise he will loose with them too. No gun shots would kill him from neither of sides. He could only be removed from the game by Mafia's 6th-Sense or via voting. Godfather would be considered as a citizen by Nostradamus.",
+    max: 1,
+    type: "independent",
+  },
+  {
+    icon: "pied-piper-alt",
+    title: "Jack Sparrow",
+    description: "He will choose a player each night to cast a spell on. If in the next 24hrs of the game his spell go out of the game either by shot or voting, he would go out of the game with him. He is armored from shots of each side. If he is voted to leave the game, god will reveal his identity and he stays in game.",
+    max: 1,
+    type: "independent",
+  },
+  {
+    icon: "crosshairs",
+    title: "Leon",
+    description: "Mostly like Sniper. He will loose his armor after receiving one shot.",
+    max: 1,
+    type: "citizen",
+  },
+  {
+    icon: "refresh",
+    title: "Constantine",
+    description: "Constantine can only use his ability once during the game. and he can revive a player regardless of his/her side or role, and the revived player would continue its lifecycle as it should. No ability will be recharged or taken away.",
+    max: 1,
+    type: "citizen",
+  },
+  {
+    icon: "times-circle-o",
+    title: "Matador",
+    description: "He will get up with mafia and he should use his ability every night. His ability is to abandon a player from using his/her ability during that night only. He is not allowed to choose the same player two days in a row.",
+    max: 1,
+    type: "mafia",
+  },
+  {
+    icon: "money",
+    title: "Saul Goodman",
+    description: "If one mafia is taken down, Saul would be able to negotiate with a simple citizen to become a mafia. The targetted player would be informed by god that he/she is now one of them. If he does not choose a simple citizen, his ability would be disabled and mafia won't be able to take a shot that night.",
+    max: 1,
+    type: "mafia",
+  },
+  {
+    icon: "hand-o-left",
+    title: "Rifleman",
+    description: "Rifleman can hand out guns to players and the bullets may be real or fake, as in the fake ones are not able to kill and the real ones can kill the targetted player.",
+    max: 1,
+    type: "citizen",
+  }
 ];
 
 const characters = [

@@ -77,7 +77,7 @@ const App = () => {
             <Route path="/settings" element={<Settings />} />
             <Route path="/exit-cards" element={<ExitCardsContainer />} />
             <Route path="/guide" element={<Guide />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Layout />
         </PersistGate>

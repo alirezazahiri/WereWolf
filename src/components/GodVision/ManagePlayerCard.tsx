@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 
 // react-redux 
 import { useDispatch, useSelector } from 'react-redux';
@@ -51,7 +51,7 @@ const ManagePlayerCard: FC<Props> = ({ player, icon, role, type }) => {
             <div className={styles.hedearContainer} style={{ color: color }}>
                 <Link to={`/god-vision/${player}`} style={{ color: color }}>{shorten(player)}</Link>
                 <Link to={`/god-vision/${player}`} style={{ color: color }}>
-                    <Icon icon={icon} />
+                    <Icon icon={icon ?? "user"} />
                 </Link>
                 <Link to={`/god-vision/${player}`} style={{ color: color }}>{role}</Link>
             </div>

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import  { FC, useEffect } from "react";
 
 // services
 import showToast from "../../services/showToast";

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import  { FC } from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import { getGodVision } from "../../services/getPageData";

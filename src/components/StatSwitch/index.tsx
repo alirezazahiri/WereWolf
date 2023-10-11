@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import  { FC } from "react";
 
 // vendor components
 import Switch from "react-switch"

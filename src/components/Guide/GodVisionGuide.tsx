@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import { GodVisionObj } from '../../translations/Guide/types';
 import GuideContainer from './GuideContainer';
 

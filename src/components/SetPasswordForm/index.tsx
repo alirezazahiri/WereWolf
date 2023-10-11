@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import  { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPassword } from "../../redux/password/passwordActions";
 import { AppState } from "../../redux/store";
