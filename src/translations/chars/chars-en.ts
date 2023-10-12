@@ -641,45 +641,47 @@ const independents = [
     title: "Saghar",
     description:
       "She can use one of her potions every night. Each potion gives Saghar a special ability. The condition for her victory is to stay among the last 3 people.",
-    html: `
-      <div>
-        <div>
-          <p>She has 8 potions</p> 
-          <p>
-            <span>Death</span>
-          </br> 
-            eliminates the target 
-          </p>
-          <p>
-            <span>Citizen-killer</span>
+    html: /*html*/`
+      <div style="margin: 1.2rem; padding: 1.2rem;">
+        <div style="border: 1px solid rgb(100, 98, 98); border-radius: 12px;">
+          <div>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">She has 8 potions</p> 
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Death</span>
             </br> 
-            by using this, God will choose a random citizen to eliminate
-          </p>
-          <p>
-            <span>Mafia-killer</span>
-            </br> 
-            by using this, God will choose a random mafia to eliminate
-          </p>
-          <p>
-            <span>Reveal</span>
-            </br> 
-            the target should reveal his/her role to all the players
-          </p>
-          <p>
-            <span>Sickening</span>
-            </br> 
-            the target will get sick with no signs and after 48 hours will be eliminated in the middle of the day (This sickness is not contagious)
-          </p>
-          <p>
-            <span>Craziness</span>
-            </br> 
-            by using this the target can't use his/her ability that night, but instead chooses a player and the chosen player will be eliminated, and the player is silenced for 24 hours
-          </p>
-          <p>
-            <span>Undying</span>
-            </br> 
-            she has two Undying potions, by using them she can't be eliminated, except by voting
-          </p>
+              eliminates the target 
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Citizen-killer</span>
+              </br> 
+              by using this, God will choose a random citizen to eliminate
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Mafia-killer</span>
+              </br> 
+              by using this, God will choose a random mafia to eliminate
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Reveal</span>
+              </br> 
+              the target should reveal his/her role to all the players
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Sickening</span>
+              </br> 
+              the target will get sick with no signs and after 48 hours will be eliminated in the middle of the day (This sickness is not contagious)
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Craziness</span>
+              </br> 
+              by using this the target can't use his/her ability that night, but instead chooses a player and the chosen player will be eliminated, and the player is silenced for 24 hours
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+              <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">Undying</span>
+              </br> 
+              she has two Undying potions, by using them she can't be eliminated, except by voting
+            </p>
+          </div>
         </div>
       </div>
       `,
@@ -707,60 +709,68 @@ const updates = [
   },
   {
     icon: "id-card-o",
-    title: "همشهری کین",
-    description: "Citizen Kane can choose one player at one night in the whole game. If he had chosen his target correctly from the mafia, god will reveal the targetted player's role. Citizen Kane will be killed the next day. Doctor won't be able to save him. However, if he chooses a player which is not a mafia he will stay in game and he won't be able to use his ability again and god will not reveal anything. If him or his target has been killed during the night, no revelation would take place and his ability would be recharged. Godfather is considered to be shown as mafia to Citizen Kane.",
+    title: "Citizen Kane",
+    description:
+      "Citizen Kane can choose one player at one night in the whole game. If he had chosen his target correctly from the mafia, god will reveal the targetted player's role. Citizen Kane will be killed the next day. Doctor won't be able to save him. However, if he chooses a player which is not a mafia he will stay in game and he won't be able to use his ability again and god will not reveal anything. If him or his target has been killed during the night, no revelation would take place and his ability would be recharged. Godfather is considered to be shown as mafia to Citizen Kane.",
     max: 1,
     type: "citizen",
   },
   {
     icon: "magic",
     title: "Nostradamus",
-    description: "In the first night, Nostradamus would be awakened by god and should choose three players, and god will tell him the count of mafias in the targetted group. God will ask him for his perception of the winner then he would play for the group he has predicted to be the winner of the match. He will win if the side he had chosen to play along with, win the match otherwise he will loose with them too. No gun shots would kill him from neither of sides. He could only be removed from the game by Mafia's 6th-Sense or via voting. Godfather would be considered as a citizen by Nostradamus.",
+    description:
+      "In the first night, Nostradamus would be awakened by god and should choose three players, and god will tell him the count of mafias in the targetted group. God will ask him for his perception of the winner then he would play for the group he has predicted to be the winner of the match. He will win if the side he had chosen to play along with, win the match otherwise he will loose with them too. No gun shots would kill him from neither of sides. He could only be removed from the game by Mafia's 6th-Sense or via voting. Godfather would be considered as a citizen by Nostradamus.",
     max: 1,
     type: "independent",
   },
   {
     icon: "pied-piper-alt",
     title: "Jack Sparrow",
-    description: "He will choose a player each night to cast a spell on. If in the next 24hrs of the game his spell go out of the game either by shot or voting, he would go out of the game with him. He is armored from shots of each side. If he is voted to leave the game, god will reveal his identity and he stays in game.",
+    description:
+      "He will choose a player each night to cast a spell on. If in the next 24hrs of the game his spell go out of the game either by shot or voting, he would go out of the game with him. He is armored from shots of each side. If he is voted to leave the game, god will reveal his identity and he stays in game.",
     max: 1,
     type: "independent",
   },
   {
     icon: "crosshairs",
     title: "Leon",
-    description: "Mostly like Sniper. He will loose his armor after receiving one shot.",
+    description:
+      "Mostly like Sniper. He will loose his armor after receiving one shot.",
     max: 1,
     type: "citizen",
   },
   {
     icon: "refresh",
     title: "Constantine",
-    description: "Constantine can only use his ability once during the game. and he can revive a player regardless of his/her side or role, and the revived player would continue its lifecycle as it should. No ability will be recharged or taken away.",
+    description:
+      "Constantine can only use his ability once during the game. and he can revive a player regardless of his/her side or role, and the revived player would continue its lifecycle as it should. No ability will be recharged or taken away.",
     max: 1,
     type: "citizen",
   },
   {
     icon: "times-circle-o",
     title: "Matador",
-    description: "He will get up with mafia and he should use his ability every night. His ability is to abandon a player from using his/her ability during that night only. He is not allowed to choose the same player two days in a row.",
+    description:
+      "He will get up with mafia and he should use his ability every night. His ability is to abandon a player from using his/her ability during that night only. He is not allowed to choose the same player two days in a row.",
     max: 1,
     type: "mafia",
   },
   {
     icon: "money",
     title: "Saul Goodman",
-    description: "If one mafia is taken down, Saul would be able to negotiate with a simple citizen to become a mafia. The targetted player would be informed by god that he/she is now one of them. If he does not choose a simple citizen, his ability would be disabled and mafia won't be able to take a shot that night.",
+    description:
+      "If one mafia is taken down, Saul would be able to negotiate with a simple citizen to become a mafia. The targetted player would be informed by god that he/she is now one of them. If he does not choose a simple citizen, his ability would be disabled and mafia won't be able to take a shot that night.",
     max: 1,
     type: "mafia",
   },
   {
     icon: "hand-o-left",
     title: "Rifleman",
-    description: "Rifleman can hand out guns to players and the bullets may be real or fake, as in the fake ones are not able to kill and the real ones can kill the targetted player.",
+    description:
+      "Rifleman can hand out guns to players and the bullets may be real or fake, as in the fake ones are not able to kill and the real ones can kill the targetted player.",
     max: 1,
     type: "citizen",
-  }
+  },
 ];
 
 const characters = [

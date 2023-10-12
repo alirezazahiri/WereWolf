@@ -27,11 +27,13 @@
     align-items: center;
 }
 
-.hedearContainer a {
+.hedearContainer > a {
     font-size: 2rem;
+    flex-basis: 33%;
     flex-grow: 1;
     font-weight: 600;
     text-decoration: none;
+    text-align: center;
 }
 
 .hedearContainer a:first-child {
@@ -44,7 +46,6 @@
 
 .hedearContainer i {
     font-size: 2.5rem;
-    margin: 0 auto;
 }
 
 .playerStatusContainer {
@@ -65,4 +66,9 @@
 
 .playerStatusContainer button:hover {
     color: rgb(218, 0, 55);
+}
+
+.deadStatus {
+    color: rgb(218, 0, 55);
+    font-size: 1.25rem;
 }

@@ -1,4 +1,4 @@
-import  { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 
 // services
 import showToast from "../../services/showToast";
@@ -94,12 +94,7 @@ const HeaderButtons: FC<Props> = ({
           language === "persian"
             ? MODAL_HEADER_SUCCESS_SUGGESTION_FA
             : MODAL_HEADER_SUCCESS_SUGGESTION_EN;
-        showToast(
-          "success",
-          <button className={styles.start} onClick={handleStart}>
-            {message}
-          </button>
-        );
+        showToast("success", message);
         dispatch(setCountOfPlayers(`${names.length}`));
         dispatch(createRoleDictionary(names));
         dispatch(createDataDictionary(names));
@@ -140,12 +135,7 @@ const HeaderButtons: FC<Props> = ({
       return;
     }
     if (type === "scenarioNameEnter" && startGame === undefined) {
-      showToast(
-        "success",
-        <button className={styles.start} onClick={handleStart}>
-          {buttons.start}
-        </button>
-      );
+      showToast("success", buttons.start);
       dispatch(updateRoleDictionary(names, characters));
       navigate("/players-roles");
       return;
@@ -172,26 +162,11 @@ const HeaderButtons: FC<Props> = ({
 
   useEffect(() => {
     if (remaining === 0 && type === "nameEnter")
-      showToast(
-        "success",
-        <button className={styles.goto} onClick={handleGoto}>
-          {buttons.go_to_char_select}
-        </button>
-      );
+      showToast("success", buttons.go_to_char_select);
     if (remaining === 0 && type === "scenarioNameEnter")
-      showToast(
-        "success",
-        <button className={styles.goto} onClick={handleGoto}>
-          {buttons.see_characters}
-        </button>
-      );
+      showToast("success", buttons.see_characters);
     else if (remaining === 0 && type === "charSelect")
-      showToast(
-        "success",
-        <button className={styles.start} onClick={handleStart}>
-          {buttons.start}
-        </button>
-      );
+      showToast("success", buttons.start);
   }, [
     remaining,
     buttons.start,

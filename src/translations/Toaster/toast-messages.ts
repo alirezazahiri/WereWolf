@@ -34,7 +34,7 @@ export const MODAL_HEADER_SUCCESS_FA = "سناریو خود را بچینید";
 
 // MODAL HEADER SUCCESS SUGGESTION
 export const MODAL_HEADER_SUCCESS_SUGGESTION_EN = "Start Game";
-export const MODAL_HEADER_SUCCESS_SUGGESTION_FA = "شروع بازی";
+export const MODAL_HEADER_SUCCESS_SUGGESTION_FA = "بازی رو شروع کن";
 
 export const MODAL_HEADER_SUCCESS_CHARS_EN = "tap on the name to see player's role";
 export const MODAL_HEADER_SUCCESS_CHARS_FA = "برای دیدن نقش ها روی بازیکن ها کلیک کنید";

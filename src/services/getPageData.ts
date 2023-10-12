@@ -2,7 +2,7 @@
 import { chars_en } from "../translations/chars/chars-en";
 import { chars_fa } from "../translations/chars/chars-fa";
 
-// exit cards data 
+// exit cards data
 import { exit_cards_en } from "../translations/ExitCards/ExitCards-en";
 import { exit_cards_fa } from "../translations/ExitCards/ExitCards-fa";
 
@@ -50,11 +50,11 @@ import { player_vision_objects_fa } from "../translations/PlayerVision/PlayerVis
 import { suggestion_vision_objects_en } from "../translations/SuggestionVision/suggestionVision-en";
 import { suggestion_vision_objects_fa } from "../translations/SuggestionVision/suggestionVision-fa";
 
-// Statistics 
+// Statistics
 import { statistics_objects_fa } from "../translations/Statistics/statistics-fa";
 import { statistics_objects_en } from "../translations/Statistics/statistics-en";
 
-// Caution messages 
+// Caution messages
 import { caution_objects_en } from "../translations/Caution/caution-en";
 import { caution_objects_fa } from "../translations/Caution/caution-fa";
 
@@ -65,6 +65,8 @@ import { settings_objects_fa } from "../translations/Settings/Settings-fa";
 // Godvision
 import { godVision_objects_en } from "../translations/GodVision/GodVision-en";
 import { godVision_objects_fa } from "../translations/GodVision/GodVision-fa";
+import { managePlayersCard_objects_en } from "../translations/ManagePlayerCard/ManagePlayerCard-en";
+import { managePlayersCard_objects_fa } from "../translations/ManagePlayerCard/ManagePlayerCard-fa";
 
 const getChars = (language: string) => {
   const chars_obj = language === "english" ? chars_en : chars_fa;
@@ -157,6 +159,12 @@ const getGodVision = (language: string) => {
   return language === "english" ? godVision_objects_en : godVision_objects_fa;
 };
 
+const getManagePlayerCard = (language: string) => {
+  return language === "english"
+    ? managePlayersCard_objects_en
+    : managePlayersCard_objects_fa;
+};
+
 export {
   getChars as default,
   getExitCards,
@@ -175,4 +183,5 @@ export {
   getCaution,
   getSettings,
   getGodVision,
+  getManagePlayerCard,
 };

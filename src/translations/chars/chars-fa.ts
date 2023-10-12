@@ -640,45 +640,47 @@ const independents = [
     title: "ساغر",
     description:
       "هرشب میتواند یکی از معجون هایش را استفاده کند. هر معجون به ساغر قابلیت خاص می بخشد. شرط پیروزی او، باقی ماندن بین 3 نفر آخر است",
-    html: `
-      <div>
-        <div>
-          <p>او 8 معجون دارد</p> 
-          <p>
-          <span>مرگ</span>
-          </br>
-           بازیکن را حذف میکند
-          </p>
-          <p>
-          <span>شهروند کش</span>
-          </br>
-           گرداننده یک شهروند را به طور تصادفی انتخاب و حذف میکند 
-          </p>
-          <p>
-          <span>مافیا کش</span>
-          </br>
-           گرداننده یک مافیا را به طور تصادفی انتخاب و حذف میکند
-          </p>
-          <p>
-          <span>افشا</span>
-          </br>
-           بازیکنی که این معجون به او داده شده است باید نقشش را به طور واضح به همه بگوید
-          </p>
-          <p>
-          <span>بیمار کننده</span>
-          </br>
-            بازیکنی که این معجون به او داده شده بدون هیچ علامتی بعد از 48 ساعت در وسط روز از بازی حذف میشود(بیماری واگیردار نیست) 
+    html: /*html*/`
+      <div style="margin: 1.2rem; padding: 1.2rem;">
+        <div style="border: 1px solid rgb(100, 98, 98); border-radius: 12px;">
+          <div>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">او 8 معجون دارد</p> 
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">مرگ</span>
+            </br>
+            بازیکن را حذف میکند
             </p>
-          <p>
-          <span>جنون آور</span>
-          </br>
-           با استفاده از این معجون بازیکن نمیتواند از قابلیتش در شب استفاده کند و  به جای آن باید یک نفر را انتخاب کند تا آن شخص از بازی حذف شود و خودش هم به مدت 24 ساعت ساکت می ماند
-          </p>
-          <p>
-          <span>نامیرایی</span>
-          </br>
-           دو معجون نامیرایی دارد که باعث میشود از بازی حذف نشود (مگر در رای گیری)
-          </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">شهروند کش</span>
+            </br>
+            گرداننده یک شهروند را به طور تصادفی انتخاب و حذف میکند 
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">مافیا کش</span>
+            </br>
+            گرداننده یک مافیا را به طور تصادفی انتخاب و حذف میکند
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">افشا</span>
+            </br>
+            بازیکنی که این معجون به او داده شده است باید نقشش را به طور واضح به همه بگوید
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">بیمار کننده</span>
+            </br>
+              بازیکنی که این معجون به او داده شده بدون هیچ علامتی بعد از 48 ساعت در وسط روز از بازی حذف میشود(بیماری واگیردار نیست) 
+              </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">جنون آور</span>
+            </br>
+            با استفاده از این معجون بازیکن نمیتواند از قابلیتش در شب استفاده کند و  به جای آن باید یک نفر را انتخاب کند تا آن شخص از بازی حذف شود و خودش هم به مدت 24 ساعت ساکت می ماند
+            </p>
+            <p style="border-bottom: 1px solid rgb(100, 98, 98); display: flex; flex-direction: column; justify-content: space-between; padding: 15px; font-size: 1.5rem; margin: 0 2rem;">
+            <span style="padding-bottom: 5px; color: rgb(165, 89, 165); border-bottom: 1px solid white; margin: 0 2rem; font-size: 1.8rem; font-weight: 700;">نامیرایی</span>
+            </br>
+            دو معجون نامیرایی دارد که باعث میشود از بازی حذف نشود (مگر در رای گیری)
+            </p>
+          </div>
         </div>
       </div>
       `,
