@@ -6,7 +6,6 @@ import getColor from "../../services/getColor";
 import { getStatistics } from "../../services/getPageData";
 import styles from "./Statistics.module.css";
 import { countSides } from "./utils";
-import { SuggestionType } from "../SuggestedScenarios/utils";
 import { useLocation } from "react-router-dom";
 
 export type StatType = {
