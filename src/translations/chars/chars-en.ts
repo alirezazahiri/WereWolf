@@ -88,6 +88,9 @@ const names = [
   "matador", // 76
   "saul-goodman", // 77
   "rifleman", // 78
+  "ocean", // 79
+  "zodiac", // 80
+  "vandal", // 81
 ];
 
 const citizens = [
@@ -120,7 +123,7 @@ const citizens = [
     title: "Doctor",
     description:
       "Wakes up everynight to save someone, it only can save itself once",
-    max: 1,
+    max: 2,
     type: "citizen",
   },
   {
@@ -498,7 +501,7 @@ const mafias = [
     icon: "bomb",
     title: "Bomber",
     description:
-      "one day in the game before the voting starts chooses a player to take them out of the game with himself",
+      "one day in the game before the voting starts chooses a player to take them out of the game with himself. in the Zodiac's Scenario he can place a bomb on one player and put a number ranging from 1-4 as a password, and the next day the bomb will be stopped from explosion only by that code.",
     max: 1,
     type: "mafia",
   },
@@ -641,7 +644,7 @@ const independents = [
     title: "Saghar",
     description:
       "She can use one of her potions every night. Each potion gives Saghar a special ability. The condition for her victory is to stay among the last 3 people.",
-    html: /*html*/`
+    html: /*html*/ `
       <div style="margin: 1.2rem; padding: 1.2rem;">
         <div style="border: 1px solid rgb(100, 98, 98); border-radius: 12px;">
           <div>
@@ -768,8 +771,32 @@ const updates = [
     title: "Rifleman",
     description:
       "Rifleman can hand out guns to players and the bullets may be real or fake, as in the fake ones are not able to kill and the real ones can kill the targetted player.",
+    max: 2,
+    type: "citizen",
+  },
+  {
+    icon: "users",
+    title: "Ocean",
+    description:
+      "Two nights during the game can wake up two citizens to form a group and make decisions together. If he chooses a mafia or Zodiac, he would leave the game the next day.",
     max: 1,
     type: "citizen",
+  },
+  {
+    icon: "sign-language",
+    title: "Zodiac",
+    description:
+      "He is a serial killer. every two nights he kills a person, but he should be aware that if he shoots the Guard he would leave the game the next day. No shots will affect him in the nights but if he is shot during the day he would leave the game right away. If the bomb is on him and he does not stop it from explosion, he would leave the game. He can be voted to leave the game too.",
+    max: 1,
+    type: "independent",
+  },
+  {
+    icon: "hand-spock-o",
+    title: "Vandal",
+    description:
+      "He is one of the mafias and can change the course of the bullet that comes from the gun given by the Rifleman. That is when the gun is in one player's hand and the Vandal has destroyed it, the player who pulled the trigger (with a real bullet NOT fake) would leave the game right away.",
+    max: 2,
+    type: "mafia",
   },
 ];
 

@@ -1,8 +1,6 @@
+import { StatType } from ".";
 import mapCharIdToCharacter from "../../services/mapCharIdToCharacter";
-
-interface ISides {
-  [key: string]: number;
-}
+import { chars_en } from "../../translations/chars/chars-en";
 
 export const countSides = (
   characters: number[],
@@ -20,27 +18,40 @@ export const countSides = (
       [key: string]: number;
     };
   }
-) => {
-  let charTypes: (string | undefined)[] = [];
+): StatType => {
+  let charTypes: (keyof StatType)[] = [];
   if (updatable && options) {
     const { dataDictionary, roleDictionary } = options;
     Object.entries(dataDictionary).forEach(([playerName, stat]) => {
       if (stat.alive) {
-        charTypes.push(
-          mapCharIdToCharacter(roleDictionary[playerName], language)?.type
-        );
+        const res = mapCharIdToCharacter(roleDictionary[playerName], language);
+        if (res) charTypes.push(res.type as keyof StatType);
       }
     });
   } else {
     charTypes = characters.map(
-      (char) => mapCharIdToCharacter(char, language)?.type
+      (char) => mapCharIdToCharacter(char, language)?.type as keyof StatType
     );
   }
   return charTypes?.reduce(
-    (prev: ISides, current) => ({
+    (prev: StatType, current) => ({
       ...prev,
-      [current as string]: prev[current as string] + 1,
+      [current as string]: prev[current as keyof StatType] + 1,
     }),
     { citizen: 0, mafia: 0, "mid-independent": 0, independent: 0 }
   );
+};
+
+export const sidesCountByCharID = (charIDs: number[]): StatType => {
+  const { characters } = chars_en;
+  const sides = {
+    mafia: 0,
+    citizen: 0,
+    independent: 0,
+    "mid-independent": 0,
+  };
+  charIDs.forEach(
+    (charID) => ++sides[characters[charID - 1].type as keyof typeof sides]
+  );
+  return sides;
 };

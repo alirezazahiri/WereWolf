@@ -21,6 +21,7 @@ import {
 import Statistics from "../Statistics";
 import { setCharactersStore } from '../../redux/characters/charactersActions';
 import NotFound from "../NotFound";
+import { sidesCountByCharID } from "../Statistics/utils";
 
 const SuggestionVision = () => {
   const [characters, setCharacters] = useState<CharType[]>([]);
@@ -91,7 +92,7 @@ const SuggestionVision = () => {
               <p>{description}</p>
             </div>
             <div className={styles.statContainer}>
-              <Statistics suggestion={suggestion} />
+              <Statistics statistics={sidesCountByCharID(suggestion.characters)} />
             </div>
             <button
               onClick={() => setShowCaution(true)}

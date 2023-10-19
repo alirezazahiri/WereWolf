@@ -60,6 +60,12 @@ const suggestions: SuggestionType[] = [
     fa_title: "مافیا پدرخوانده (نوستراداموس) - ۱۲ نفره",
     characters: [1, 1, 1, 4, 74, 71, 75, 78, 37, 76, 77, 72],
   },
+  {
+    id: 10,
+    en_title: "12x - Zodiac Mafia",
+    fa_title: "مافیا زودیاک - ۱۲ نفره",
+    characters: [1, 1, 4, 3, 6, 79, 78, 37, 76, 51, 49, 80],
+  },
 ];
 
 export default suggestions;

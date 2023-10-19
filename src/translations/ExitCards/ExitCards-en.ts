@@ -62,17 +62,17 @@ const cards = [
     description: "Reveal your role and leave the game",
   },
   {
+    title: "Disclosure of Identity 2",
+    description:
+      "Choose a player and God will reveal their role to all the players",
+  },
+  {
     title: "Vertigo",
     description: "Choose a person, and devest their ability for one day",
   },
   {
     title: "Killshot",
     description: "You will take tonight's shot",
-  },
-  {
-    title: "Disclosure of Identity",
-    description:
-      "Choose a player and God will reveal their role to all the players",
   },
   {
     title: "Presence Report",
@@ -88,11 +88,13 @@ const cards = [
   },
   {
     title: "Silence of the Lambs",
-    description: "Choose two players and they won't be able to talk the next day.",
+    description:
+      "Choose two players and they won't be able to talk the next day.",
   },
   {
     title: "Handcuff",
-    description: "Choose a player and he won't be able to use his ability at the following night",
+    description:
+      "Choose a player and he won't be able to use his ability at the following night",
   },
 ];
 
