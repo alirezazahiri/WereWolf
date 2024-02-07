@@ -123,7 +123,7 @@ const citizens = [
     title: "Doctor",
     description:
       "Wakes up everynight to save someone, it only can save itself once",
-    max: 2,
+    max: 1,
     type: "citizen",
   },
   {
@@ -771,7 +771,7 @@ const updates = [
     title: "Rifleman",
     description:
       "Rifleman can hand out guns to players and the bullets may be real or fake, as in the fake ones are not able to kill and the real ones can kill the targetted player.",
-    max: 2,
+    max: 1,
     type: "citizen",
   },
   {
@@ -795,7 +795,7 @@ const updates = [
     title: "Vandal",
     description:
       "He is one of the mafias and can change the course of the bullet that comes from the gun given by the Rifleman. That is when the gun is in one player's hand and the Vandal has destroyed it, the player who pulled the trigger (with a real bullet NOT fake) would leave the game right away.",
-    max: 2,
+    max: 1,
     type: "mafia",
   },
 ];

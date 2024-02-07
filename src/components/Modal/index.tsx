@@ -1,7 +1,7 @@
 import  { FC } from "react";
 
 // react-redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // styles
 import styles from "./Modal.module.css";
@@ -27,6 +27,7 @@ import Caution from "../Caution";
 import toFarsiNumber from "../../services/convertNumbersToFa";
 import { getModal } from "../../services/getPageData";
 import { shorten } from "../../services/shorten";
+import { setPassword } from "../../redux/password/passwordActions";
 
 interface Props {
   language: string;
@@ -72,6 +73,8 @@ const ModalContainer: FC<Props> = ({
       ...state.charactersState,
     })
   );
+  const dispatch = useDispatch();
+
   let title;
   if (type === "nameEnter") title = playersCount - names.length;
   else if (type === "scenarioNameEnter" && countOfPlayers)
@@ -158,6 +161,18 @@ const ModalContainer: FC<Props> = ({
         )}
         {type === "forgetPassSettings" && (
           <SetPasswordForm isForgotten={true} closeHandler={closeHandler} />
+        )}
+        {type === "deletePassSettings" && (
+          <div className={styles.buttonContainer}>
+          <button
+            onClick={() => {
+              dispatch(setPassword(""));
+              closeHandler()
+            }}
+          >
+            {language === "persian" ? "حذف گذرواژه" : "Delete Password"}
+          </button>
+        </div>
         )}
         {type === "exitCardAnnouncement" && (
           <div className={styles.exitCardContainer}>

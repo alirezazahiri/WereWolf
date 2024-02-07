@@ -1,6 +1,7 @@
-const passwordSettings = "تغییر گذرواژه گرداننده";
+const passwordSettings = "ثبت گذرواژه گرداننده";
 const languageSettings = "تغییر زبان";
 const forgetPassSettings = "فراموشی گذرواژه";
+const deletePassSettings = "حذف گذرواژه";
 const proceed = "تایید";
 const passwordPH = "...گذرواژه";
 const currentPassPH = "...گذرواژه کنونی";
@@ -13,6 +14,7 @@ export const settings_objects_fa = {
   passwordSettings,
   languageSettings,
   forgetPassSettings,
+  deletePassSettings,
   proceed,
   passwordPH,
   currentPassPH,

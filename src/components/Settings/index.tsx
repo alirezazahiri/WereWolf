@@ -9,12 +9,13 @@ const initialState = {
   passwordSettings: false,
   languageSettings: false,
   forgetPassSettings: false,
+  deletePassSettings: false,
 };
 
 const Settings = () => {
-  const { language } = useSelector((state: AppState) => state.languageState);
+  const { language, password } = useSelector((state: AppState) => ({...state.languageState, ...state.passwordState}));
   const [show, setShow] = useState(initialState);
-  const { passwordSettings, languageSettings, forgetPassSettings } =
+  const { passwordSettings, languageSettings, forgetPassSettings, deletePassSettings } =
     getSettings(language);
 
   return (
@@ -41,6 +42,13 @@ const Settings = () => {
           {forgetPassSettings}
         </button>
       </div>
+      {password && <div className={styles.buttonContainer}>
+        <button
+          onClick={() => setShow({ ...initialState, deletePassSettings: true })}
+        >
+          {deletePassSettings}
+        </button>
+      </div>}
 
       {/* modals */}
       {/* Password */}
@@ -62,6 +70,13 @@ const Settings = () => {
         language={language}
         type="forgetPassSettings"
         show={show.forgetPassSettings}
+        closeHandler={() => setShow({ ...initialState })}
+      />
+      {/* Forget Password Settings */}
+      <ModalContainer
+        language={language}
+        type="deletePassSettings"
+        show={show.deletePassSettings}
         closeHandler={() => setShow({ ...initialState })}
       />
     </div>
